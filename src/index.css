@@ -1,0 +1,14 @@
+@import './styles/theme.css'; /* Import the theme variables */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: "Lato", serif;
+  margin: auto;
+}
+.reffral-income-bg{
+  background: url("./images/refferal-income-bg.webp") center no-repeat;
+  background-size: cover;
+}

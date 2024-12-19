@@ -1,0 +1,18 @@
+:root {
+    --color-background: #ffffff;
+    --color-primary: #28418D;
+    --color-blue: #2850CC;
+    --color-white: #ffffff;
+    --color-bodytext: #67789C;
+    --gradient-background: linear-gradient(to left, #E9EBF2 0%, #F6F7FA 52%, #EAEEFB 100%);
+    --gradient-blue: linear-gradient(to bottom, #1E3478 0%, #192A70 47%, #1A104C 100%);
+    --header-background: #F4F7FF;
+  }
+  
+  .dark {
+    --color-primary: #007acc;
+    --background-primary: #d9dee7;
+    --color-secondary: #ccaa00;
+    --color-background: #1a202c;
+    --color-text: #ffffff;
+  }
