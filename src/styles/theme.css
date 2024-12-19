@@ -9,6 +9,7 @@
     --gradient-blue: linear-gradient(to bottom, #1E3478 0%, #192A70 47%, #1A104C 100%);
     --header-background: #F4F7FF;
     --work-gradient: linear-gradient(to left, #BFCBF212 0%, #BFC5DA12 52%, #819FFF12 100%);
+    --color-subtext: #031641;
   }
   
   .dark {
