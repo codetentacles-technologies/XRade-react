@@ -1,7 +1,15 @@
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
+
+
 const Home = () => {
+
+    const data = Array(8).fill({
+        packageAmount: "$50",
+        dailyIncome: "1%",
+        duration: "300 Day",
+    });
     return (
         <div>
             {/* Hero section */}
@@ -170,12 +178,235 @@ const Home = () => {
                 <section>
                     <div className='flex flex-col gap-8'>
                         <h4 className='text-primary text-4xl font-bold flex items-center justify-center gap-3 w-full'>Level Income <img src="/images/level-income-img.png" alt="setting" className='w-[37px] h-[36px]' /></h4>
-                        <div className='flex gap-6'>
-                            <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-4'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-10 gap-6'>
+                            <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
                                 <h5 className='font-bold text-lg text-secondary'>LEVEL 1</h5>
                                 <p className='font-bold text-lg text-subtext'>0.25%</p>
                             </div>
-                            <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max'>LEVEL 1</div>
+                            <div className='p-3 bg-[#F4F7FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 2</h5>
+                                <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            </div>
+                            <div className='p-3 bg-[#EDF1FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 3</h5>
+                                <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            </div>
+                            <div className='p-3 bg-[#E7EBFF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 4</h5>
+                                <p className='font-bold text-lg text-subtext'>4%</p>
+                            </div>
+                            <div className='p-3 bg-[#DEE5FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 5</h5>
+                                <p className='font-bold text-lg text-subtext'>4%</p>
+                            </div>
+                            <div className='p-3 bg-[#D9E1FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 6</h5>
+                                <p className='font-bold text-lg text-subtext'>3%</p>
+                            </div>
+                            <div className='p-3 bg-[#D3DDFF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 7</h5>
+                                <p className='font-bold text-lg text-subtext'>2%</p>
+                            </div>
+                            <div className='p-3 bg-[#CAD5FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 8</h5>
+                                <p className='font-bold text-lg text-subtext'>1%</p>
+                            </div>
+                            <div className='p-3 bg-[#B8C7FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 9</h5>
+                                <p className='font-bold text-lg text-subtext'>6%</p>
+                            </div>
+                            <div className='p-3 bg-[#B1C2FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-3.5'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 10</h5>
+                                <p className='font-bold text-lg text-subtext'>5%</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Jackpot Tours */}
+                <section>
+                    <div className='flex flex-col gap-8'>
+                        <div className='flex justify-between'>
+                            <h4 className='text-primary text-4xl font-bold flex items-center gap-3 '>Jackpot Tours: Exclusive Experiences  Await<img src="/images/jackpot-tours.png" alt="setting" className='w-[37px] h-[36px]' />
+                            </h4>
+                            <button className='flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max'>Explore All <ArrowRight /></button>
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/dubai-img.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">Dubai Tour</h3>
+                                    <p className="text-lightblue text-base font-medium">$10,000 Direct Business within 45 days</p>
+                                </div>
+                            </div>
+
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/turkey-img.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">Turkey + Dubai Tour</h3>
+                                    <p className="text-lightblue text-base font-medium">$10,000 Direct Business within 45 days</p>
+                                </div>
+                            </div>
+
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/europe-img.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">Europe Tour</h3>
+                                    <p className="text-lightblue text-base font-medium">$10,000 Direct Business within 45 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Divident Income */}
+                <section>
+                    <div className='flex flex-col gap-8'>
+                        <div className='flex flex-col gap-3'>
+                            <div className='flex justify-between'>
+                                <h4 className='text-primary text-4xl font-bold flex items-center gap-3 '>Dividend Income<img src="/images/divident-img.png" alt="setting" className='w-[37px] h-[36px]' />
+                                </h4>
+                            </div>
+                            <p className='text-secondary text-base font-normal'>Choose from a range of investment packages that offer attractive daily returns for a specified duration. This stable  Dividend income structure provides consistent income, allowing you to grow your portfolio with confidence.</p>
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+                            <div className='w-full bg-gradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3'>
+                                <p className='text-4xl font-black text-primary'>2X</p>
+                                <p className='text-2xl font-bold text-primary'>Double Your Investment</p>
+                                <p className='text-lg font-normal text-secondary'>Within 24 hours</p>
+                            </div>
+                            <div className='w-full bg-gradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3'>
+                                <p className='text-4xl font-black text-primary'>50%</p>
+                                <p className='text-2xl font-bold text-primary'>50% Cashback</p>
+                                <p className='text-lg font-normal text-secondary'>Bonus reward</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Jackpot Rewards */}
+                <section>
+                    <div className='flex flex-col gap-8'>
+
+                        <div className="flex ">
+                            <div className='flex flex-col w-max'>
+                                <h4 className='text-primary text-4xl font-bold flex items-center gap-3 '>Jackpot Rewards: Luxurious Recognition<img src="/images/jackpot-rewards.png" alt="setting" className=' h-[36px]' />
+                                </h4>
+                                <p className='text-secondary text-base font-normal'>Beyond travel, we offer luxurious rewards for high-achieving investors. Our Jackpot Rewards recognize your exceptional  dedication and commitment to the platform.</p>
+                            </div>
+                            <button className='flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px]'>Explore All <ArrowRight /></button>
+                        </div>
+
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/superbike.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">Superbike</h3>
+                                    <p className="text-lightblue text-base font-medium">$50,000 Direct Business  within 100 days</p>
+                                </div>
+                            </div>
+
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/suv-car.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">SUV Car</h3>
+                                    <p className="text-lightblue text-base font-medium">$100,000 Direct Business  within 100 days</p>
+                                </div>
+                            </div>
+
+                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+                                <div className="relative">
+                                    <img
+                                        src="/images/house-fund.png" // Replace with your image URL
+                                        alt="Dubai Tour"
+                                        className="w-full h-[262px] object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 gap-2">
+                                    <h3 className="text-2xl font-bold text-primary">House Fund</h3>
+                                    <p className="text-lightblue text-base font-medium">$500,000 Direct Business  within 100 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* Challenging Income */}
+                <section>
+                    <div className='flex flex-col gap-8'>
+
+                        <div className="flex ">
+                            <div className='flex flex-col'>
+                                <h4 className='text-primary text-4xl font-bold flex items-center gap-3 '>Challenging Income: Maximizing  Your Investment Returns<img src="/images/challenging-income.png" alt="setting" className=' h-[36px]' />
+                                </h4>
+                                <p className='text-secondary text-base font-normal'>Unlock exceptional rewards for your investment prowess. This unique feature challenges you to leverage our platform's  potential for rapid growth.</p>
+                            </div>
+                            <button className='flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px]'>View All <ArrowRight /></button>
+                        </div>
+
+                        <div className="flex justify-center items-center">
+                            <div className="w-full">
+                                <table className="w-full border-collapse rounded-2xl shadow-lg overflow-hidden">
+                                    <thead className="bg-white">
+                                        <tr>
+                                            <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
+                                                Package Amount
+                                            </th>
+                                            <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
+                                                Daily Income
+                                            </th>
+                                            <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
+                                                Duration
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {data.map((row, index) => (
+                                            <tr
+                                                key={index}
+                                                className={`${index % 2 === 0 ? "bg-[#F9FAFB]" : "bg-white"
+                                                    } hover:bg-gray-100`}
+                                            >
+                                                <td className="p-6 text-center text-secondary">{row.packageAmount}</td>
+                                                <td className="p-6 text-center text-secondary">{row.dailyIncome}</td>
+                                                <td className="p-6 text-center text-secondary">{row.duration}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <p className='text-secondary text-base font-normal mt-8'>This rewarding system encourages strategic investment and enables you to capitalize on the platform's inherent benefits.  It's an opportunity to maximize your earnings and amplify your investment success.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
