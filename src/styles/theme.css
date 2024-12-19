@@ -1,12 +1,14 @@
 :root {
     --color-background: #ffffff;
     --color-primary: #28418D;
+    --color-secondary: #4C5163;
     --color-blue: #2850CC;
     --color-white: #ffffff;
     --color-bodytext: #67789C;
     --gradient-background: linear-gradient(to left, #E9EBF2 0%, #F6F7FA 52%, #EAEEFB 100%);
     --gradient-blue: linear-gradient(to bottom, #1E3478 0%, #192A70 47%, #1A104C 100%);
     --header-background: #F4F7FF;
+    --work-gradient: linear-gradient(to left, #BFCBF212 0%, #BFC5DA12 52%, #819FFF12 100%);
   }
   
   .dark {

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class', // Enables dark mode via a 'class' strategy
+  darkMode: 'className', // Enables dark mode via a 'className' strategy
   theme: {
     extend: {
       colors: {
@@ -24,7 +24,7 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
+        secondary: 'var( --color-secondary)',
         background: 'var( --color-background)',
         blue: 'var(--color-blue)',
         white: 'var(--color-white)',
@@ -34,6 +34,7 @@ module.exports = {
       backgroundImage: {
         gradient: 'var(--gradient-background)',
         bluegradient: 'var(--gradient-blue)',
+        workgradient: 'var(--work-gradient)',
       },
       fontFamily: {
         
@@ -47,12 +48,12 @@ module.exports = {
         "extra-bold": 900,
       },
       fontSize: {
-        base: "1rem",
-        lg: "1.25rem",
-        xl: "1.5rem",
-        "2xl": "2rem",
-        "3xl": "2.5rem",
-        "4xl": "3rem",
+        base: "16px",
+        lg: "18px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "30px",
+        "4xl": "36px",
       },
       boxShadow: {
         DEFAULT: "0 2px 4px rgba(0, 0, 0, 0.1)",
@@ -101,5 +102,5 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: "class",
+  darkMode: "className",
 };
