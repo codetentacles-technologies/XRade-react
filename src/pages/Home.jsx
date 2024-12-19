@@ -153,10 +153,12 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-4 border border-[#CFD3E2] rounded-2xl py-4 px-6'>
-                                    <p className='bg-bluegradient text-white text-lg font-bold w-[31px] h-[31px] rounded-full text-center'>3</p>
+                                    <div className='w-max'>
+                                        <p className='bg-bluegradient text-white text-lg font-bold w-[31px] h-[31px] rounded-full text-center'>3</p>
+                                    </div>
                                     <div className='flex flex-col gap-2'>
                                         <h6 className='text-secondary text-lg font-bold leading-5'>Duration:</h6>
-                                        <p className='text-lightblue text-base font-normal leading-5'>Enjoy your bonus for 30  days, credited directly to  your account.</p>
+                                        <p className='text-lightblue text-base font-normal leading-5 text-wrap'>Enjoy your bonus for 30  days, credited directly to  your account.</p>
                                     </div>
                                 </div>
                             </div>
