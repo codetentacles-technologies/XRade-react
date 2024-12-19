@@ -166,6 +166,20 @@ const Home = () => {
                     </div>
                 </section>
 
+                {/* Level Income */}
+                <section>
+                    <div className='flex flex-col gap-8'>
+                        <h4 className='text-primary text-4xl font-bold flex items-center justify-center gap-3 w-full'>Level Income <img src="/images/level-income-img.png" alt="setting" className='w-[37px] h-[36px]' /></h4>
+                        <div className='flex gap-6'>
+                            <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center py-7 gap-4 px-4'>
+                                <h5 className='font-bold text-lg text-secondary'>LEVEL 1</h5>
+                                <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            </div>
+                            <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max'>LEVEL 1</div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
 
         </div>
