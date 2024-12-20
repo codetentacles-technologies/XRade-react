@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className='bg-header mx-auto'>
             <header className="flex items-center justify-between p-4 mx-auto max-w-full sm:max-w-[540px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]">
-                <img src="/images/XRade-logo.webp" alt="" className='w-[54px]' />
+                <img src="/images/Xtrade-logo.webp" alt="" className='w-[54px]' />
                 {/* <nav className="nav">
                     <ul className="flex space-x-8">
                         <li><a className="text-primary" href="#">Home</a></li>

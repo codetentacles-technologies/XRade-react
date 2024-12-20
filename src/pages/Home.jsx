@@ -11,6 +11,8 @@ const Home = () => {
 
     const [openIndex, setOpenIndex] = useState(null);
 
+   
+
     const questions = [
         {
             question: "What is the minimum investment amount?",
@@ -29,6 +31,29 @@ const Home = () => {
     const handleToggle = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
+
+    const steps = [
+        {
+            title: "Login Or Create our account",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendisse consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        },
+        {
+            title: "Research",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor",
+        },
+        {
+            title: "Choose your crypto",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. r adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        },
+        {
+            title: "Pre-Sale and Buy",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. r adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        },
+    ];
 
     return (
         <div className='flex flex-col gap-24 '>
@@ -204,43 +229,43 @@ const Home = () => {
                     <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 justify-center gap-6'>
                         <div className='p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 1</h5>
-                            <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            <p className='font-bold text-lg text-[#031641]'>0.25%</p>
                         </div>
                         <div className='p-3 bg-[#F4F7FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 2</h5>
-                            <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            <p className='font-bold text-lg text-[#031641]'>0.25%</p>
                         </div>
                         <div className='p-3 bg-[#EDF1FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 3</h5>
-                            <p className='font-bold text-lg text-subtext'>0.25%</p>
+                            <p className='font-bold text-lg text-[#031641]'>0.25%</p>
                         </div>
                         <div className='p-3 bg-[#E7EBFF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 4</h5>
-                            <p className='font-bold text-lg text-subtext'>4%</p>
+                            <p className='font-bold text-lg text-[#031641]'>4%</p>
                         </div>
                         <div className='p-3 bg-[#DEE5FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 5</h5>
-                            <p className='font-bold text-lg text-subtext'>4%</p>
+                            <p className='font-bold text-lg text-[#031641]'>4%</p>
                         </div>
                         <div className='p-3 bg-[#D9E1FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 6</h5>
-                            <p className='font-bold text-lg text-subtext'>3%</p>
+                            <p className='font-bold text-lg text-[#031641]'>3%</p>
                         </div>
                         <div className='p-3 bg-[#D3DDFF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 7</h5>
-                            <p className='font-bold text-lg text-subtext'>2%</p>
+                            <p className='font-bold text-lg text-[#031641]'>2%</p>
                         </div>
                         <div className='p-3 bg-[#CAD5FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 8</h5>
-                            <p className='font-bold text-lg text-subtext'>1%</p>
+                            <p className='font-bold text-lg text-[#031641]'>1%</p>
                         </div>
                         <div className='p-3 bg-[#B8C7FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 9</h5>
-                            <p className='font-bold text-lg text-subtext'>6%</p>
+                            <p className='font-bold text-lg text-[#031641]'>6%</p>
                         </div>
                         <div className='p-3 bg-[#B1C2FF] rounded-2xl shadow-lg text-grey-darker w-max flex flex-col items-center justify-center m-auto py-7 gap-4 px-3.5'>
                             <h5 className='font-bold text-lg text-secondary'>LEVEL 10</h5>
-                            <p className='font-bold text-lg text-subtext'>5%</p>
+                            <p className='font-bold text-lg text-[#031641]'>5%</p>
                         </div>
                     </div>
                 </div>
@@ -432,29 +457,102 @@ const Home = () => {
                 </div>
             </section>
 
-              {/* Supported Wallets */}
-              <section>
+            {/* Meet the Fund Team */}
+            <section>
                 <div className='flex flex-col gap-8 items-center justify-center'>
-                    <h4 className='text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Supported Wallets</h4>
+                    <h4 className='flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Meet the Fund Team <img src="/images/fund-team.webp" className='h-9' alt="" /></h4>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                        <div className='flex flex-col items-center justify-center gap-4'>
+                            <img src="/images/fund-team1.webp" alt="wallet" className='w-[200px]' />
+                            <p className='text-lg text-primary font-semibold'>John Smith</p>
+                            <p className='text-sm text-lightblue text-center font-medium'>John Smith is the CTO of our  company. He has over 15 years of  experience in the blockchain and  fintech industries.</p>
+                        </div>
+                        <div className='flex flex-col items-center justify-center gap-4'>
+                            <img src="/images/fund-team1.webp" alt="wallet" className='w-[200px]' />
+                            <p className='text-lg text-primary font-semibold'>John Smith</p>
+                            <p className='text-sm text-lightblue text-center font-medium'>John Smith is the CTO of our  company. He has over 15 years of  experience in the blockchain and  fintech industries.</p>
+                        </div>
+                        <div className='flex flex-col items-center justify-center gap-4'>
+                            <img src="/images/fund-team1.webp" alt="wallet" className='w-[200px]' />
+                            <p className='text-lg text-primary font-semibold'>John Smith</p>
+                            <p className='text-sm text-lightblue text-center font-medium'>John Smith is the CTO of our  company. He has over 15 years of  experience in the blockchain and  fintech industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Unlock Exponential Growth with the  CTO Fund */}
+            <section>
+                <div className='flex flex-col gap-8 items-center justify-center'>
+                    <h4 className='flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Unlock Exponential Growth with the  CTO Fund<img src="/images/cto-funds.webp" className='h-9' alt="" /></h4>
+                    
+                </div>
+            </section>
+
+            {/* Our Visionary Roadmap */}
+            <section>
+                <div className='flex flex-col gap-8 items-center justify-center bg-gradient rounded-3xl p-6'>
+                    <h4 className='flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Our Visionary Roadmap<img src="/images/roadmap.webp" className='h-9' alt="" /></h4>
+
+                    <div className="flex flex-col items-center justify-center gap-[93px]">
+                        <div className="relative w-full max-w-4xl">
+                            {/* Timeline Line */}
+                            <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#D0D8EF] h-full"></div>
+                            {steps.map((step, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-center w-full mb-10 last:mb-0"
+                                >
+                                    {/* Title (Left) */}
+                                    <div className="w-1/2 pr-8 text-right">
+                                        <h3 className="text-2xl font-bold text-primary">
+                                            {step.title}
+                                        </h3>
+                                    </div>
+                                    {/* Circle Indicator */}
+                                    <div className="relative w-8 h-8 flex-shrink-0">
+                                        <div className="absolute left-1/2 transform -translate-x-1/2 bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
+                                            <div className="bg-blue timeline-shadow w-2 h-2 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    {/* Description (Right) */}
+                                    <div className="w-1/2 pl-8 text-left">
+                                        <p className="text-lightgray">{step.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+            {/* Supported Wallets */}
+            <section>
+                <div className='flex flex-col gap-8 items-center justify-center'>
+                    <h4 className='flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Supported Wallets <img src="/images/supported-wallets.webp" className='h-9' alt="" /></h4>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16'>
                         <div className='flex flex-col items-center justify-center gap-4'>
-                            <img src="/images/wallet1-img.webp" alt="wallet" className='w-[70px] h-[68px]'/>
+                            <img src="/images/wallet1-img.webp" alt="wallet" className='w-[70px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-4'>
-                            <img src="/images/wallet2-img.webp" alt="wallet" className='w-[70px] h-[68px]'/>
+                            <img src="/images/wallet2-img.webp" alt="wallet" className='w-[70px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-4'>
-                            <img src="/images/wallet3-img.webp" alt="wallet" className='w-[72px] h-[68px]'/>
+                            <img src="/images/wallet3-img.webp" alt="wallet" className='w-[72px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-4'>
-                            <img src="/images/wallet4-img.webp" alt="wallet" className='w-[68px] h-[68px]'/>
+                            <img src="/images/wallet4-img.webp" alt="wallet" className='w-[68px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-4'>
-                            <img src="/images/wallet5-img.webp" alt="wallet" className='w-[63px] h-[68px]'/>
+                            <img src="/images/wallet5-img.webp" alt="wallet" className='w-[63px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
                     </div>
@@ -471,7 +569,7 @@ const Home = () => {
                     <div className='flex flex-col gap-4'>
                         {questions.map((item, index) => (
                             <div key={index} className="">
-                                <div className='bg-graygradient p-4 rounded-2xl cursor-pointer'>
+                                <div className='bg-graygradient hover:bg-[#EAEFFC] p-4 rounded-2xl cursor-pointer'>
                                     <div
                                         className="flex justify-between items-center"
                                         onClick={() => handleToggle(index)}

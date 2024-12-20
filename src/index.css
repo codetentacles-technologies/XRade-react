@@ -12,3 +12,6 @@ body{
   background: url("./images/refferal-income-bg.webp") center no-repeat;
   background-size: cover;
 }
+.timeline-shadow{
+  box-shadow: 0px 1px 8px 6px #81A1F340;
+}
