@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div >
         <Header />
-        <div className='max-w-full sm:max-w-[400px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]  mx-auto p-4'>
+        <div className='max-w-full sm:max-w-[400px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]  mx-auto px-4 py-8'>
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/about" element={<About />} /> */}

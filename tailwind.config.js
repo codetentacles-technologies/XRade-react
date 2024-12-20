@@ -31,11 +31,14 @@ module.exports = {
         white: 'var(--color-white)',
         lightblue: 'var(--color-bodytext)',
         header: 'var(--header-background)',
+        lightgray: 'var(--color-lightgray)',
+        terms: 'var(--terms-background)',
       },
       backgroundImage: {
         gradient: 'var(--gradient-background)',
         bluegradient: 'var(--gradient-blue)',
         workgradient: 'var(--work-gradient)',
+        graygradient: 'var(--gradient-gray)',
       },
       fontFamily: {
         
