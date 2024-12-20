@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import React, { useState } from 'react';
 
-const Home = () => {
+const Dashboard = () => {
 
     const data = Array(8).fill({
         packageAmount: "$50",
@@ -57,25 +57,6 @@ const Home = () => {
 
     return (
         <div className='flex flex-col gap-24 '>
-
-            {/* Hero section */}
-            <section className='container'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                    <div className='col-span-2 m-auto flex flex-col gap-6 xl:gap-9'>
-                        <div className='flex flex-col gap-4 xl:gap-6'>
-                            <h1 className='text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight'> <span className='text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal'>Unlock Consistent Passive Income with </span> High-Value Crypto Investments</h1>
-                            <p className='text-lightblue text-base xl:text-lg font-medium'>Join a platform that merges innovative crypto mechanisms with rewarding opportunities.</p>
-                        </div>
-                        <div className='flex flex-col lg:flex-row items-center gap-6'>
-                            <button className='text-primary border border-primary rounded-full text-lg font-semibold py-3.5  px-9 w-full lg:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white  transition duration-300 ease-in-out'>Get Started Now <ArrowRight /></button>
-                            <button className='text-white bg-blue rounded-full text-lg font-semibold py-3.5 px-9 w-full lg:w-max  hover:bg-primary transition duration-300 ease-in-out'>Learn More About Our Features</button>
-                        </div>
-                    </div>
-                    <div className='m-auto'>
-                        <img src="/images/hero-section-img.webp" className='h-[468px]' alt="" />
-                    </div>
-                </div>
-            </section>
 
             {/* Card Section */}
             <section className=''>
@@ -506,9 +487,7 @@ const Home = () => {
                             <p className="font-bold">$750,000</p>
                             <p>5% Bonus</p>
                         </div>
-                       
                     </div>
-                    <p className='text-lg text-secondary font-medium mt-6'>Invest in the CTO Fund and receive a bonus based on your business level. Within 200 days</p>
                 </div>
             </section>
 
@@ -684,4 +663,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Dashboard;
