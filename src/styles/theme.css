@@ -13,6 +13,7 @@
     --color-lightgray: #858C9F;
     --terms-background: #F9FAFB;
     --gradient-gray: linear-gradient(to left, #1E347812 0%, #BFC5DA12 52%, #3860DE12 100%);
+    --box-gradient: linear-gradient(180deg, #F4F7FF 0%, #FFFFFF 100%);
   }
   
   .dark {

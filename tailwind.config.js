@@ -39,6 +39,7 @@ module.exports = {
         bluegradient: 'var(--gradient-blue)',
         workgradient: 'var(--work-gradient)',
         graygradient: 'var(--gradient-gray)',
+        boxgradient: 'var(--box-gradient)',
       },
       fontFamily: {
         
@@ -63,8 +64,10 @@ module.exports = {
         DEFAULT: "0 2px 4px rgba(0, 0, 0, 0.1)",
         md: "0px 10px 50px rgba(0, 0, 0, 0.1)",
         lg: "0 10px 15px rgba(0, 0, 0, 0.1)",
-        xl: "0px 5px 90px 0px rgba(0, 0, 0, 0.1)",
+        xl: "3px 16px 19px 0px #DDE1EE",
         hover: "0px 5px 35px 0px rgba(0, 0, 0, 0.1)",
+        dashboard: "3px 5px 5px 0px #CFD3E2",
+
       },
       animation: {
         fadeInUp: "fadeInUp 0.7s ease-out",
@@ -95,12 +98,21 @@ module.exports = {
       translate: {
         '-8': '-8px',
       },
+      // container: {
+      //   center: true,
+      //   padding: '',
+      //   screens: {
+      //     DEFAULT: '100%',
+      //     lg: '',
+      //   },
+      // },
+
       container: {
-        center: true,
-        padding: '',
+        center: true, 
+        padding: '1rem', 
         screens: {
-          DEFAULT: '100%',
-          lg: '',
+          DEFAULT: '100%', 
+          lg: '1320px', 
         },
       },
     },
