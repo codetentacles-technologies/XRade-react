@@ -145,7 +145,7 @@ const Dashboard = () => {
       <div className="mb-10">
         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/dubai-img.png"
@@ -158,7 +158,7 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-blue-600">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full group-hover:bg-[#192265]">
                 Complete the Task{" "}
                 <span>
                   <ArrowRight size={15} />{" "}
@@ -167,7 +167,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/turkey-img.png"
@@ -182,7 +182,7 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-blue-600">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full group-hover:bg-[#192265]">
                 Complete the Task{" "}
                 <span>
                   <ArrowRight size={15} />{" "}
@@ -190,7 +190,7 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/europe-img.png"
@@ -203,7 +203,7 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-blue-600">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full group-hover:bg-[#192265]">
                 Complete the Task{" "}
                 <span>
                   <ArrowRight size={15} />{" "}
@@ -220,7 +220,7 @@ const Dashboard = () => {
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
               key={index}
-              className="bg-white border p-6 rounded-[24px] flex justify-between items-center hover:border-primary"
+              className="bg-white border p-6 rounded-[24px] flex justify-between items-center group transform transition-all duration-300 ease-in-out hover:border-primary"
             >
               <div className="flex ">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -242,7 +242,7 @@ const Dashboard = () => {
                   </p>
                 </div>
                 <div>
-                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full ">
+                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full transform transition-all duration-300 ease-in-out group-hover:bg-primary group-hover:text-white">
                     start
                   </button>
                 
