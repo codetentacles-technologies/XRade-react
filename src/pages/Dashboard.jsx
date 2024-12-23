@@ -3,7 +3,7 @@ import React from "react";
 import TotalRaisedImg from "../../public/images/dashboard/TotalRaised.svg";
 import TotalUsers from "../../public/images/dashboard/TotalUsers.svg";
 import TotalWithdrawals from "../../public/images/dashboard/TotalWithdrawals.svg";
-import PackageCards from "../components/Packagecards";
+import Cardpackage from "../components/Cards";
 
 const Dashboard = () => {
   return (
@@ -50,7 +50,7 @@ const Dashboard = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
           nulla eu stetur eget.
         </p>
-        <PackageCards />
+        <Cardpackage />
       </div>
       {/* Activity Overview section */}
       <h2 className="text-2xl font-bold text-primary">Activity Overview</h2>

@@ -28,7 +28,7 @@ const packages = [
     imageUrl: packagetitle,
   },
 ];
-const PackageCards = () => {
+const Cards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {packages.map((pkg, index) => (
@@ -61,4 +61,4 @@ const PackageCards = () => {
   );
 };
 
-export default PackageCards;
+export default Cards;
