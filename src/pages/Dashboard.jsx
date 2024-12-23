@@ -64,21 +64,21 @@ const Dashboard = () => {
         eu stetur eget.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transform transition-all duration-300 ease-in-out hover:scale-105">
           <div>
             <h3 className="text-secondary font-bold text-md">Total Users</h3>
             <p className="text-3xl font-bold text-primary">200</p>
           </div>
         </div>
 
-        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transform transition-all duration-300 ease-in-out hover:scale-105">
           <div>
             <h3 className="text-secondary font-bold text-md">Total Raised</h3>
             <p className="text-3xl font-bold text-primary">50</p>
           </div>
         </div>
 
-        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transform transition-all duration-300 ease-in-out hover:scale-105">
           <div>
             <h3 className="text-secondary font-bold text-md">
               Total Withdrawals
@@ -86,7 +86,7 @@ const Dashboard = () => {
             <p className="text-3xl font-bold text-primary">100</p>
           </div>
         </div>
-        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+        <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transform transition-all duration-300 ease-in-out hover:scale-105">
           <div>
             <h3 className="text-secondary font-bold text-md">
               Total Withdrawals
@@ -145,7 +145,7 @@ const Dashboard = () => {
       <div className="mb-10">
         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/dubai-img.png"
@@ -167,7 +167,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/turkey-img.png"
@@ -190,7 +190,7 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]">
             <div className="relative">
               <img
                 src="/images/europe-img.png"
@@ -220,7 +220,7 @@ const Dashboard = () => {
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
               key={index}
-              className="bg-white border p-6 rounded-[24px] flex justify-between items-center"
+              className="bg-white border p-6 rounded-[24px] flex justify-between items-center hover:border-primary"
             >
               <div className="flex ">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -242,7 +242,7 @@ const Dashboard = () => {
                   </p>
                 </div>
                 <div>
-                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full hover:bg-blue-600">
+                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full ">
                     start
                   </button>
                 

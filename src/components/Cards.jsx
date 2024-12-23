@@ -34,7 +34,7 @@ const PackageCards = () => {
       {packages.map((pkg, index) => (
         <div
           key={index}
-          className="bg-white shadow-xl p-6 rounded-[24px] text-center particlecard-bg"
+          className="bg-white shadow-xl p-6 rounded-[24px] text-center particlecard-bg transform transition-all duration-300 ease-in-out group hover:translate-y-[-10px]"
         >
           <h3 className="text-md text-white font-bold mb-2 text-center">{pkg.title}</h3>
           <div className="bg-blue-500 rounded-full inline-block">
@@ -48,7 +48,7 @@ const PackageCards = () => {
           <p className="text-lg font-bold text-primary mb-2">{pkg.price}</p>
           <p className="text-lg font-bold text-primary mb-2">{pkg.percentage}</p>
           <p className="text-[#989DAB] mb-4">{pkg.description}</p>
-          <button className="bg-blue text-white py-2 px-4 rounded-full hover:bg-blue-600">
+          <button className="bg-blue text-white py-2 px-4 rounded-full group-hover:bg-[#192265]">
             Buy Package
           </button>
         </div>
