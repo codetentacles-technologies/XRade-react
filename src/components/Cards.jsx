@@ -28,19 +28,15 @@ const packages = [
     imageUrl: packagetitle,
   },
 ];
-const Cards = () => {
+const PackageCards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {packages.map((pkg, index) => (
         <div
           key={index}
-          className="bg-white shadow-xl p-6 rounded-[24px] text-center relative overflow-hidden"
+          className="bg-white shadow-xl p-6 rounded-[24px] text-center particlecard-bg"
         >
-             <div
-            className="absolute top-0 left-0 w-full h-24 bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url(${CardParticleBg})`, zIndex: -1 }}
-          ></div>
-          <h3 className="text-md text-primary font-bold mb-2">{pkg.title}</h3>
+          <h3 className="text-md text-white font-bold mb-2 text-center">{pkg.title}</h3>
           <div className="bg-blue-500 rounded-full inline-block">
             <img
               src={pkg.imageUrl}
@@ -61,4 +57,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default PackageCards;

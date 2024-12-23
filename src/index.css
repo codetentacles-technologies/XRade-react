@@ -15,3 +15,7 @@ body{
 .timeline-shadow{
   box-shadow: 0px 1px 8px 6px #81A1F340;
 }
+
+.particlecard-bg{
+  background: url(../public/images/dashboard/CardParticleBg.svg) no-repeat;
+}
