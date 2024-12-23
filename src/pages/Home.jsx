@@ -127,7 +127,7 @@ const Home = () => {
                         </div>
                         <p className='text-white font-normal text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor</p>
                     </div>
-                    <div className='m-auto flex flex-col justify-center items-center relative'>
+                    <div className='m-auto flex flex-col justify-center items-center relative  hover:scale-105 '>
                         <button className='bg-white text-[32px] font-bold text-blue py-5 px-12 rounded-3xl w-[256px] absotute z-10'>
                             Direct 15%
                         </button>
@@ -292,7 +292,7 @@ const Home = () => {
                                 <img
                                     src="/images/dubai-img.png" // Replace with your image URL
                                     alt="Dubai Tour"
-                                    className="w-full h-[262px] object-cover"
+                                    className="w-full h-[262px] object-cover hover:scale-105"
                                 />
                             </div>
                             <div className="p-6 gap-2">
@@ -306,7 +306,7 @@ const Home = () => {
                                 <img
                                     src="/images/turkey-img.png" // Replace with your image URL
                                     alt="Dubai Tour"
-                                    className="w-full h-[262px] object-cover"
+                                    className="w-full h-[262px] object-cover hover:scale-105"
                                 />
                             </div>
                             <div className="p-6 gap-2">
@@ -319,7 +319,7 @@ const Home = () => {
                                 <img
                                     src="/images/europe-img.png" // Replace with your image URL
                                     alt="Dubai Tour"
-                                    className="w-full h-[262px] object-cover"
+                                    className="w-full h-[262px] object-cover hover:scale-105"
                                 />
                             </div>
                             <div className="p-6 gap-2">
