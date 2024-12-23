@@ -1,5 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+
 
 const Home = () => {
 
@@ -55,23 +58,27 @@ const Home = () => {
         },
     ];
 
+
+    useEffect(() => {
+        Aos.init();
+    }, []);
     return (
         <div className='flex flex-col gap-24 '>
 
             {/* Hero section */}
             <section className='container'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-                    <div className='col-span-2 m-auto flex flex-col gap-6 xl:gap-9'>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
+                    <div className='xl:col-span-2 m-auto flex flex-col gap-6 xl:gap-9'>
                         <div className='flex flex-col gap-4 xl:gap-6'>
-                            <h1 className='text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight'> <span className='text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal'>Unlock Consistent Passive Income with </span> High-Value Crypto Investments</h1>
-                            <p className='text-lightblue text-base xl:text-lg font-medium'>Join a platform that merges innovative crypto mechanisms with rewarding opportunities.</p>
+                            <h1 className='text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight' data-aos="fade-up" data-aos-duration="2000"> <span className='text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal'  >Unlock Consistent Passive Income with </span> High-Value Crypto Investments</h1>
+                            <p className='text-lightblue text-base xl:text-lg font-medium' data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">Join a platform that merges innovative crypto mechanisms with rewarding opportunities.</p>
                         </div>
-                        <div className='flex flex-col lg:flex-row items-center gap-6'>
-                            <button className='text-primary border border-primary rounded-full text-lg font-semibold py-3.5  px-9 w-full lg:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white  transition duration-300 ease-in-out'>Get Started Now <ArrowRight /></button>
-                            <button className='text-white bg-blue rounded-full text-lg font-semibold py-3.5 px-9 w-full lg:w-max  hover:bg-primary transition duration-300 ease-in-out'>Learn More About Our Features</button>
+                        <div className='flex flex-col xl:flex-row items-center gap-6' data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
+                            <button className='text-primary border border-primary rounded-full text-lg font-semibold py-3.5  px-9 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white  transition duration-300 ease-in-out'>Get Started Now <ArrowRight /></button>
+                            <button className='text-white bg-blue rounded-full text-lg font-semibold py-3.5 px-9 w-full xl:w-max  hover:bg-primary transition duration-300 ease-in-out'>Learn More About Our Features</button>
                         </div>
                     </div>
-                    <div className='m-auto'>
+                    <div className='m-auto' data-aos="zoom-in" data-aos-duration="3000">
                         <img src="/images/hero-section-img.webp" className='h-[468px]' alt="" />
                     </div>
                 </div>
@@ -506,7 +513,7 @@ const Home = () => {
                             <p className="font-bold">$750,000</p>
                             <p>5% Bonus</p>
                         </div>
-                       
+
                     </div>
                     <p className='text-lg text-secondary font-medium mt-6'>Invest in the CTO Fund and receive a bonus based on your business level. Within 200 days</p>
                 </div>
@@ -557,24 +564,24 @@ const Home = () => {
             <section>
                 <div className='flex flex-col gap-8 items-center justify-center'>
                     <h4 className='flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold'>Supported Wallets <img src="/images/supported-wallets.webp" className='h-9' alt="" /></h4>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16'>
-                        <div className='flex flex-col items-center justify-center gap-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center justify-center mx-auto gap-16'>
+                        <div className='flex flex-col items-center justify-center text-center gap-4'>
                             <img src="/images/wallet1-img.webp" alt="wallet" className='w-[70px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
-                        <div className='flex flex-col items-center justify-center gap-4'>
+                        <div className='flex flex-col items-center justify-center text-center gap-4'>
                             <img src="/images/wallet2-img.webp" alt="wallet" className='w-[70px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
-                        <div className='flex flex-col items-center justify-center gap-4'>
+                        <div className='flex flex-col items-center justify-center text-center gap-4'>
                             <img src="/images/wallet3-img.webp" alt="wallet" className='w-[72px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
-                        <div className='flex flex-col items-center justify-center gap-4'>
+                        <div className='flex flex-col items-center justify-center text-center gap-4'>
                             <img src="/images/wallet4-img.webp" alt="wallet" className='w-[68px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
-                        <div className='flex flex-col items-center justify-center gap-4'>
+                        <div className='flex flex-col items-center justify-center text-center gap-4'>
                             <img src="/images/wallet5-img.webp" alt="wallet" className='w-[63px] h-[68px]' />
                             <p className='text-base text-primary font-medium'>Ton Keeper Wallet</p>
                         </div>
