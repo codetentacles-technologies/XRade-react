@@ -480,13 +480,13 @@ const Home = () => {
               />
             </h4>
             <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max">
-              Explore All{" "}
+              Explore All
               <motion.div
-                initial={{ x: 0 }}
+                initial={{ x: 0 }} // Starting position
                 whileHover={{ x: 8 }} // Moves 8px to the right when hovered
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth transition
               >
-                <ArrowRight />{" "}
+                <ArrowRight size={24} /> {/* ArrowRight icon */}
               </motion.div>
             </button>
           </div>
