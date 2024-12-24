@@ -137,14 +137,14 @@ const Dashboard = () => {
         {/* Recent Investment Section */}
         <div className=" flex items-center justify-between mb-5 flex-cold lg:flex-row">
           <h2 className="text-2xl font-bold text-primary">Recent Investment</h2>
-          <div className="relative">
+          <div className="relative flex items-center">
             <input
               type="text"
               placeholder="placeholder"
               className="border placeholder-[#989DAB] py-2 px-10 rounded-[8px] focus:outline-none focus:border-blue-500"
             />
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#989DAB]">
-              <Search size={25} />
+              <Search size={18} />
             </span>
           </div>
         </div>
