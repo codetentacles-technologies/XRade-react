@@ -70,7 +70,7 @@ const Home = () => {
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <h1 className="text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
                   <span className="text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal">
-                    Unlock Consistent Passive Income with{" "}
+                    Unlock Consistent Passive Income with{" "}<br/>
                   </span>
                   High-Value Crypto Investments
                 </h1>
