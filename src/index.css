@@ -1,21 +1,108 @@
-@import './styles/theme.css'; /* Import the theme variables */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "./styles/theme.css"; /* Import the theme variables */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   font-family: "Lato", serif;
   margin: auto;
 }
-.reffral-income-bg{
+.reffral-income-bg {
   background: url(../public/images/refferal-income-bg.webp) center no-repeat;
   background-size: cover;
 }
-.timeline-shadow{
-  box-shadow: 0px 1px 8px 6px #81A1F340;
+.timeline-shadow {
+  box-shadow: 0px 1px 8px 6px #81a1f340;
 }
 
-.particlecard-bg{
+.particlecard-bg {
   background: url(../public/images/dashboard/CardParticleBg.svg) no-repeat;
+  background-size: contain;
 }
+
+/* ==Main heading============= */
+
+.main-heading-text {
+  position: relative;
+  -webkit-box-reflect: below -117px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.main-heading-text span {
+  display: inline-block;
+  animation: main 1s infinite;
+  animation-delay: calc(0.1s * var(--h));
+}
+
+@keyframes main {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+}
+/*============= income type============== */
+.contain-income-type {
+  perspective: 1000px;
+}
+
+.contain-income-type img {
+  animation: flip 3s infinite;
+  animation-delay: calc(0.3s * var(--i));
+}
+
+@keyframes flip {
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+/*============= wallet============== */
+.contain-wallet img {
+  animation: flip 3s infinite;
+  animation-delay: calc(0.3s * var(--w));
+}
+
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+
+/*============= Floating effect ============== */
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-rotate {
+  animation: floatEffect 3s ease-in-out infinite;
+}
+/*============= Bouce Effect ============== */
+@keyframes bounceEffect {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bouncing {
+  animation: bounceEffect 0.5s 0.3s infinite;
+}
+

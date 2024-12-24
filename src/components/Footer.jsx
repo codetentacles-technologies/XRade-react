@@ -3,10 +3,10 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='bg-header border-t border-lightgray'>
+        <div className='bg-header border-t-2 border-lightgray'>
             <div className='flex flex-col justify-center items-center gap-9 py-8 px-4 mx-auto  max-w-full sm:max-w-[540px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]' >
                 <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full ">
-                    <img src="/images/Xtrade-logo.webp" alt="" className='w-[38px]' />
+                    <img src="/images/Xtrade-logo.webp" alt="" className='w-[60px]' />
                     <div>
                         <p className='text-secondary text-lg font-bold text-center'>Corporate office address-AI trade corporation My street 1215 Houston Texas 77057  USA</p>
                     </div>

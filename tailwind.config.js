@@ -40,6 +40,9 @@ module.exports = {
         workgradient: 'var(--work-gradient)',
         graygradient: 'var(--gradient-gray)',
         boxgradient: 'var(--box-gradient)',
+        hovergradient: 'var(--gradient-hover)',
+        howitworkgradient: 'var(--how-work-gradient)',
+        faqhover: 'var(--faq-hover-gradient)',
       },
       fontFamily: {
         

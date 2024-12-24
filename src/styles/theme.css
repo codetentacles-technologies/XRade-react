@@ -6,16 +6,19 @@
     --color-white: #ffffff;
     --color-bodytext: #67789C;
     --gradient-background: linear-gradient(to left, #E9EBF2 0%, #F6F7FA 52%, #EAEEFB 100%);
-    --gradient-blue: linear-gradient(to bottom, #1E3478 0%, #192A70 47%, #1A104C 100%);
-    --header-background: #F4F7FF;
+    --gradient-blue: linear-gradient(135.7deg, #1E3478 5.77%, #192A70 48.32%, #1A104C 95.35%);
+    --header-background:  #F9FAFF;
     --work-gradient: linear-gradient(to left, #BFCBF212 0%, #BFC5DA12 52%, #819FFF12 100%);
     --color-subtext: #031641;
     --color-lightgray: #858C9F;
     --terms-background: #F9FAFB;
     --gradient-gray: linear-gradient(to left, #1E347812 0%, #BFC5DA12 52%, #3860DE12 100%);
+    --gradient-hover: linear-gradient(124.6deg, rgba(30, 52, 120, 0.12) -14.58%, rgba(191, 197, 218, 0.12) 49.49%, rgba(56, 96, 222, 0.12) 108.63%);
     --box-gradient: linear-gradient(180deg, #F4F7FF 0%, #FFFFFF 100%);
+    --how-work-gradient: linear-gradient(124.6deg, #DDE1EC -14.58%, #F7F8FA 49.49%, #DDE1EC 108.63%);
+    --faq-hover-gradient: linear-gradient(118.82deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
   }
-  
+
   .dark {
     --color-primary: #007acc;
     --background-primary: #d9dee7;
@@ -23,3 +26,6 @@
     --color-background: #1a202c;
     --color-text: #ffffff;
   }
+
+
+  
