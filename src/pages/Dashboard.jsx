@@ -237,7 +237,7 @@ const Dashboard = () => {
                     sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam
                     ut egestas dui.
                   </p>
-                  <p className="text-secondary text-sm mt-2 text-end">
+                  <p className="text-lightgray text-sm mt-2 text-end">
                     Start: 00d 00h 00m
                   </p>
                 </div>
