@@ -70,7 +70,7 @@ const Home = () => {
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <h1 className="text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
                   <span className="text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal">
-                    Unlock Consistent Passive Income with{" "}<br/>
+                    Unlock Consistent Passive Income with <br />
                   </span>
                   High-Value Crypto Investments
                 </h1>
@@ -192,9 +192,8 @@ const Home = () => {
             </p>
           </div>
           <div className="m-auto flex flex-col justify-center items-center relative">
-            <ShinyButton className="bg-white text-[32px] font-bold text-blue py-5 px-12 rounded-3xl w-[256px] absotute z-10">
-              Direct 15%
-            </ShinyButton>
+            <div className="shiny-div">Direct 15%</div>
+
             <p className="bg-[#AFBFF0] rounded-b-3xl w-[236px] h-8 absolute bottom-[-10px] z-[1]"></p>
             <p className="bg-[#8296D3] rounded-b-3xl w-[208px] h-8 absolute bottom-[-20px]"></p>
           </div>
@@ -478,7 +477,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/dubai-img.png" // Replace with your image URL
                   alt="Dubai Tour"
@@ -494,7 +493,7 @@ const Home = () => {
             </div>
 
             <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/turkey-img.png" // Replace with your image URL
                   alt="Dubai Tour"
@@ -511,7 +510,7 @@ const Home = () => {
               </div>
             </div>
             <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/europe-img.png" // Replace with your image URL
                   alt="Dubai Tour"
