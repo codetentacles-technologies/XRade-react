@@ -6,6 +6,7 @@ import TotalWithdrawals from "../../public/images/dashboard/TotalWithdrawals.svg
 import ChallengingIncome from "../../public/images/dashboard/ChallengingIncome.svg";
 // component===============
 import Cardpackage from "../components/Cards";
+import { Search } from "lucide-react";
 
 // icons======
 import { ArrowRight } from "lucide-react";
@@ -30,13 +31,15 @@ const Dashboard = () => {
           This dashboard is your gateway to real-time insights, empowering you
           to track and maximize your earnings effortlessly. Here, you'll find
           up-to-the-minute updates on your investments, referral performance,
-          and rewards.<br/> Stay informed with detailed metrics, including your total
+          and rewards.
+          <br /> Stay informed with detailed metrics, including your total
           investments, active packages, referral network growth, and earnings
           breakdown. Whether you’re monitoring your daily dividends, exploring
           new income opportunities, or strategizing for your next milestone,
-          this dashboard is designed to keep you ahead.<br/> Take control, make
-          informed decisions, and unlock the full potential of our innovative
-          multi-tiered ecosystem. Your path to financial growth starts here!
+          this dashboard is designed to keep you ahead.
+          <br /> Take control, make informed decisions, and unlock the full
+          potential of our innovative multi-tiered ecosystem. Your path to
+          financial growth starts here!
         </p>
       </div>
       {/* Header Section */}
@@ -132,9 +135,22 @@ const Dashboard = () => {
 
       <div className="mb-10" data-aos="fade-up">
         {/* Recent Investment Section */}
-        <h2 className="text-2xl font-bold mb-4 text-primary">
-          Recent Investment
-        </h2>
+        <div className=" flex items-center justify-between mb-5 flex-row lg:flex-row">
+          <h2 className="text-2xl font-bold text-primary">
+            Recent Investment
+          </h2>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="placeholder"
+              className="border placeholder-[#989DAB] py-2 px-10 rounded-[8px] focus:outline-none focus:border-blue-500"
+            />
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#989DAB]">
+              <Search size={25}/>
+            </span>
+          </div>
+        </div>
+
         <div className="overflow-x-auto bg-white shadow-xl rounded-[24px]">
           <table className="min-w-full">
             <thead>
