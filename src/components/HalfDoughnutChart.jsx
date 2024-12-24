@@ -1,65 +1,79 @@
-import React from "react";
-import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import React from 'react';
+import { Doughnut } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+} from 'chart.js';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+// Register necessary Chart.js components
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale);
 
-const HalfCircleChart = () => {
+const MultiLayerDoughnutChart = () => {
+  // Data for each layer
   const data = {
+    labels: ['Layer 1', 'Layer 2', 'Layer 3'],
     datasets: [
+      // Layer 1
       {
-        data: [750000, 1500000, 2000000],
-        backgroundColor: ["#90caf9", "#1976d2", "#0d47a1"],
+        label: 'Layer 1',
+        data: [70, 30, 0], // This will fill the first layer (70% filled, others empty)
+        backgroundColor: '#2850CC', // Red
+        borderWidth: 0, // No border for inner layers
+        radius: '80%', // First layer (inner-most)
+        circumference: 180, // First half of the circle
+        rotation: 0, // Starts at top
+      },
+      // Layer 2
+      {
+        label: 'Layer 2',
+        data: [50, 50, 0], // This will fill the second layer
+        backgroundColor: '#28418D', // Green
         borderWidth: 0,
+        radius: '90%', // Second layer
+        circumference: 180, // Second half of the circle
+        rotation: 180, // Starts at the bottom
+      },
+      // Layer 3
+      {
+        label: 'Layer 3',
+        data: [30, 60, 10], // Third layer
+        backgroundColor: '#031641', // Blue
+        borderWidth: 0,
+        radius: '100%', // Outer layer
+        circumference: 180,
+        rotation: 270, // Starts at the left
       },
     ],
   };
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
-    cutout: "70%",
-    rotation: -90, // Start from top
-    circumference: 180, // Half-circle
     plugins: {
-      legend: { display: false },
-      tooltip: { enabled: false }, // Disable tooltips
+      legend: {
+        position: 'top',
+      },
+      tooltip: {
+        callbacks: {
+          // Customize tooltip to show specific data
+          label: (tooltipItem) => {
+            return `${tooltipItem.dataset.label}: ${tooltipItem.raw}%`;
+          },
+        },
+      },
     },
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto h-[200px] sm:h-[300px]">
-      {/* Main Chart */}
+    <div>
+      <h2>Multi-Layer Doughnut Chart</h2>
       <Doughnut data={data} options={options} />
-
-      {/* Labels */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-2/3 -translate-y-1/2">
-        {/* $750,000 Label */}
-        <div className="absolute top-[60%] left-[5%] -translate-x-1/2 -translate-y-1/2">
-          <div className="bg-white rounded-full p-2 shadow-md text-center text-xs sm:text-sm">
-            <p className="font-semibold">$750,000</p>
-            <p className="text-gray-500">5% Bonus</p>
-          </div>
-        </div>
-
-        {/* $1,500,000 Label */}
-        <div className="absolute top-[40%] left-[35%] -translate-x-1/2 -translate-y-1/2">
-          <div className="bg-white rounded-full p-2 shadow-md text-center text-xs sm:text-sm">
-            <p className="font-semibold">$1,500,000</p>
-            <p className="text-gray-500">10% Bonus</p>
-          </div>
-        </div>
-
-        {/* $2,000,000 Label */}
-        <div className="absolute top-[20%] left-[70%] -translate-x-1/2 -translate-y-1/2">
-          <div className="bg-white rounded-full p-2 shadow-md text-center text-xs sm:text-sm">
-            <p className="font-semibold">$2,000,000</p>
-            <p className="text-gray-500">20% Bonus</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
 
-export default HalfCircleChart;
+export default MultiLayerDoughnutChart;

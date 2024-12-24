@@ -17,6 +17,9 @@
     --box-gradient: linear-gradient(180deg, #F4F7FF 0%, #FFFFFF 100%);
     --how-work-gradient: linear-gradient(124.6deg, #DDE1EC -14.58%, #F7F8FA 49.49%, #DDE1EC 108.63%);
     --faq-hover-gradient: linear-gradient(118.82deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    --box-hover-home: linear-gradient(124.6deg, #EBEFFE -14.58%, #F6F7FA 49.49%, #EBEFFE 108.63%);
+    --box-home-after-hero: linear-gradient(124.6deg, #E9EBF2 -14.58%, #F6F7FA 49.49%, #EAEEFB 108.63%);
+    --tour-card:  0px 25px 54px 0px #0A14341F;
   }
 
   .dark {
@@ -28,4 +31,3 @@
   }
 
 
-  

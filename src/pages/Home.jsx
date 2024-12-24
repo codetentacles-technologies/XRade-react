@@ -5,6 +5,8 @@ import Aos from "aos";
 import HalfDoughnutChart from "../components/HalfDoughnutChart";
 import BoxReveal from "../components/ui/box-reveal.tsx";
 import ShinyButton from "../components/ui/shiny-button.tsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const data = Array(8).fill({
@@ -58,12 +60,17 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    Aos.init();
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
   }, []);
+
   return (
     <div className="flex flex-col gap-24 ">
       {/* Hero section */}
-      <section className="container">
+      <section className="container" data-aos="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <div className="xl:col-span-2 m-auto flex flex-col gap-6 xl:gap-9">
             <div className="flex flex-col gap-4 xl:gap-6">
@@ -92,7 +99,7 @@ const Home = () => {
               </BoxReveal>
 
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max hover:bg-primary">
+                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
                   Learn More About Our Features
                 </button>
               </BoxReveal>
@@ -109,9 +116,9 @@ const Home = () => {
       </section>
 
       {/* Card Section */}
-      <section className="">
+      <section className="" data-aos="fade-up">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-boxgradient  flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="bg-homeboxhover  flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img src="/images/network-growth-img.webp" alt="" />
@@ -128,7 +135,7 @@ const Home = () => {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="bg-boxgradient flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="bg-homeboxhover flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -149,7 +156,7 @@ const Home = () => {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="bg-boxgradient flex flex-col justify-center items-center gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="bg-homeboxhover flex flex-col justify-center items-center gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
             <div className="flex flex-col justify-center items-center gap-4">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -174,7 +181,7 @@ const Home = () => {
       </section>
 
       {/* Referral Income */}
-      <section className="">
+      <section className="" data-aos="fade-up">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 reffral-income-bg py-8 px-8 xl:px-[100px] rounded-3xl">
           <div className="col-span-2 flex flex-col  gap-4">
             <div>
@@ -201,7 +208,7 @@ const Home = () => {
       </section>
 
       {/*Type of Income */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div>
             <h2 className="text-primary text-4xl  font-bold flex items-center gap-2.5">
@@ -313,7 +320,7 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section>
+      <section data-aos="fade-up">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[54px] group bg-workgradient hover:bg-howitworkgradient rounded-3xl py-6 px-6 xl:px-[100px]">
           <div className="flex flex-col gap-[54px]">
             <div className="flex flex-col gap-6">
@@ -338,7 +345,7 @@ const Home = () => {
                 reach and community
               </p>
             </div>
-            <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max group-hover:bg-primary group-hover:text-white transition duration-300 ease-in-out">
+            <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
               Explore All <ArrowRight />
             </button>
           </div>
@@ -404,7 +411,7 @@ const Home = () => {
       </section>
 
       {/* Level Income */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <h4 className="text-primary text-4xl font-bold flex items-center justify-center gap-3 w-full">
             Level Income{" "}
@@ -460,7 +467,7 @@ const Home = () => {
       </section>
 
       {/* Jackpot Tours */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-3 justify-between">
             <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3 ">
@@ -476,7 +483,7 @@ const Home = () => {
             </button>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/dubai-img.png" // Replace with your image URL
@@ -492,7 +499,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/turkey-img.png" // Replace with your image URL
@@ -509,7 +516,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/europe-img.png" // Replace with your image URL
@@ -529,7 +536,7 @@ const Home = () => {
       </section>
 
       {/* Divident Income */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
             <div className="flex justify-between">
@@ -551,24 +558,24 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-blue group-hover:text-subtext">
+              <p className="text-4xl font-black text-[#28418D] group-hover:text-[#031641]">
                 2X
               </p>
-              <p className="text-2xl font-bold text-blue group-hover:text-subtext">
+              <p className="text-2xl font-bold text-[#28418D] group-hover:text-[#031641]">
                 Double Your Investment
               </p>
-              <p className="text-lg font-normal text-blue group-hover:text-subtext">
+              <p className="text-lg font-normal text-[#28418D] group-hover:text-[#031641]">
                 Within 24 hours
               </p>
             </div>
             <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-blue group-hover:text-subtext">
+              <p className="text-4xl font-black text-[#28418D] group-hover:text-[#031641]">
                 50%
               </p>
-              <p className="text-2xl font-bold text-blue group-hover:text-subtext">
+              <p className="text-2xl font-bold text-[#28418D] group-hover:text-[#031641]">
                 50% Cashback
               </p>
-              <p className="text-lg font-normal text-blue group-hover:text-subtext">
+              <p className="text-lg font-normal text-[#28418D] group-hover:text-[#031641]">
                 Bonus reward
               </p>
             </div>
@@ -577,7 +584,7 @@ const Home = () => {
       </section>
 
       {/* Jackpot Rewards */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-3 justify-between">
             <div className="flex flex-col ">
@@ -601,12 +608,12 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
-              <div className="relative">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/superbike.png" // Replace with your image URL
                   alt="Dubai Tour"
-                  className="w-full h-[262px] object-cover"
+                  className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
                 />
               </div>
               <div className="p-6 gap-2">
@@ -617,12 +624,12 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
-              <div className="relative">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/suv-car.png" // Replace with your image URL
                   alt="Dubai Tour"
-                  className="w-full h-[262px] object-cover"
+                  className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
                 />
               </div>
               <div className="p-6 gap-2">
@@ -633,12 +640,12 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
-              <div className="relative">
+            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+              <div className="relative overflow-hidden">
                 <img
                   src="/images/house-fund.png" // Replace with your image URL
                   alt="Dubai Tour"
-                  className="w-full h-[262px] object-cover"
+                  className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
                 />
               </div>
               <div className="p-6 gap-2">
@@ -653,7 +660,7 @@ const Home = () => {
       </section>
 
       {/* Challenging Income */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-3 justify-between">
             <div className="flex flex-col">
@@ -678,7 +685,7 @@ const Home = () => {
 
           <div className="flex justify-center items-center">
             <div className="w-full">
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto bg-white shadow-xl rounded-[24px]">
                 <table className="w-full border-collapse rounded-2xl shadow-lg overflow-hidden">
                   <thead className="bg-white">
                     <tr>
@@ -727,7 +734,7 @@ const Home = () => {
       </section>
 
       {/* Meet the Fund Team */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Meet the Fund Team{" "}
@@ -775,7 +782,7 @@ const Home = () => {
       </section>
 
       {/* Unlock Exponential Growth with the  CTO Fund */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold mb-4">
             Unlock Exponential Growth with the CTO Fund
@@ -801,7 +808,7 @@ const Home = () => {
               <p>5% Bonus</p>
             </div>
           </div>
-
+          {/* <HalfDoughnutChart/> */}
           <p className="text-lg text-secondary font-medium mt-2">
             Invest in the CTO Fund and receive a bonus based on your business
             level. Within 200 days
@@ -810,7 +817,7 @@ const Home = () => {
       </section>
 
       {/* Our Visionary Roadmap */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8 items-center justify-center bg-gradient rounded-3xl p-6">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Our Visionary Roadmap
@@ -850,7 +857,7 @@ const Home = () => {
       </section>
 
       {/* Supported Wallets */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Supported Wallets{" "}
@@ -927,7 +934,7 @@ const Home = () => {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section>
+      <section data-aos="fade-up">
         <div className="flex flex-col gap-8">
           <div>
             <h2 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">

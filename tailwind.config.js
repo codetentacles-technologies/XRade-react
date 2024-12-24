@@ -43,6 +43,9 @@ module.exports = {
         hovergradient: 'var(--gradient-hover)',
         howitworkgradient: 'var(--how-work-gradient)',
         faqhover: 'var(--faq-hover-gradient)',
+        homeboxhover: 'var(--box-hover-home)',
+        boxafterhero: 'var(--box-home-after-hero)',
+        tourcardhover: "var( --tour-card)",
       },
       fontFamily: {
         

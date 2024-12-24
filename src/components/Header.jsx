@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <div className='bg-header mx-auto'>
-            <header className="flex items-center justify-between p-4 mx-auto max-w-full sm:max-w-[540px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]">
+            <header className="flex items-center justify-between py-4 mx-auto max-w-full sm:max-w-[540px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px]">
                <Link to="/"> <img src="/images/Xtrade-logo.webp" alt="" className='w-[54px]' /></Link>
                 <nav className="nav hidden md:flex">
                     <ul className="flex space-x-8">

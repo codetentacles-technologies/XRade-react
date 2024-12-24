@@ -107,13 +107,13 @@ const Dashboard = () => {
           <table className="min-w-full">
             <thead>
               <tr>
-                <th className="text-left p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-bold text-center">
                   Package Amount
                 </th>
-                <th className="text-left p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-bold text-center">
                   Daily Income
                 </th>
-                <th className="text-left p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-bold text-center">
                   Duration
                 </th>
               </tr>
@@ -145,7 +145,7 @@ const Dashboard = () => {
       <div className="mb-10">
         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
             <div className="relative">
               <img
                 src="/images/dubai-img.png"
@@ -167,7 +167,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
             <div className="relative">
               <img
                 src="/images/turkey-img.png"
@@ -190,7 +190,7 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px]">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
             <div className="relative">
               <img
                 src="/images/europe-img.png"
