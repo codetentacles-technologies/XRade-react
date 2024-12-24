@@ -48,7 +48,7 @@ const PackageCards = () => {
           <p className="text-lg font-bold text-primary mb-2">{pkg.price}</p>
           <p className="text-lg font-bold text-primary mb-2">{pkg.percentage}</p>
           <p className="text-[#989DAB] mb-4">{pkg.description}</p>
-          <button className="bg-blue text-white py-2 px-4 rounded-full group-hover:bg-[#192265]">
+          <button className="bg-blue text-white py-2 px-4 rounded-full hover:bg-[#192265] hover:shadow-buypackage">
             Buy Package
           </button>
         </div>

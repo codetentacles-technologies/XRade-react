@@ -46,6 +46,7 @@ module.exports = {
         homeboxhover: 'var(--box-hover-home)',
         boxafterhero: 'var(--box-home-after-hero)',
         tourcardhover: "var( --tour-card)",
+      
       },
       fontFamily: {
         
@@ -73,6 +74,8 @@ module.exports = {
         xl: "3px 16px 19px 0px #DDE1EE",
         hover: "0px 5px 35px 0px rgba(0, 0, 0, 0.1)",
         dashboard: "3px 5px 5px 0px #CFD3E2",
+        buypackage: "0px 7px 10px 0px #2041A97D",
+        referhover: "3px 16px 19px 0px #DDE1EE",
 
       },
       animation: {

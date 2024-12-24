@@ -80,7 +80,7 @@ const Dashboard = () => {
       {/* Package Section */}
       <div className="mb-10" data-aos="fade-up">
         <h2 className="text-2xl font-bold text-primary">Buy Packages</h2>
-        <p className="text-primary mb-8">
+        <p className="text-lightblue mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
           nulla eu stetur eget.
         </p>
@@ -88,7 +88,7 @@ const Dashboard = () => {
       </div>
       {/* Activity Overview section */}
       <h2 className="text-2xl font-bold text-primary">Activity Overview</h2>
-      <p className="text-primary mb-8">
+      <p className="text-lightblue mb-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla
         eu stetur eget.
       </p>
@@ -139,13 +139,13 @@ const Dashboard = () => {
           <table className="min-w-full">
             <thead>
               <tr>
-                <th className=" p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-semibold text-center">
                   Package Amount
                 </th>
-                <th className=" p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-semibold text-center">
                   Daily Income
                 </th>
-                <th className=" p-4 text-primary font-bold text-center">
+                <th className=" p-4 text-primary font-semibold text-center">
                   Duration
                 </th>
               </tr>
@@ -156,13 +156,13 @@ const Dashboard = () => {
                   key={index}
                   className={`${index % 2 === 0 ? "bg-[#F9FAFB]" : "bg-white"}`}
                 >
-                  <td className="p-4 text-secondary text-md font-bold text-center">
+                  <td className="p-4 text-secondary text-md font-medium text-center">
                     $50
                   </td>
-                  <td className="p-4 text-secondary text-md font-bold text-center">
+                  <td className="p-4 text-secondary text-md font-medium text-center">
                     1%
                   </td>
-                  <td className="p-4 text-secondary text-md font-bold text-center">
+                  <td className="p-4 text-secondary text-md font-medium text-center">
                     300 Day
                   </td>
                 </tr>
@@ -177,12 +177,12 @@ const Dashboard = () => {
       <div className="mb-10" data-aos="fade-up">
         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
-            <div className="relative">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+            <div className="relative overflow-hidden">
               <img
                 src="/images/dubai-img.png"
                 alt="Dubai Tour"
-                className="w-full h-[262px] object-cover"
+                className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
               />
             </div>
             <div className="p-6 gap-2">
@@ -199,12 +199,12 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
-            <div className="relative">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+            <div className="relative overflow-hidden">
               <img
                 src="/images/turkey-img.png"
                 alt="Dubai Tour"
-                className="w-full h-[262px] object-cover"
+                className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
               />
             </div>
             <div className="p-6 gap-2">
@@ -222,12 +222,12 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
-          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
-            <div className="relative">
+          <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+            <div className="relative overflow-hidden">
               <img
                 src="/images/europe-img.png"
                 alt="Dubai Tour"
-                className="w-full h-[262px] object-cover"
+                className="w-full h-[262px] object-cover transform transition-all duration-300 ease-in-out group-hover:scale-110"
               />
             </div>
             <div className="p-6 gap-2">
@@ -254,7 +254,7 @@ const Dashboard = () => {
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
               key={index}
-              className="bg-white border p-6 rounded-[24px] flex justify-between items-center group transform transition-all duration-300 ease-in-out hover:border-primary"
+              className="bg-white border p-6 rounded-[24px] flex justify-between items-center group transform transition-all duration-300 ease-in-out hover:shadow-referhover"
             >
               <div className="flex ">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
@@ -280,7 +280,7 @@ const Dashboard = () => {
                   </p>
                 </div>
                 <div>
-                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full transform transition-all duration-300 ease-in-out group-hover:bg-primary group-hover:text-white">
+                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full transform transition-all duration-300 ease-in-out hover:bg-primary hover:text-white">
                     start
                   </button>
                 </div>
