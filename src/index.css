@@ -142,3 +142,28 @@ body {
   }
 }
 
+
+/* Hover effect for the button */
+.hover-arrow-btn:hover {
+  background-color: #28418D; 
+}
+
+/* Styling for the button */
+.hover-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styling for the arrow icon */
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s ease-out;  /* Smooth transition for movement */
+}
+
+/* Hover effect for the arrow icon only */
+.hover-arrow-btn:hover .arrow-icon {
+  transform: translateX(8px);  /* Move the arrow 8px to the right */
+}

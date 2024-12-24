@@ -23,7 +23,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="container">
-      <div className="mb-7 p-4 px-6 border rounded-[24px]">
+      <div className="mb-7 p-4 px-6 border rounded-[24px]" data-aos="fade-up">
         <h3 className=" text-primary font-bold text-2xl pb-1">
           Welcome to the heart of your crypto investment journey!
         </h3>
@@ -136,9 +136,7 @@ const Dashboard = () => {
       <div className="mb-10" data-aos="fade-up">
         {/* Recent Investment Section */}
         <div className=" flex items-center justify-between mb-5 flex-cold lg:flex-row">
-          <h2 className="text-2xl font-bold text-primary">
-            Recent Investment
-          </h2>
+          <h2 className="text-2xl font-bold text-primary">Recent Investment</h2>
           <div className="relative">
             <input
               type="text"
@@ -146,7 +144,7 @@ const Dashboard = () => {
               className="border placeholder-[#989DAB] py-2 px-10 rounded-[8px] focus:outline-none focus:border-blue-500"
             />
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#989DAB]">
-              <Search size={25}/>
+              <Search size={25} />
             </span>
           </div>
         </div>
@@ -206,10 +204,10 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265]">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
                 Complete the Task{" "}
                 <span>
-                  <ArrowRight size={15} />{" "}
+                  <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button>
             </div>
@@ -230,10 +228,10 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265]">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
                 Complete the Task{" "}
                 <span>
-                  <ArrowRight size={15} />{" "}
+                  <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button>
             </div>
@@ -251,10 +249,10 @@ const Dashboard = () => {
               <p className="text-lightblue text-base font-medium">
                 $10,000 Direct Business within 45 days
               </p>
-              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265]">
+              <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
                 Complete the Task{" "}
                 <span>
-                  <ArrowRight size={15} />{" "}
+                  <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button>
             </div>

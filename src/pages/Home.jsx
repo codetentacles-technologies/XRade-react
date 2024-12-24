@@ -94,8 +94,8 @@ const Home = () => {
 
             <div className="flex flex-col xl:flex-row items-center gap-6">
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out">
-                  Get Started Now <ArrowRight />
+                <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out hover-arrow-btn">
+                  Get Started Now <ArrowRight className="arrow-icon" size={24} />
                 </button>
               </BoxReveal>
 
@@ -346,8 +346,8 @@ const Home = () => {
                 reach and community
               </p>
             </div>
-            <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
-              Explore All <ArrowRight />
+            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
+              Explore All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
           <div className="flex flex-col gap-8">
@@ -479,15 +479,9 @@ const Home = () => {
                 className="w-[37px] h-[36px]"
               />
             </h4>
-            <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max">
+            <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px] hover-arrow-btn">
               Explore All
-              <motion.div
-                initial={{ x: 0 }} // Starting position
-                whileHover={{ x: 8 }} // Moves 8px to the right when hovered
-                transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth transition
-              >
-                <ArrowRight size={24} /> {/* ArrowRight icon */}
-              </motion.div>
+              <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -610,8 +604,8 @@ const Home = () => {
                 dedication and commitment to the platform.
               </p>
             </div>
-            <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px]">
-              Explore All <ArrowRight />
+            <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px] hover-arrow-btn">
+              Explore All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
 
@@ -686,8 +680,8 @@ const Home = () => {
                 potential for rapid growth.
               </p>
             </div>
-            <button className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap">
-              View All <ArrowRight />
+            <button className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
+              View All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
 
