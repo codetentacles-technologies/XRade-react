@@ -7,6 +7,7 @@ import BoxReveal from "../components/ui/box-reveal.tsx";
 import ShinyButton from "../components/ui/shiny-button.tsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const data = Array(8).fill({
@@ -70,9 +71,9 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-24 ">
       {/* Hero section */}
-      <section className="container" data-aos="fade-up">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <div className="xl:col-span-2 m-auto flex flex-col gap-6 xl:gap-9">
+      <section data-aos="fade-up">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
+          <div className="xl:col-span-2 m-auto flex flex-col gap-6 xl:gap-9 w-full">
             <div className="flex flex-col gap-4 xl:gap-6">
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <h1 className="text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
@@ -479,7 +480,14 @@ const Home = () => {
               />
             </h4>
             <button className="flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max">
-              Explore All <ArrowRight />
+              Explore All{" "}
+              <motion.div
+                initial={{ x: 0 }}
+                whileHover={{ x: 8 }} // Moves 8px to the right when hovered
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <ArrowRight />{" "}
+              </motion.div>
             </button>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

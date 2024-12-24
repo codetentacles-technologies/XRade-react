@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // ======Images==========
 import TotalRaisedImg from "../../public/images/dashboard/TotalRaised.svg";
 import TotalUsers from "../../public/images/dashboard/TotalUsers.svg";
@@ -9,12 +9,41 @@ import Cardpackage from "../components/Cards";
 
 // icons======
 import { ArrowRight } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Dashboard = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
   return (
     <div className="container">
+      <div className="my-7 p-4 px-6 border rounded-[24px]">
+        <h3 className=" text-primary font-bold text-2xl pb-1">
+          Welcome to the heart of your crypto investment journey!
+        </h3>
+        <p className="text-[#67789C] pt-2 pb-1">
+          This dashboard is your gateway to real-time insights, empowering you
+          to track and maximize your earnings effortlessly. Here, you'll find
+          up-to-the-minute updates on your investments, referral performance,
+          and rewards.<br/> Stay informed with detailed metrics, including your total
+          investments, active packages, referral network growth, and earnings
+          breakdown. Whether you’re monitoring your daily dividends, exploring
+          new income opportunities, or strategizing for your next milestone,
+          this dashboard is designed to keep you ahead.<br/> Take control, make
+          informed decisions, and unlock the full potential of our innovative
+          multi-tiered ecosystem. Your path to financial growth starts here!
+        </p>
+      </div>
       {/* Header Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 mt-7"
+        data-aos="fade-up"
+      >
         <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
           <div>
             <h3 className="text-secondary font-bold text-md">Total Users</h3>
@@ -49,7 +78,7 @@ const Dashboard = () => {
       </div>
 
       {/* Package Section */}
-      <div className="mb-10">
+      <div className="mb-10" data-aos="fade-up">
         <h2 className="text-2xl font-bold text-primary">Buy Packages</h2>
         <p className="text-primary mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
@@ -63,7 +92,10 @@ const Dashboard = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla
         eu stetur eget.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+      <div
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10"
+        data-aos="fade-up"
+      >
         <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transform transition-all duration-300 ease-in-out hover:scale-105">
           <div>
             <h3 className="text-secondary font-bold text-md">Total Users</h3>
@@ -98,7 +130,7 @@ const Dashboard = () => {
 
       {/* Recent Investment */}
 
-      <div className="mb-10">
+      <div className="mb-10" data-aos="fade-up">
         {/* Recent Investment Section */}
         <h2 className="text-2xl font-bold mb-4 text-primary">
           Recent Investment
@@ -142,7 +174,7 @@ const Dashboard = () => {
 
       {/* win trips */}
 
-      <div className="mb-10">
+      <div className="mb-10" data-aos="fade-up">
         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all group duration-300 ease-in-out group hover:translate-y-[-10px] ">
@@ -214,8 +246,10 @@ const Dashboard = () => {
         </div>
       </div>
       {/* Challenging Income Section */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-bold mb-4 text-primary">Challenging Income</h2>
+      <div className="mb-10" data-aos="fade-up">
+        <h2 className="text-2xl font-bold mb-4 text-primary">
+          Challenging Income
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
@@ -225,7 +259,11 @@ const Dashboard = () => {
               <div className="flex ">
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
                   <span className="text-blue-500">
-                    <img src={ChallengingIncome} className="w-[90px]" alt="Total Users" />
+                    <img
+                      src={ChallengingIncome}
+                      className="w-[90px]"
+                      alt="Total Users"
+                    />
                   </span>
                 </div>
                 <div>
@@ -245,7 +283,6 @@ const Dashboard = () => {
                   <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full transform transition-all duration-300 ease-in-out group-hover:bg-primary group-hover:text-white">
                     start
                   </button>
-                
                 </div>
               </div>
             </div>
