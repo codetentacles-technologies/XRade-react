@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";
-import HalfDoughnutChart from "../components/HalfDoughnutChart";
+import ChartComponent from "../components/ChartComponent";
 import BoxReveal from "../components/ui/box-reveal.tsx";
 import ShinyButton from "../components/ui/shiny-button.tsx";
 import AOS from "aos";
@@ -95,7 +95,8 @@ const Home = () => {
             <div className="flex flex-col xl:flex-row items-center gap-6">
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out hover-arrow-btn">
-                  Get Started Now <ArrowRight className="arrow-icon" size={24} />
+                  Get Started Now{" "}
+                  <ArrowRight className="arrow-icon" size={24} />
                 </button>
               </BoxReveal>
 
@@ -791,21 +792,23 @@ const Home = () => {
             <img src="/images/cto-funds.webp" className="h-9" alt="" />
           </h4>
           <div className="relative w-[300px] h-[300px] mx-auto animate-rotate">
-            <div className="absolute inset-0 flex justify-center items-center">
+            {/* <div className="absolute inset-0 flex justify-center items-center">
               <div className="absolute w-[322px] h-[322px] rounded-full border-[30px] border-blue "></div>
               <div className="absolute w-[228px] h-[228px] rounded-full border-[20px] border-primary"></div>
               <div className="absolute w-[158px] h-[158px] rounded-full border-[15px] border-[#031641]"></div>
+            </div> */}
+            <div className="absolute inset-0 flex justify-center items-center">
+              <ChartComponent />
             </div>
-
-            <div className="absolute left-[60%] top-[-5%] transform -translate-x-1/2 bg-white shadow-xl rounded-lg p-2 text-center text-blue-900">
+            <div className="absolute left-[60%] top-[-5%] transform -translate-x-1/2 bg-white shadow-graphlabel rounded-[12px] p-2 text-center text-blue-900">
               <p className="font-bold">$2,000,000</p>
               <p>20% Bonus</p>
             </div>
-            <div className="absolute left-[30%] top-[40%] transform -translate-x-1/2 bg-white shadow-xl rounded-lg p-2 text-center text-blue-900">
+            <div className="absolute left-[30%] top-[70%] transform -translate-x-1/2 bg-white shadow-graphlabel rounded-[12px] p-2 text-center text-blue-900">
               <p className="font-bold">$1,500,000</p>
               <p>10% Bonus</p>
             </div>
-            <div className="absolute left-[20%] top-[70%] transform -translate-x-1/2 bg-white shadow-xl rounded-lg p-2 text-center text-blue-900">
+            <div className="absolute left-[45%] top-[30%] transform -translate-x-1/2 bg-white shadow-graphlabel rounded-[12px] p-2 text-center text-blue-900">
               <p className="font-bold">$750,000</p>
               <p>5% Bonus</p>
             </div>

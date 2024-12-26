@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'className', // Enables dark mode via a 'className' strategy
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "className", // Enables dark mode via a 'className' strategy
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-        background: 'var(--color-background)',
-        text: 'var(--color-text)',
-        subtext: 'var(--color-subtext)',
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        background: "var(--color-background)",
+        text: "var(--color-text)",
+        subtext: "var(--color-subtext)",
       },
     },
   },
@@ -20,37 +20,34 @@ module.exports = {
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var( --color-secondary)',
-        background: 'var( --color-background)',
-        blue: 'var(--color-blue)',
-        white: 'var(--color-white)',
-        lightblue: 'var(--color-bodytext)',
-        header: 'var(--header-background)',
-        lightgray: 'var(--color-lightgray)',
-        terms: 'var(--terms-background)',
+        primary: "var(--color-primary)",
+        secondary: "var( --color-secondary)",
+        background: "var( --color-background)",
+        blue: "var(--color-blue)",
+        white: "var(--color-white)",
+        lightblue: "var(--color-bodytext)",
+        header: "var(--header-background)",
+        lightgray: "var(--color-lightgray)",
+        terms: "var(--terms-background)",
       },
       backgroundImage: {
-        gradient: 'var(--gradient-background)',
-        bluegradient: 'var(--gradient-blue)',
-        workgradient: 'var(--work-gradient)',
-        graygradient: 'var(--gradient-gray)',
-        boxgradient: 'var(--box-gradient)',
-        hovergradient: 'var(--gradient-hover)',
-        howitworkgradient: 'var(--how-work-gradient)',
-        faqhover: 'var(--faq-hover-gradient)',
-        homeboxhover: 'var(--box-hover-home)',
-        boxafterhero: 'var(--box-home-after-hero)',
+        gradient: "var(--gradient-background)",
+        bluegradient: "var(--gradient-blue)",
+        workgradient: "var(--work-gradient)",
+        graygradient: "var(--gradient-gray)",
+        boxgradient: "var(--box-gradient)",
+        hovergradient: "var(--gradient-hover)",
+        howitworkgradient: "var(--how-work-gradient)",
+        faqhover: "var(--faq-hover-gradient)",
+        homeboxhover: "var(--box-hover-home)",
+        boxafterhero: "var(--box-home-after-hero)",
         tourcardhover: "var( --tour-card)",
-      
       },
-      fontFamily: {
-        
-      },
+      fontFamily: {},
       fontWeight: {
         light: 100,
         regular: 400,
@@ -76,7 +73,7 @@ module.exports = {
         dashboard: "3px 5px 5px 0px #CFD3E2",
         buypackage: "0px 7px 10px 0px #2041A97D",
         referhover: "3px 16px 19px 0px #DDE1EE",
-
+        graphlabel: "0px 7px 10px 0px #2041A97D",
       },
       animation: {
         fadeInUp: "fadeInUp 0.7s ease-out",
@@ -105,7 +102,7 @@ module.exports = {
         },
       },
       translate: {
-        '-8': '-8px',
+        "-8": "-8px",
       },
       // container: {
       //   center: true,
@@ -117,21 +114,21 @@ module.exports = {
       // },
 
       container: {
-        center: true, 
-        padding: '1rem', 
+        center: true,
+        padding: "1rem",
         screens: {
-          DEFAULT: '100%', 
-          lg: '1320px', 
+          DEFAULT: "100%",
+          lg: "1320px",
         },
       },
       keyframes: {
         shine: {
-          '0%': { left: '-100%' },
-          '100%': { left: '100%' },
+          "0%": { left: "-100%" },
+          "100%": { left: "100%" },
         },
       },
       animation: {
-        shine: 'shine 2s infinite',
+        shine: "shine 2s infinite",
       },
     },
   },
