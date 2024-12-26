@@ -7,7 +7,7 @@ const ChartComponent = () => {
       labels: [],
       datasets: [
         {
-          label: "20% Bonus",
+          // label: "20% Bonus",
           data: [14],
           backgroundColor: "#2850CC",
           borderColor: "#FFFFFF",
@@ -22,7 +22,7 @@ const ChartComponent = () => {
           },
         },
         {
-          label: "10% Bonus",
+          // label: "10% Bonus",
           data: [13],
           backgroundColor: "#28418D",
           borderColor: "#FFFFFF",
@@ -37,7 +37,7 @@ const ChartComponent = () => {
           },
         },
         {
-          label: "5% Bonus",
+          // label: "5% Bonus",
           data: [12],
           backgroundColor: "#051842",
           borderColor: "#FFFFFF",
@@ -70,6 +70,17 @@ const ChartComponent = () => {
         hover: {
           mode: null,
         },
+        tooltip: {
+          enabled: false,
+        },
+        datalabels: {
+          display: false, 
+        },
+        interaction: {
+          mode: "nearest", // Optional: ensure no hover interaction triggers
+          intersect: false, // Optional: disable interactions at intersections
+        },
+        hover: { mode: null },
       },
     };
 
@@ -79,8 +90,8 @@ const ChartComponent = () => {
   }, []);
 
   return (
-    <div >
-          <canvas id="myChart"></canvas>
+    <div>
+      <canvas id="myChart"></canvas>
     </div>
   );
 };

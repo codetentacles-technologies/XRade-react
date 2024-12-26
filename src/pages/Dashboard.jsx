@@ -22,7 +22,7 @@ const Dashboard = () => {
     });
   }, []);
   return (
-    <div className="container">
+    <div className="dashboard">
       <div className="mb-7 p-4 px-6 border rounded-[24px]" data-aos="fade-up">
         <h3 className=" text-primary font-bold text-2xl pb-1">
           Welcome to the heart of your crypto investment journey!
@@ -135,9 +135,9 @@ const Dashboard = () => {
 
       <div className="mb-10" data-aos="fade-up">
         {/* Recent Investment Section */}
-        <div className=" flex items-center justify-between mb-5 flex-cold lg:flex-row">
+        <div className=" flex items-center justify-between mb-5 flex-col lg:flex-row">
           <h2 className="text-2xl font-bold text-primary">Recent Investment</h2>
-          <div className="relative flex items-center">
+          <div className="relative flex items-center flex-col lg:flex-row">
             <input
               type="text"
               placeholder="placeholder"
@@ -268,7 +268,7 @@ const Dashboard = () => {
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
               key={index}
-              className="bg-white border p-4 rounded-[24px] transform transition-all duration-300 ease-in-out hover:shadow-referhover hover:border-0 grid grid-cols-1 sm:grid-cols-12"
+              className="bg-white border p-4 rounded-[24px] gap-5 lg:gap-0 transform transition-all duration-300 ease-in-out hover:shadow-referhover hover:border-0 grid grid-cols-1 sm:grid-cols-12"
             >
               {/* First Column (col-4) */}
               <div className="sm:col-span-2 ">
