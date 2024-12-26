@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 import Aos from "aos";
 import ChartComponent from "../components/ChartComponent";
 import BoxReveal from "../components/ui/box-reveal.tsx";
@@ -101,9 +102,10 @@ const Home = () => {
               </BoxReveal>
 
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
+                <Link to="/PageNotFound" className="no-underline">
                 <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
                   Learn More About Our Features
-                </button>
+                </button></Link>
               </BoxReveal>
             </div>
           </div>

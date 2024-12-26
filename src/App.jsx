@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
+import PageNotFound from './pages/notfound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path='/PageNotFound' element={<PageNotFound/>} />
           </Routes>
         </div>
         <Footer />
