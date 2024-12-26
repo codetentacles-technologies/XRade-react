@@ -272,11 +272,11 @@ const Dashboard = () => {
             >
               {/* First Column (col-4) */}
               <div className="sm:col-span-2 ">
-                  <img
-                    src={ChallengingIncome}
-                    className="w-[55px]"
-                    alt="Total Users"
-                  />
+                <img
+                  src={ChallengingIncome}
+                  className="w-[55px]"
+                  alt="Total Users"
+                />
               </div>
 
               {/* Second Column (col-5) */}
@@ -293,10 +293,12 @@ const Dashboard = () => {
               {/* Third Column (col-3) */}
               <div className="sm:col-span-3 flex items-end flex-col gap-5 justify-between">
                 <div>
-                  <button className="bg-white border border-primary text-primary py-2 font-bold px-5 flex rounded-full transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white">
-                    start
-                    <ArrowRight className="ml-2 hidden group-hover:block opacity-0 transition-opacity duration-400 ease-in-out group-hover:opacity-100" />
-                  </button>
+                  <div>
+                    <button className="bg-white border border-primary text-primary py-2 font-bold px-8 flex items-center justify-center rounded-full relative overflow-hidden transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white w-auto">
+                      start
+                      <ArrowRight size={20} className="ml-1 absolute right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out" />
+                    </button>
+                  </div>
                 </div>
                 <div>
                   <p className="text-lightgray text-sm mt-2 text-end">
