@@ -268,35 +268,40 @@ const Dashboard = () => {
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
             <div
               key={index}
-              className="bg-white border p-6 rounded-[24px] flex justify-between items-center group transform transition-all duration-300 ease-in-out hover:shadow-referhover"
+              className="bg-white border p-4 rounded-[24px] transform transition-all duration-300 ease-in-out hover:shadow-referhover hover:border-0 grid grid-cols-1 sm:grid-cols-12"
             >
-              <div className="flex ">
-                <div className="bg-blue-100 p-3 rounded-full mr-4">
-                  <span className="text-blue-500">
-                    <img
-                      src={ChallengingIncome}
-                      className="w-[90px]"
-                      alt="Total Users"
-                    />
-                  </span>
+              {/* First Column (col-4) */}
+              <div className="sm:col-span-2 ">
+                  <img
+                    src={ChallengingIncome}
+                    className="w-[55px]"
+                    alt="Total Users"
+                  />
+              </div>
+
+              {/* Second Column (col-5) */}
+              <div className="sm:col-span-7 ">
+                <h3 className="text-lg font-bold text-primary">
+                  Refer to your 50 friends
+                </h3>
+                <p className="text-[#67789C] text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
+                  sit ut nulla eu stetur eget. Nec, ac,
+                </p>
+              </div>
+
+              {/* Third Column (col-3) */}
+              <div className="sm:col-span-3 flex items-end flex-col gap-5 justify-between">
+                <div>
+                  <button className="bg-white border border-primary text-primary py-2 font-bold px-5 flex rounded-full transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white">
+                    start
+                    <ArrowRight className="ml-2 hidden group-hover:block opacity-0 transition-opacity duration-400 ease-in-out group-hover:opacity-100" />
+                  </button>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-primary">
-                    Refer to your 50 friends
-                  </h3>
-                  <p className="text-[#67789C] text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam
-                    ut egestas dui.
-                  </p>
                   <p className="text-lightgray text-sm mt-2 text-end">
                     Start: 00d 00h 00m
                   </p>
-                </div>
-                <div>
-                  <button className="bg-white border border-primary text-primary py-1 px-5 rounded-full transform transition-all duration-300 ease-in-out hover:bg-primary hover:text-white">
-                    start
-                  </button>
                 </div>
               </div>
             </div>
