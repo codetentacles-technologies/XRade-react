@@ -994,7 +994,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6"  data-aos="fade-up">
         {/* Terms and Conditions */}
         <section className="bg-terms p-6 rounded-3xl">
           <div className="flex flex-col gap-7">
