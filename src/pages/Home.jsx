@@ -752,8 +752,7 @@ const Home = () => {
               />
               <p className="text-lg text-primary font-semibold">John Smith</p>
               <p className="text-sm text-lightblue text-center font-medium">
-                John Smith is the CTO of our company. He has over 15 years of
-                experience in the blockchain and fintech industries.
+              John Smith is the CTO of our  company. He has over 15 years of  experience in the blockchain and  fintech industries.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
@@ -762,10 +761,9 @@ const Home = () => {
                 alt="wallet"
                 className="w-[200px] "
               />
-              <p className="text-lg text-primary font-semibold">John Smith</p>
+              <p className="text-lg text-primary font-semibold">Jane Doe</p>
               <p className="text-sm text-lightblue text-center font-medium">
-                John Smith is the CTO of our company. He has over 15 years of
-                experience in the blockchain and fintech industries.
+              Jane Doe is the Head of Operations  for the CTO Fund. She is a seasoned  financial expert with a passion for  innovation.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
@@ -774,10 +772,9 @@ const Home = () => {
                 alt="wallet"
                 className="w-[200px] "
               />
-              <p className="text-lg text-primary font-semibold">John Smith</p>
+              <p className="text-lg text-primary font-semibold">Michael Jones</p>
               <p className="text-sm text-lightblue text-center font-medium">
-                John Smith is the CTO of our company. He has over 15 years of
-                experience in the blockchain and fintech industries.
+              Michael Jones is the Chief Investment  Officer of the CTO Fund. He brings a  wealth of experience in portfolio  management and risk assessment.
               </p>
             </div>
           </div>
