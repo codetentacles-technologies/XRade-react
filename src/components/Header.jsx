@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className='bg-header mx-auto fixed top-0 left-0 w-full z-10'>
             <header className="flex items-center justify-between py-4 container">
-               <Link to="/"> <img src="/images/AItrade-logo.svg" alt="" className='w-full' /></Link>
+               <Link to="/"> <img src="/images/AITrade-logo.png" alt="" className='w-[150px]' /></Link>
                 <nav className="nav hidden md:flex">
                     <ul className="flex space-x-8">
                         <li><Link to="/Dashboard" className="no-underline">Dashboard</Link></li>

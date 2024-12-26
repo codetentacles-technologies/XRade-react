@@ -295,7 +295,7 @@ const Dashboard = () => {
                 <div>
                   <button className="bg-white border border-primary text-primary py-2 font-bold px-9 flex items-center rounded-full transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white w-auto relative">
                     <span className="group-hover:translate-x-[-0.5rem]">
-                      start
+                      Start
                     </span>
                     <ArrowRight
                       size={20}
