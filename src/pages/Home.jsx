@@ -746,7 +746,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="flex flex-col items-center justify-center gap-4">
               <img
-                src="/images/fund-team1.webp"
+                src="/images/fund-team1.svg"
                 alt="wallet"
                 className="w-[200px] "
               />
@@ -757,7 +757,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
               <img
-                src="/images/fund-team1.webp"
+                src="/images/fund-team2.svg"
                 alt="wallet"
                 className="w-[200px] "
               />
@@ -768,7 +768,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
               <img
-                src="/images/fund-team1.webp"
+                src="/images/fund-team3.svg"
                 alt="wallet"
                 className="w-[200px] "
               />
