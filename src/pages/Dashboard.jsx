@@ -293,13 +293,17 @@ const Dashboard = () => {
               {/* Third Column (col-3) */}
               <div className="sm:col-span-3 flex items-end flex-col gap-5 justify-between">
                 <div>
-                  <div>
-                    <button className="bg-white border border-primary text-primary py-2 font-bold px-8 flex items-center justify-center rounded-full relative overflow-hidden transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white w-auto">
+                  <button className="bg-white border border-primary text-primary py-2 font-bold px-9 flex items-center rounded-full transform transition-all group duration-300 ease-in-out hover:bg-primary hover:text-white w-auto relative">
+                    <span className="group-hover:translate-x-[-0.5rem]">
                       start
-                      <ArrowRight size={20} className="ml-1 absolute right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out" />
-                    </button>
-                  </div>
+                    </span>
+                    <ArrowRight
+                      size={20}
+                      className="absolute right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-in-out"
+                    />
+                  </button>
                 </div>
+
                 <div>
                   <p className="text-lightgray text-sm mt-2 text-end">
                     Start: 00d 00h 00m
