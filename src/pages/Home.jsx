@@ -95,7 +95,7 @@ const Home = () => {
 
             <div className="flex flex-col xl:flex-row items-center gap-6">
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out hover-arrow-btn">
+                <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out hover-arrow-btn">
                   Get Started Now{" "}
                   <ArrowRight className="arrow-icon" size={24} />
                 </button>
@@ -103,7 +103,7 @@ const Home = () => {
 
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <Link to="/PageNotFound" className="no-underline">
-                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-9 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
+                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
                   Learn More About Our Features
                 </button></Link>
               </BoxReveal>
@@ -202,7 +202,7 @@ const Home = () => {
               duis dolor. Congue suspendisse aliquam ut egestas duis dolor
             </p>
           </div>
-          <div className="m-auto flex flex-col justify-center items-center relative">
+          <div className="m-auto flex flex-col justify-center items-center relative mb-5 lg:mb-auto">
             <div className="shiny-div">Direct 15%</div>
 
             <p className="bg-[#AFBFF0] rounded-b-3xl w-[236px] h-8 absolute bottom-[-10px] z-[1]"></p>

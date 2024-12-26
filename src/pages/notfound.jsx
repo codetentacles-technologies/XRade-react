@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 function notfound() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center h-full">
         <img src={NotFound} />
         <h1 className='font-extrabold text-5xl text-center py-4 text-primary'>Page Not Found</h1>
         <p className='text-lightblue'>Hey User! Looks like you’re heading to a wrong page</p>
