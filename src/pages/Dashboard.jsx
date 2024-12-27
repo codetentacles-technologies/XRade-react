@@ -7,7 +7,7 @@ import ChallengingIncome from "../../public/images/dashboard/ChallengingIncome.s
 // component===============
 import Cardpackage from "../components/Cards";
 import { Search } from "lucide-react";
-import BreadCrumbs from "../components/BreadCrumbs.JSX";
+import BreadCrumbs from "../components/BreadCrumbs.jsx";
 // icons======
 import { ArrowRight } from "lucide-react";
 import AOS from "aos";
@@ -21,7 +21,7 @@ const Dashboard = () => {
   ];
 
   // For animations 
-  
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
