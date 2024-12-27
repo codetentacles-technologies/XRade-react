@@ -19,6 +19,9 @@ const Dashboard = () => {
     { name: "Home", link: "/" },
     { name: "Dashboard", isCurrent: true },
   ];
+
+  // For animations 
+  
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -26,6 +29,7 @@ const Dashboard = () => {
       once: true,
     });
   }, []);
+
   return (
     <div className="dashboard">
       <BreadCrumbs title="Dashboard" breadcrumbs={breadcrumbs} />
