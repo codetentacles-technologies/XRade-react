@@ -143,13 +143,11 @@ body {
 }
 
 
-/* Hover effect for the button */
-.hover-arrow-btn:hover {
+.hover-arrow-btn:hover, .left-arrow-button:hover {
   background-color: #28418D; 
 }
 
-/* Styling for the button */
-.hover-arrow-btn {
+.hover-arrow-btn, .left-arrow-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -157,13 +155,20 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Styling for the arrow icon */
 .arrow-icon {
   display: inline-block;
-  transition: transform 0.3s ease-out;  /* Smooth transition for movement */
+  transition: transform 0.3s ease-out; 
 }
 
-/* Hover effect for the arrow icon only */
 .hover-arrow-btn:hover .arrow-icon {
-  transform: translateX(8px);  /* Move the arrow 8px to the right */
+  transform: translateX(8px);
+}
+
+.left-arrow-icon{
+  display: inline-block;
+  transition: transform 0.3s ease-out; 
+}
+
+.left-arrow-button:hover .left-arrow-icon {
+  transform: translateX(-8px);
 }

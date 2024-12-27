@@ -5,6 +5,7 @@
     --color-blue: #2850CC;
     --color-white: #ffffff;
     --color-bodytext: #67789C;
+    --color-home-aboutus: #EBEEF9;
     --gradient-background: linear-gradient(to left, #E9EBF2 0%, #F6F7FA 52%, #EAEEFB 100%);
     --gradient-blue: linear-gradient(135.7deg, #1E3478 5.77%, #192A70 48.32%, #1A104C 95.35%);
     --header-background:  #F9FAFF;
@@ -20,6 +21,7 @@
     --box-hover-home: linear-gradient(124.6deg, #EBEFFE -14.58%, #F6F7FA 49.49%, #EBEFFE 108.63%);
     --box-home-after-hero: linear-gradient(124.6deg, #E9EBF2 -14.58%, #F6F7FA 49.49%, #EAEEFB 108.63%);
     --tour-card:  0px 25px 54px 0px #0A14341F;
+    
   }
 
   .dark {

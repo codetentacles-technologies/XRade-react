@@ -7,13 +7,18 @@ import ChallengingIncome from "../../public/images/dashboard/ChallengingIncome.s
 // component===============
 import Cardpackage from "../components/Cards";
 import { Search } from "lucide-react";
-
+import BreadCrumbs from "../components/BreadCrumbs.JSX";
 // icons======
 import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Dashboard = () => {
+  // Breadcrumbs
+  const breadcrumbs = [
+    { name: "Home", link: "/" },
+    { name: "Dashboard", isCurrent: true },
+  ];
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -23,6 +28,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="dashboard">
+      <BreadCrumbs title="Dashboard" breadcrumbs={breadcrumbs} />
       <div className="mb-7 p-4 px-6 border rounded-[24px]" data-aos="fade-up">
         <h3 className=" text-primary font-bold text-2xl pb-1">
           Welcome to the heart of your crypto investment journey!

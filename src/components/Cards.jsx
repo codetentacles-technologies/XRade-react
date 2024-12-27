@@ -4,33 +4,41 @@ import CardParticleBg from "../../public/images/dashboard/CardParticleBg.svg";
 
 const packages = [
   {
-    title: "Basic Package",
+    title: "Package Title",
     price: "$50 / 300 Days",
     percentage: "(1%)",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut ",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac ",
     imageUrl: packagetitle,
   },
   {
-    title: "Advanced Package",
+    title: "Package Title",
     price: "$100 / 600 Days",
     percentage: "(1%)",
     description:
-      "Pellentesque habitant morbi tristique senectus et netus et ",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac ",
     imageUrl: packagetitle,
   },
   {
-    title: "Premium Package",
-    price: "$200 / 900 Days",
-    percentage: "(1%)",
+    title: "Package Title",
+    price: "$250/ 200 Days",
+    percentage: "(1.5%)",
     description:
-      "Nulla facilisi. Vivamus aliquet ligula et magna scelerisque soll",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac",
+    imageUrl: packagetitle,
+  },
+  {
+    title: "Package Title",
+    price: "$500/ 200 Days",
+    percentage: "(1.5%)",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac",
     imageUrl: packagetitle,
   },
 ];
 const PackageCards = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       {packages.map((pkg, index) => (
         <div
           key={index}

@@ -19,6 +19,43 @@ const Home = () => {
 
   const [openIndex, setOpenIndex] = useState(null);
 
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+  // ==================== DATA ===============================
+
+  const aboutus = [
+    {
+      title: "Diverse Income Streams",
+      description:
+        "Offers multiple income types, including dividend income, referral income, level income, and more, tailored to suit both experienced and new investors.",
+    },
+    {
+      title: "Investment Packages",
+      description:
+        "Attractive daily returns ranging from 1% to 1.5% with flexible durations, allowing users to grow their portfolios confidently.",
+    },
+    {
+      title: "Challenging Income Programs",
+      description:
+        "Rewarding system encouraging strategic investments with features like doubling investment returns within 24 hours or 50% cashback rewards.",
+    },
+    {
+      title: "Tiered Referral System",
+      description:
+        "Expands earning potential with 10 levels of commissions, rewarding users as their network grows.",
+    },
+  ];
+
   const questions = [
     {
       question: "What is the minimum investment amount?",
@@ -33,10 +70,6 @@ const Home = () => {
       answer: "Withdrawals can be made at any time with a minimum fee.",
     },
   ];
-
-  const handleToggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   const steps = [
     {
@@ -60,14 +93,6 @@ const Home = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. r adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
     },
   ];
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
 
   return (
     <div className="flex flex-col gap-24 ">
@@ -103,9 +128,10 @@ const Home = () => {
 
               <BoxReveal boxColor={"#28418D"} duration={0.5}>
                 <Link to="/PageNotFound" className="no-underline">
-                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
-                  Learn More About Our Features
-                </button></Link>
+                  <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
+                    Learn More About Our Features
+                  </button>
+                </Link>
               </BoxReveal>
             </div>
           </div>
@@ -563,24 +589,24 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-4xl font-black text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 2X
               </p>
-              <p className="text-2xl font-bold text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-2xl font-bold text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 Double Your Investment
               </p>
-              <p className="text-lg font-normal text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-lg font-normal text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 Within 24 hours
               </p>
             </div>
             <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-4xl font-black text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 50%
               </p>
-              <p className="text-2xl font-bold text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-2xl font-bold text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 50% Cashback
               </p>
-              <p className="text-lg font-normal text-[#28418D] group-hover:text-[#031641]">
+              <p className="text-lg font-normal text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
                 Bonus reward
               </p>
             </div>
@@ -737,7 +763,50 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* About Us section */}
 
+      <section data-aos="fade-up">
+        <div className="flex flex-col lg:flex-row gap-3 justify-between">
+          <div className="flex flex-col">
+            <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
+              About AI Trade
+              <img
+                src="/images/about_home.svg"
+                alt="setting"
+                className=" h-[36px]"
+              />
+            </h4>
+            <p className="text-lightblue font-normal">
+              Pioneering AI in AI Trading
+            </p>
+          </div>
+          <button className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
+            View All <ArrowRight className="arrow-icon" size={24} />
+          </button>
+        </div>
+        <p className="text-lightblue font-normal my-4">
+          Binance Trading is a trailblazer in the world of arbitrage trading,
+          fusing artificial intelligence with financial expertise to redefine
+          how you engage with global markets. Our mission is to empower traders
+          of all levels with advanced tools and insights, ensuring they navigate
+          the complexities of financial markets with confidence and success.
+        </p>
+        <h4 className="text-primary text-2xl font-bold my-5">
+          Key Features
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {aboutus.map((item, index) => (
+            <div key={index} className="flex flex-col h-full">
+              <div className="bg-homeabout p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
+                <h1 className="text-primary font-bold text-lg pb-1">
+                  {item.title}
+                </h1>
+                <p className="text-lightblue flex-grow">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* Meet the Fund Team */}
       <section data-aos="fade-up">
         <div className="flex flex-col gap-8 items-center justify-center">
@@ -754,7 +823,8 @@ const Home = () => {
               />
               <p className="text-lg text-primary font-semibold">John Smith</p>
               <p className="text-sm text-lightblue text-center font-medium">
-              John Smith is the CTO of our  company. He has over 15 years of  experience in the blockchain and  fintech industries.
+                John Smith is the CTO of our company. He has over 15 years of
+                experience in the blockchain and fintech industries.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
@@ -765,7 +835,8 @@ const Home = () => {
               />
               <p className="text-lg text-primary font-semibold">Jane Doe</p>
               <p className="text-sm text-lightblue text-center font-medium">
-              Jane Doe is the Head of Operations  for the CTO Fund. She is a seasoned  financial expert with a passion for  innovation.
+                Jane Doe is the Head of Operations for the CTO Fund. She is a
+                seasoned financial expert with a passion for innovation.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
@@ -774,9 +845,13 @@ const Home = () => {
                 alt="wallet"
                 className="w-[200px] "
               />
-              <p className="text-lg text-primary font-semibold">Michael Jones</p>
+              <p className="text-lg text-primary font-semibold">
+                Michael Jones
+              </p>
               <p className="text-sm text-lightblue text-center font-medium">
-              Michael Jones is the Chief Investment  Officer of the CTO Fund. He brings a  wealth of experience in portfolio  management and risk assessment.
+                Michael Jones is the Chief Investment Officer of the CTO Fund.
+                He brings a wealth of experience in portfolio management and
+                risk assessment.
               </p>
             </div>
           </div>
@@ -994,7 +1069,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="flex flex-col gap-6"  data-aos="fade-up">
+      <div className="flex flex-col gap-6" data-aos="fade-up">
         {/* Terms and Conditions */}
         <section className="bg-terms p-6 rounded-3xl">
           <div className="flex flex-col gap-7">
