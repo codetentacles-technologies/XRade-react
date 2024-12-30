@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount, useReadContract } from "wagmi";
 
 const Header = () => {
+  const { chainId, isConnected } = useAccount();
+
+
+  
   return (
     <div className="bg-header mx-auto fixed top-0 left-0 w-full z-10 shadow-xl">
       <header className="flex items-center justify-between py-4 container">
@@ -18,7 +24,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button className="bg-blue text-white text-sm lg:text-lg font-bold py-3 px-8 rounded-full flex items-center gap-2 hover:bg-bluegradient">
+        {/* <button className="bg-blue text-white text-sm lg:text-lg font-bold py-3 px-8 rounded-full flex items-center gap-2 hover:bg-bluegradient">
           {" "}
           <img
             src="/images/connect-wallet-img.webp"
@@ -26,7 +32,8 @@ const Header = () => {
             className="w-[18px] h-[18px]"
           />
           Connect Wallet
-        </button>
+        </button> */}
+        {<ConnectButton accountStatus={'address'} showBalance={false} />}
       </header>
     </div>
   );

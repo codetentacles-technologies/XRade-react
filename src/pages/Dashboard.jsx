@@ -12,8 +12,21 @@ import BreadCrumbs from "../components/BreadCrumbs.jsx";
 import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useAccount, useReadContract } from "wagmi";
+import {blockConfig} from "../config/BlockChainConfig.jsx"
+import { parseUnits } from "viem";
 
 const Dashboard = () => {
+  const { isConnected, chainId } = useAccount()
+  const {
+    data : plans, isLoading, error
+  } = useReadContract({
+    abi: blockConfig[chainId].XTRADE_ABI,
+    address: blockConfig[chainId].XRADE_ADDRESS,
+    functionName: "plans",
+    args: [1],
+  });
+  
   // Breadcrumbs
   const breadcrumbs = [
     { name: "Home", link: "/" },
@@ -29,6 +42,8 @@ const Dashboard = () => {
       once: true,
     });
   }, []);
+
+
 
   return (
     <div className="dashboard">
