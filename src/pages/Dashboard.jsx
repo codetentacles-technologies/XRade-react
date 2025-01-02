@@ -21,7 +21,7 @@ const Dashboard = () => {
   const {
     data : plans, isLoading, error
   } = useReadContract({
-    abi: blockConfig[chainId].XTRADE_ABI,
+    abi: blockConfig[chainId].XRADE_ABI,
     address: blockConfig[chainId].XRADE_ADDRESS,
     functionName: "plans",
     args: [1],
