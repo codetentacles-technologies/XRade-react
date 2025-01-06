@@ -159,7 +159,7 @@ const Home = () => {
 
       {/* Card Section */}
       <section className="container" data-aos="fade-up">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
@@ -169,7 +169,7 @@ const Home = () => {
                 Network Growth
               </h5>
             </div>
-            <p className="text-lightblue text-base font-medium text-center">
+            <p className="text-lightblue text-base font-medium text-center md:w-[50%] lg:w-[40%] xl:w-full">
               Expand your network and watch your passive income grow. Invite
               friends, family, and colleagues to join our platform. The more
               people you refer, the larger your network becomes, leading to
@@ -190,7 +190,7 @@ const Home = () => {
                 Tiered Rewards
               </h5>
             </div>
-            <p className="text-lightblue text-base font-medium text-center">
+            <p className="text-lightblue text-base font-medium text-center md:w-[50%] lg:w-[40%] xl:w-full">
               Expand your network and watch your passive income grow. Invite
               friends, family, and colleagues to join our platform. The more
               people you refer, the larger your network becomes, leading to
@@ -211,7 +211,7 @@ const Home = () => {
                 Passive Income
               </h5>
             </div>
-            <p className="text-lightblue text-base font-medium text-center">
+            <p className="text-lightblue text-base font-medium text-center  md:w-[50%] lg:w-[40%] xl:w-full">
               Expand your network and watch your passive income grow. Invite
               friends, family, and colleagues to join our platform. The more
               people you refer, the larger your network becomes, leading to
