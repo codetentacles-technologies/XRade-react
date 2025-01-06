@@ -172,3 +172,78 @@ body {
 .left-arrow-button:hover .left-arrow-icon {
   transform: translateX(-8px);
 }
+.ju367v9i{
+  background: #2850CC !important;
+border-radius: 25px !important;
+padding: 0px 32px !important;
+margin: auto !important;
+}
+.hero-bg {
+  background: linear-gradient(#070E2DD9 85%, #050A20D4 85%, #070D29D9 85%), url(../public/images/hero-bg.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.work {
+  background: url(../public/images/work-img.webp);
+  background-size: cover;
+  background-position: center;
+}
+.investment {
+  position: relative; /* Required for the pseudo-element */
+  overflow: hidden; /* Hide the overflow from the pseudo-element scaling */
+}
+
+.investment::before {
+  content: '';
+  background: url(../public/images/investment-img.webp);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.3s ease; /* Smooth transition */
+  transform: scale(1); /* Initial scale */
+  z-index: 0; /* Place behind other content */
+}
+
+.investment:hover::before {
+  transform: scale(1.05); /* Scale background image on hover */
+}
+
+.cashback{
+  background: url(../public/images/cashback-img.webp);
+  background-size: cover;
+  background-position: center;
+}
+.cashback {
+  position: relative; /* Required for the pseudo-element */
+  overflow: hidden; /* Hide the overflow from the pseudo-element scaling */
+}
+
+.cashback::before {
+  content: '';
+  background: url(../public/images/cashback-img.webp);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.3s ease; /* Smooth transition */
+  transform: scale(1); /* Initial scale */
+  z-index: 0; /* Place behind other content */
+}
+
+.cashback:hover::before {
+  transform: scale(1.08); /* Scale background image on hover */
+}
+
+.card{
+  background: url(../public/images/card-bg.webp) no-repeat;
+  background-size: contain;
+  background-position: center;
+}

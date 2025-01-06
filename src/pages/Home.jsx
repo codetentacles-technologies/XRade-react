@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Ellipsis } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
@@ -69,6 +69,14 @@ const Home = () => {
       question: "What are the withdrawal policies?",
       answer: "Withdrawals can be made at any time with a minimum fee.",
     },
+    {
+      question: "What are the withdrawal policies?",
+      answer: "Withdrawals can be made at any time with a minimum fee.",
+    },
+    {
+      question: "What are the withdrawal policies?",
+      answer: "Withdrawals can be made at any time with a minimum fee.",
+    },
   ];
 
   const steps = [
@@ -97,58 +105,62 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-24 ">
       {/* Hero section */}
-      <section data-aos="fade-up">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
-          <div className="xl:col-span-2 m-auto flex flex-col gap-6 xl:gap-9 w-full">
-            <div className="flex flex-col gap-4 xl:gap-6">
-              <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <h1 className="text-primary text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
-                  <span className="text-lightblue text-2xl lg:text-3xl xl:text-[40px] font-normal">
-                    Unlock Consistent Passive Income with <br />
-                  </span>
-                  High-Value Crypto Investments
-                </h1>
-              </BoxReveal>
+      <section className="p-0">
+        <div className=" m-auto flex flex-col items-center justify-center text-center gap-6 xl:gap-9 w-full hero-bg py-32">
+          <div className="flex flex-col gap-4 xl:gap-6">
+            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+              <h1 className="text-white text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
+                <span className="text-white text-2xl lg:text-3xl xl:text-[40px] font-normal">
+                  Unlock Consistent Passive Income with <br />
+                </span>
+                High-Value Crypto Investments
+              </h1>
+            </BoxReveal>
 
-              <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <p className="text-lightblue text-base xl:text-lg font-medium">
-                  Join a platform that merges innovative crypto mechanisms with
-                  rewarding opportunities.
-                </p>
-              </BoxReveal>
-            </div>
-
-            <div className="flex flex-col xl:flex-row items-center gap-6">
-              <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <button className="text-primary border border-primary rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out hover-arrow-btn">
-                  Get Started Now{" "}
-                  <ArrowRight className="arrow-icon" size={24} />
-                </button>
-              </BoxReveal>
-
-              <BoxReveal boxColor={"#28418D"} duration={0.5}>
-                <Link to="/PageNotFound" className="no-underline">
-                  <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
-                    Learn More About Our Features
-                  </button>
-                </Link>
-              </BoxReveal>
-            </div>
+            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+              <p className="text-white text-base xl:text-lg font-medium">
+                Join a platform that merges innovative crypto mechanisms with
+                rewarding opportunities.
+              </p>
+            </BoxReveal>
           </div>
-          <div className="m-auto">
-            <img
-              src="/images/hero-section-img.webp"
-              className="h-auto lg:h-[468px]"
-              alt=""
-            />
+          <div className="flex flex-col xl:flex-row items-center gap-6">
+            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+              <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
+                Get Started Now{" "}
+                <ArrowRight className="arrow-icon" size={24} />
+              </button>
+            </BoxReveal>
+
+            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+              <Link to="/PageNotFound" className="no-underline">
+                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
+                  Learn More About Our Features
+                </button>
+              </Link>
+            </BoxReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Graph Section */}
+      <section data-aos="fade-up" className="container">
+        <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="xl:col-span-1 flex flex-col gap-5">
+            <h6 className="text-primary text-4xl font-bold">AI Trading</h6>
+            <p className="text-sm font-normal text-lightblue">Welcome to the Real-Time Website Activity section, where you can stay updated with live insights into the platform's performance and engagement. This dynamic chart provides a comprehensive overview of user activity, including the number of visitors currently exploring the website, recent transactions, and real-time engagement metrics such as clicks, likes, and interactions. You can also see which pages are performing the best, offering a snapshot of the most visited sections of the site.</p>
+            <p className="text-sm font-normal text-lightblue">Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
+          </div>
+          <div className="xl:col-span-2 w-full m-auto hover:rounded-3xl  hover:shadow-xl transition-all duration-300 ease-in-out">
+            <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" />
           </div>
         </div>
       </section>
 
       {/* Card Section */}
-      <section className="" data-aos="fade-up">
+      <section className="container" data-aos="fade-up">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="bg-homeboxhover  flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img src="/images/network-growth-img.webp" alt="" />
@@ -165,7 +177,7 @@ const Home = () => {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="bg-homeboxhover flex flex-col justify-center items-center group gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -186,7 +198,7 @@ const Home = () => {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="bg-homeboxhover flex flex-col justify-center items-center gap-[18px] px-6 py-8 rounded-2xl shadow-2xl transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero">
             <div className="flex flex-col justify-center items-center gap-4">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -211,7 +223,7 @@ const Home = () => {
       </section>
 
       {/* Referral Income */}
-      <section className="" data-aos="fade-up">
+      <section className="container" data-aos="fade-up">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 reffral-income-bg py-8 px-8 xl:px-[100px] rounded-3xl">
           <div className="col-span-2 flex flex-col  gap-4">
             <div>
@@ -238,7 +250,7 @@ const Home = () => {
       </section>
 
       {/*Type of Income */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8">
           <div>
             <h2 className="text-primary text-4xl  font-bold flex items-center gap-2.5">
@@ -350,12 +362,12 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section data-aos="fade-up">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[54px] group bg-workgradient hover:bg-howitworkgradient rounded-3xl py-6 px-6 xl:px-[100px]">
+      <section data-aos="fade-up" className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[54px] group work rounded-3xl py-6 px-6 xl:px-[100px]">
           <div className="flex flex-col gap-[54px]">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1">
-                <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
+                <h4 className="text-white text-4xl font-bold flex items-center gap-3">
                   How It Works{" "}
                   <img
                     src="/images/setting-img.webp"
@@ -363,28 +375,28 @@ const Home = () => {
                     className="w-[30px] h-[36px]"
                   />
                 </h4>
-                <p className="text-lightblue text-base font-normal">
+                <p className="text-white text-base font-normal">
                   Earn referral income from 10 levels of your network's daily
                   ROI.
                 </p>
               </div>
-              <p className="text-lightblue text-base font-normal">
+              <p className="text-white text-base font-normal">
                 This engaging bonus structure incentivizes you to introduce
                 others to the platform's benefits. It's a winwin situation,
                 where you earn additional income while expanding the platform's
                 reach and community
               </p>
             </div>
-            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
+            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-subtext text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
               Explore All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
           <div className="flex flex-col gap-8">
             <div>
-              <h5 className="text-primary text-2xl font-bold">
+              <h5 className="text-white text-2xl font-bold">
                 Per-Hour Mining Bonus: Engaging Your Network
               </h5>
-              <p className="text-lightblue text-base font-normal">
+              <p className="text-white text-base font-normal">
                 Earn referral income from 10 levels of your network's daily ROI.
               </p>
             </div>
@@ -396,10 +408,10 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h6 className="text-secondary text-lg font-bold leading-5">
+                  <h6 className="text-white text-lg font-bold leading-5">
                     Referrals:
                   </h6>
-                  <p className="text-lightblue text-base font-normal leading-5">
+                  <p className="text-white text-base font-normal leading-5">
                     Bring 10 referrals within 48 hours.
                   </p>
                 </div>
@@ -411,10 +423,10 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h6 className="text-secondary text-lg font-bold leading-5">
+                  <h6 className="text-white text-lg font-bold leading-5">
                     Rewards:
                   </h6>
-                  <p className="text-lightblue text-base font-normal leading-5">
+                  <p className="text-white text-base font-normal leading-5">
                     Receive a continuous reward of $0.25 per hour.
                   </p>
                 </div>
@@ -426,10 +438,10 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h6 className="text-secondary text-lg font-bold leading-5">
+                  <h6 className="text-white text-lg font-bold leading-5">
                     Duration:
                   </h6>
-                  <p className="text-lightblue text-base font-normal leading-5 text-wrap">
+                  <p className="text-white text-base font-normal leading-5 text-wrap">
                     Enjoy your bonus for 30 days, credited directly to your
                     account.
                   </p>
@@ -441,7 +453,7 @@ const Home = () => {
       </section>
 
       {/* Level Income */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8">
           <h4 className="text-primary text-4xl font-bold flex items-center justify-center gap-3 w-full">
             Level Income{" "}
@@ -496,8 +508,66 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Network section */}
+      <section data-aos="fade-up" className="container">
+        <div className="flex flex-col gap-8">
+          <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold">
+            Per-Hour Mining Bonus: Engaging  Your Network
+          </h4>
+          <div className="flex flex-col md:flex-row  gap-6">
+            {/* Card 1 */}
+            <div className="text-center w-full lg:w-[25%] flex flex-col items-center justify-center gap-8">
+              <div className="bg-homeabout m-auto w-[90px] h-[90px] rounded-[20px] flex items-center justify-center hover:shadow-xl">
+                <img src="/images/refferal-img.webp" alt="" className="m-auto w-[66px] h-[66px]" />
+              </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-semibold text-2xl text-primary">Referral Benefits</h3>
+                <p className="text-base font-medium text-secondary">
+                  Bring 10 referrals within  48 hours.
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-[25%] mt-[42px] hidden md:block">
+              <img src="/images/dotted-line.webp" alt="" />
+            </div>
+
+            {/* Card 2 */}
+            <div className="text-center w-full lg:w-[25%] flex flex-col items-center justify-center gap-8">
+              <div className="bg-homeabout m-auto w-[90px] h-[90px] rounded-[20px] flex items-center justify-center  hover:shadow-xl">
+                <img src="/images/reward-img.webp" alt="" className="m-auto  w-[52px] h-[66px]" />
+              </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-semibold text-2xl text-primary">Reward</h3>
+                <p className="text-base font-medium text-secondary">
+                  Receive a continuous  reward of $0.25 per  hour.
+                </p>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-[25%] mt-[42px] hidden md:block">
+              <img src="/images/dotted-line.webp" alt="" />
+            </div>
+
+            {/* Card 3 */}
+            <div className="text-center w-full lg:w-[25%] flex flex-col items-center justify-center gap-8">
+              <div className="bg-homeabout m-auto w-[90px] h-[90px] rounded-[20px] flex items-center justify-center hover:shadow-xl">
+                <img src="/images/timer-img.webp" alt="" className="m-auto w-[56px] h-[66px]" />
+              </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="font-semibold text-2xl text-primary">Duration</h3>
+                <p className="text-base font-medium text-secondary">
+                  Enjoy your bonus for 30  days, credited directly to  your account.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Jackpot Tours */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-3 justify-between">
             <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3 ">
@@ -567,12 +637,12 @@ const Home = () => {
       </section>
 
       {/* Divident Income */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
             <div className="flex justify-between">
               <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
-                Dividend Income
+                Challenging Income: Maximizing  Your Investment Returns
                 <img
                   src="/images/divident-img.png"
                   alt="setting"
@@ -588,25 +658,25 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+            <div className="w-full investment shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group ">
+              <p className="text-4xl font-black text-white  transform transition-all duration-300 ease-in-out">
                 2X
               </p>
-              <p className="text-2xl font-bold text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+              <p className="text-2xl font-bold text-white  transform transition-all duration-300 ease-in-out">
                 Double Your Investment
               </p>
-              <p className="text-lg font-normal text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+              <p className="text-lg font-normal text-white  transform transition-all duration-300 ease-in-out">
                 Within 24 hours
               </p>
             </div>
-            <div className="w-full bg-boxgradient shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group hover:bg-hovergradient">
-              <p className="text-4xl font-black text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+            <div className="w-full cashback shadow-lg flex flex-col justify-center items-center py-8 rounded-3xl gap-3 transform transition-all duration-[500ms] ease-[ease] delay-0 group ">
+              <p className="text-4xl font-black text-white  transform transition-all duration-300 ease-in-out">
                 50%
               </p>
-              <p className="text-2xl font-bold text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+              <p className="text-2xl font-bold text-white  transform transition-all duration-300 ease-in-out">
                 50% Cashback
               </p>
-              <p className="text-lg font-normal text-[#28418D] group-hover:text-subtext transform transition-all duration-300 ease-in-out">
+              <p className="text-lg font-normal text-white  transform transition-all duration-300 ease-in-out">
                 Bonus reward
               </p>
             </div>
@@ -615,7 +685,7 @@ const Home = () => {
       </section>
 
       {/* Jackpot Rewards */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-3 justify-between">
             <div className="flex flex-col ">
@@ -633,9 +703,9 @@ const Home = () => {
                 dedication and commitment to the platform.
               </p>
             </div>
-            <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px] hover-arrow-btn">
+            {/* <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px] hover-arrow-btn">
               Explore All <ArrowRight className="arrow-icon" size={24} />
-            </button>
+            </button> */}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -690,82 +760,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Challenging Income */}
-      <section data-aos="fade-up">
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col lg:flex-row gap-3 justify-between">
-            <div className="flex flex-col">
-              <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl  font-bold flex items-center gap-3">
-                Challenging Income: Maximizing Your Investment Returns
-                <img
-                  src="/images/challenging-income.png"
-                  alt="setting"
-                  className=" h-[36px]"
-                />
-              </h4>
-              <p className="text-secondary text-base font-normal">
-                Unlock exceptional rewards for your investment prowess. This
-                unique feature challenges you to leverage our platform's
-                potential for rapid growth.
-              </p>
-            </div>
-            <button className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
-              View All <ArrowRight className="arrow-icon" size={24} />
-            </button>
-          </div>
-
-          <div className="flex justify-center items-center">
-            <div className="w-full">
-              <div className="overflow-x-auto bg-white shadow-xl rounded-[24px]">
-                <table className="w-full border-collapse rounded-2xl shadow-lg overflow-hidden">
-                  <thead className="bg-white">
-                    <tr>
-                      <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
-                        Package Amount
-                      </th>
-                      <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
-                        Daily Income
-                      </th>
-                      <th className="py-6 px-6 text-center text-lg font-semibold text-[#031641]">
-                        Duration
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((row, index) => (
-                      <tr
-                        key={index}
-                        className={`${
-                          index % 2 === 0 ? "bg-[#F9FAFB]" : "bg-white"
-                        } hover:bg-gray-100`}
-                      >
-                        <td className="p-6 text-center text-secondary">
-                          {row.packageAmount}
-                        </td>
-                        <td className="p-6 text-center text-secondary">
-                          {row.dailyIncome}
-                        </td>
-                        <td className="p-6 text-center text-secondary">
-                          {row.duration}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-secondary text-base font-normal mt-8">
-                This rewarding system encourages strategic investment and
-                enables you to capitalize on the platform's inherent benefits.
-                It's an opportunity to maximize your earnings and amplify your
-                investment success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* About Us section */}
-
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col lg:flex-row gap-3 justify-between">
           <div className="flex flex-col">
             <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
@@ -797,18 +793,127 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {aboutus.map((item, index) => (
             <div key={index} className="flex flex-col h-full">
-              <div className="bg-homeabout p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
-                <h1 className="text-primary font-bold text-lg pb-1">
+              <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
+                <h1 className="text-white font-bold text-lg pb-1">
                   {item.title}
                 </h1>
-                <p className="text-lightblue flex-grow">{item.description}</p>
+                <p className="text-white font-normal text-sm flex-grow">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Challenging Income */}
+      <section className="container">
+        <div className="bg-white rounded-3xl shadow-md p-6">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-4">
+            <div>
+              <h2 className="text-2xl font-bold text-primary">Transactions</h2>
+              <p className="text-sm font-medium text-[#71717A]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <a href="#" className="text-secondary text-sm font-semibold hover:underline">
+              See All Transactions
+            </a>
+          </div>
+
+          {/* Transactions Table */}
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+
+              <tbody className="bg-white divide-y divide-gray-200">
+                {[
+                  {
+                    card: "Mastercard **** 6442",
+                    paymentMethod: "Card payment",
+                    amount: "$99.00",
+                    date: "Jan 17, 2022",
+                    status: "Completed",
+                    statusColor: "bg-[#DCFCE7] text-[#14532D",
+                    category: "Dividend",
+                  },
+                  {
+                    card: "Account ****882",
+                    paymentMethod: "Bank payment",
+                    amount: "$249.94",
+                    date: "Jan 17, 2022",
+                    status: "Pending",
+                    statusColor: "bg-[#FEF9C3] text-[#713F12]",
+                    category: "Challenging",
+                  },
+                  {
+                    card: "Account ****882",
+                    paymentMethod: "Bank payment",
+                    amount: "$249.94",
+                    date: "Jan 17, 2022",
+                    status: "Canceled",
+                    statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
+                    category: "Challenging",
+                  },
+                  {
+                    card: "Account ****882",
+                    paymentMethod: "Bank payment",
+                    amount: "$249.94",
+                    date: "Jan 17, 2022",
+                    status: "Completed",
+                    statusColor: "bg-[#DCFCE7] text-[#14532D",
+                    category: "Challenging",
+                  },
+                  {
+                    card: "Account ****882",
+                    paymentMethod: "Card payment",
+                    amount: "$249.94",
+                    date: "Jan 17, 2022",
+                    status: "Pending",
+                    statusColor: "bg-[#FEF9C3] text-[#713F12]",
+                    category: "Challenging",
+                  },
+                  {
+                    card: "Amex card **** 5666",
+                    paymentMethod: "Card payment",
+                    amount: "$199.24",
+                    date: "Jan 17, 2022",
+                    status: "Canceled",
+                    statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
+                    category: "CTO Fund",
+                  },
+                ].map((transaction, index) => (
+                  <tr key={index}>
+                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[30%]">
+                      {transaction.card} <span className="text-secondary text-xs font-medium"> {transaction.paymentMethod}</span>
+                    </td>
+                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-primary font-semibold w-[15%]">
+                      {transaction.amount} <span className="text-secondary text-xs font-medium "> <br /> {transaction.date}</span>
+                    </td>
+                    <td className="px-4 py-[18px] whitespace-nowrap mx-auto text-center w-[35%]">
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${transaction.statusColor}`}
+                      >
+                        {transaction.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-secondary font-medium w-[15%]">
+                      {transaction.category}
+                    </td>
+                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
+                      <button className="text-secondary hover:text-gray-600">
+                        <Ellipsis size={32} />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
       {/* Meet the Fund Team */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Meet the Fund Team{" "}
@@ -859,7 +964,7 @@ const Home = () => {
       </section>
 
       {/* Unlock Exponential Growth with the  CTO Fund */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold mb-4">
             Unlock Exponential Growth with the CTO Fund
@@ -896,8 +1001,8 @@ const Home = () => {
       </section>
 
       {/* Our Visionary Roadmap */}
-      <section data-aos="fade-up">
-        <div className="flex flex-col gap-8 items-center justify-center bg-gradient rounded-3xl p-6">
+      <section data-aos="fade-up" className="container">
+        <div className="flex flex-col gap-8 items-center justify-center rounded-3xl p-6">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Our Visionary Roadmap
             <img src="/images/roadmap.webp" className="h-9" alt="" />
@@ -906,37 +1011,40 @@ const Home = () => {
           <div className="flex flex-col items-center justify-center gap-[93px]">
             <div className="relative w-full max-w-4xl">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#D0D8EF] h-full"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#D0D8EF]  h-full"></div>
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="flex items-center w-full mb-10 last:mb-0"
+                  className={`flex items-center w-full mb-10 last:mb-0  ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
                 >
-                  {/* Title (Left) */}
-                  <div className="w-1/2 pr-8 text-right">
-                    <h3 className="text-2xl font-bold text-primary">
+                  {/* Title (Left or Right) */}
+                  <div className={`w-1/2 text-left ps-8 ${index % 2 === 0 ? '' : 'text-right pe-8'}`}>
+                    <h3 className="text-2xl font-bold text-primary ">
                       {step.title}
                     </h3>
                   </div>
+
                   {/* Circle Indicator */}
                   <div className="relative w-8 h-8 flex-shrink-0">
                     <div className="absolute left-1/2 transform -translate-x-1/2 bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
                       <div className="bg-blue timeline-shadow w-2 h-2 rounded-full"></div>
                     </div>
                   </div>
-                  {/* Description (Right) */}
-                  <div className="w-1/2 pl-8 text-left">
-                    <p className="text-lightgray">{step.description}</p>
+
+                  {/* Description (Right or Left) */}
+                  <div className={`w-1/2 text-left bg-primary rounded-3xl text-lg font-medium  ${index % 2 === 0 ? '' : 'text-left '}`}>
+                    <p className="text-lightgray bg-gradient rounded-3xl p-4 text-lg  font-medium mb-[5px] ">{step.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
       {/* Supported Wallets */}
-      <section data-aos="fade-up">
+      <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8 items-center justify-center">
           <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Supported Wallets{" "}
@@ -1013,63 +1121,66 @@ const Home = () => {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section data-aos="fade-up">
-        <div className="flex flex-col gap-8">
+      <section data-aos="fade-up" className=" bg-[#F8F9FF]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-11  lg:pe-4 xl:pe-20 2xl:pe-[300px]">
           <div>
-            <h2 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
-              Frequently Asked Questions{" "}
-              <img
-                src="/images/questionmark-img.webp"
-                alt="questionmark"
-                className="w-[43px] h-[36px]"
-              />
-            </h2>
-            <p className="text-lightblue text-base font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
-              nulla eu stetur eget.
-            </p>
+            <img src="/images/bitcoin-img.webp" alt="bitcoin" />
           </div>
-          <div className="flex flex-col gap-4">
-            {questions.map((item, index) => (
-              <div key={index} className="">
-                <div className="bg-hovergradient hover:bg-[#EAEFFC] p-4 rounded-2xl cursor-pointer">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => handleToggle(index)}
-                  >
-                    <p className="flex items-center gap-6">
-                      <span className="text-white text-lg font-bold bg-bluegradient rounded-full w-[31px] h-[31px] leading-7 text-center">
-                        {index + 1}
-                      </span>
-                      <span className="text-lg font-medium text-primary">
-                        {item.question}
-                      </span>
-                    </p>
-                    <span
-                      className={`text-lg font-bold text-primary bg-[#CCD5F1] rounded-[8px] ${
-                        openIndex === index ? "px-2.5" : "px-2 "
-                      }`}
+          <div className="flex flex-col gap-8 px-4 lg:px-0 py-8">
+            <div>
+              <h2 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
+                Frequently Asked Questions{" "}
+                <img
+                  src="/images/questionmark-img.webp"
+                  alt="questionmark"
+                  className="w-[43px] h-[36px]"
+                />
+              </h2>
+              <p className="text-lightblue text-base font-medium">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
+                nulla eu stetur eget.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              {questions.map((item, index) => (
+                <div key={index} className="">
+                  <div className="bg-hovergradient hover:bg-[#EAEFFC] p-4 rounded-2xl cursor-pointer">
+                    <div
+                      className="flex justify-between items-center"
+                      onClick={() => handleToggle(index)}
                     >
-                      {openIndex === index ? "-" : "+"}
-                    </span>
-                  </div>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ${
-                      openIndex === index ? "max-h-[200px]" : "max-h-0"
-                    }`}
-                  >
-                    <div className="text-lg font-medium text-primary p-2 ps-14">
-                      {item.answer}
+                      <p className="flex items-center gap-6">
+                        <span className="text-white text-lg font-bold bg-bluegradient rounded-full w-[31px] h-[31px] leading-7 text-center">
+                          {index + 1}
+                        </span>
+                        <span className="text-lg font-medium text-primary">
+                          {item.question}
+                        </span>
+                      </p>
+                      <span
+                        className={`text-lg font-bold text-primary bg-[#CCD5F1] rounded-[8px] ${openIndex === index ? "px-2.5" : "px-2 "
+                          }`}
+                      >
+                        {openIndex === index ? "-" : "+"}
+                      </span>
+                    </div>
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${openIndex === index ? "max-h-[200px]" : "max-h-0"
+                        }`}
+                    >
+                      <div className="text-lg font-medium text-primary p-2 ps-14">
+                        {item.answer}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="flex flex-col gap-6" data-aos="fade-up">
+      <div className="container flex flex-col gap-6" data-aos="fade-up">
         {/* Terms and Conditions */}
         <section className="bg-terms p-6 rounded-3xl">
           <div className="flex flex-col gap-7">

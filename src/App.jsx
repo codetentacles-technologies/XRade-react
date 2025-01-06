@@ -27,7 +27,7 @@ function App() {
                                     element={
                                         <>
                                             <Header />
-                                            <div className="container py-[7rem]">
+                                            <div className=" py-[4rem]">
                                                 <Home />
                                             </div>
                                             <Footer />

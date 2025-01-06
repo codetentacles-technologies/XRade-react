@@ -7,7 +7,7 @@ const Header = () => {
     const { chainId, isConnected } = useAccount();
 
     return (
-        <div className="bg-header mx-auto fixed top-0 left-0 w-full z-10 shadow-xl">
+        <div className="bg-header mx-auto fixed top-0 left-0 w-full z-10">
             <header className="flex items-center justify-between py-4 container">
                 <Link to="/">
                     {" "}
