@@ -9,8 +9,56 @@ import ShinyButton from "../components/ui/shiny-button.tsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
+import { useAccount } from "wagmi";
+import { readContract } from "wagmi/actions";
+import { blockConfig } from "../config/BlockChainConfig.jsx";
+import { configRead } from "../utils/RainbowKitConfig.jsx";
 
 const Home = () => {
+  const { chainId } = useAccount();
+
+const checkUsersInvestment = async (user) => {
+  try {
+    const investment = await readContract(configRead, {
+      abi: blockConfig[chainId].XRADE_ABI,
+      address: blockConfig[chainId].XRADE_ADDRESS,
+      functionName: "usersTotalInvested",
+      arg: [user]
+    });
+    return investment;
+  } catch (error) {
+    return false;
+  }
+};
+
+const checkUsersWithdrawal = async (user) => {
+  try {
+    const usersWithdrawal = await readContract(configRead,{
+      abi: blockConfig[chainId].XRADE_ABI,
+      address: blockConfig[chainId].XRADE_ADDRESS,
+      functionName: "usersTotalWithdrawal",
+      arg: [user]
+    });
+    return usersWithdrawal;
+  }catch(error){
+    return false;
+  }
+};
+
+const checkUserEarning = async (user) => {
+try {
+  const userEarning = await readContract(configRead, {
+    abi: blockConfig[chainId].XRADE_ABI,
+    address: blockConfig[chainId].XRADE_ADDRESS,
+    functionName: "getUsersEarning",
+    arg: [user]
+  });
+  return userEarning;
+} catch (error) {
+  return false;
+}
+};
+
   const data = Array(8).fill({
     packageAmount: "$50",
     dailyIncome: "1%",
