@@ -1,4 +1,4 @@
-import { ArrowRight, Ellipsis } from "lucide-react";
+import { ArrowRight, ChevronRight, Ellipsis } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
@@ -793,8 +793,8 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {aboutus.map((item, index) => (
             <div key={index} className="flex flex-col h-full">
-              <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-300 ease-in-out group hover:translate-y-[-5px] hover:bg-boxafterhero">
-                <h1 className="text-white font-bold text-lg pb-1">
+              <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-600 ease-in-out group hover:translate-y-[-1px] hover:bg-hoverbluegradient  ">
+                <h1 className="text-white font-bold text-lg pb-1 ">
                   {item.title}
                 </h1>
                 <p className="text-white font-normal text-sm flex-grow">{item.description}</p>
@@ -806,17 +806,17 @@ const Home = () => {
 
       {/* Challenging Income */}
       <section className="container">
-        <div className="bg-white rounded-3xl shadow-md p-6">
+        <div className="bg-white rounded-3xl shadow-xl p-6 flex flex-col gap-6">
           {/* Header */}
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center ">
             <div>
               <h2 className="text-2xl font-bold text-primary">Transactions</h2>
               <p className="text-sm font-medium text-[#71717A]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
-            <a href="#" className="text-secondary text-sm font-semibold hover:underline">
-              See All Transactions
+            <a href="#" className="text-secondary text-sm font-semibold flex items-center gap-1 ">
+              See All Transactions <ChevronRight size={16} />
             </a>
           </div>
 
@@ -834,6 +834,7 @@ const Home = () => {
                     status: "Completed",
                     statusColor: "bg-[#DCFCE7] text-[#14532D",
                     category: "Dividend",
+                    dotColor: "bg-[#22C55E]",
                   },
                   {
                     card: "Account ****882",
@@ -843,6 +844,7 @@ const Home = () => {
                     status: "Pending",
                     statusColor: "bg-[#FEF9C3] text-[#713F12]",
                     category: "Challenging",
+                    dotColor: "bg-[#FACC15]",
                   },
                   {
                     card: "Account ****882",
@@ -852,6 +854,7 @@ const Home = () => {
                     status: "Canceled",
                     statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
                     category: "Challenging",
+                    dotColor: "bg-[#EF4444] ",
                   },
                   {
                     card: "Account ****882",
@@ -861,6 +864,7 @@ const Home = () => {
                     status: "Completed",
                     statusColor: "bg-[#DCFCE7] text-[#14532D",
                     category: "Challenging",
+                    dotColor: "bg-[#22C55E]",
                   },
                   {
                     card: "Account ****882",
@@ -870,6 +874,7 @@ const Home = () => {
                     status: "Pending",
                     statusColor: "bg-[#FEF9C3] text-[#713F12]",
                     category: "Challenging",
+                    dotColor: "bg-[#FACC15]",
                   },
                   {
                     card: "Amex card **** 5666",
@@ -879,26 +884,34 @@ const Home = () => {
                     status: "Canceled",
                     statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
                     category: "CTO Fund",
+                    dotColor: "bg-[#EF4444] ",
                   },
                 ].map((transaction, index) => (
                   <tr key={index}>
-                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[30%]">
+                    <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
                       {transaction.card} <span className="text-secondary text-xs font-medium"> {transaction.paymentMethod}</span>
                     </td>
-                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-primary font-semibold w-[15%]">
+                    <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
                       {transaction.amount} <span className="text-secondary text-xs font-medium "> <br /> {transaction.date}</span>
                     </td>
-                    <td className="px-4 py-[18px] whitespace-nowrap mx-auto text-center w-[35%]">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${transaction.statusColor}`}
-                      >
-                        {transaction.status}
+                    <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
+                      <span className="flex flex-col items-center">
+                        {/* Dot */}
+
+                        {/* Status */}
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${transaction.statusColor}`}
+                        >
+                          <span className={`w-2 h-2 rounded-full inline-block mr-1 ${transaction.dotColor}`}></span>
+                          {transaction.status}
+                        </span>
                       </span>
                     </td>
-                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-secondary font-medium w-[15%]">
+
+                    <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
                       {transaction.category}
                     </td>
-                    <td className="px-4 py-[18px] whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
+                    <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
                       <button className="text-secondary hover:text-gray-600">
                         <Ellipsis size={32} />
                       </button>
@@ -1003,42 +1016,44 @@ const Home = () => {
       {/* Our Visionary Roadmap */}
       <section data-aos="fade-up" className="container">
         <div className="flex flex-col gap-8 items-center justify-center rounded-3xl p-6">
-          <h4 className="flex items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
+          <h4 className="flex  items-center gap-2 text-primary text-2xl lg:text-3xl xl:text-4xl font-bold">
             Our Visionary Roadmap
             <img src="/images/roadmap.webp" className="h-9" alt="" />
           </h4>
 
-          <div className="flex flex-col items-center justify-center gap-[93px]">
+          <div className="flex flex-col items-center justify-center gap-[40px] md:gap-[93px]">
             <div className="relative w-full max-w-4xl">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[#D0D8EF]  h-full"></div>
+              <div className="absolute md:left-1/2 transform md:-translate-x-1/2 w-[2px]  bg-[#D0D8EF] h-full"></div>
+
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`flex items-center w-full mb-10 last:mb-0  ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+                  className={`flex flex-col md:flex-row items-center w-full mb-10 last:mb-0 ps-4 md:ps-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
                 >
-                  {/* Title (Left or Right) */}
-                  <div className={`w-1/2 text-left ps-8 ${index % 2 === 0 ? '' : 'text-right pe-8'}`}>
-                    <h3 className="text-2xl font-bold text-primary ">
+                  {/* Title */}
+                  <div className={`w-full md:w-1/2 text-left ps-4 md:ps-8 ${index % 2 === 0 ? '' : 'md:text-right pe-4 md:pe-8'}`}>
+                    <h3 className="text-lg md:text-2xl font-bold text-primary">
                       {step.title}
                     </h3>
                   </div>
 
                   {/* Circle Indicator */}
-                  <div className="relative w-8 h-8 flex-shrink-0">
-                    <div className="absolute left-1/2 transform -translate-x-1/2 bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
+                  <div className="relative w-8 h-8 flex-shrink-0 ">
+                    <div className="absolute left-[-180px] md:left-1/2 top-[-30px] md:top-0 transform md:-translate-x-1/2 bg-blue-500  w-8 h-8 rounded-full flex items-center justify-center">
                       <div className="bg-blue timeline-shadow w-2 h-2 rounded-full"></div>
                     </div>
                   </div>
 
-                  {/* Description (Right or Left) */}
-                  <div className={`w-1/2 text-left bg-primary rounded-3xl text-lg font-medium  ${index % 2 === 0 ? '' : 'text-left '}`}>
-                    <p className="text-lightgray bg-gradient rounded-3xl p-4 text-lg  font-medium mb-[5px] ">{step.description}</p>
+                  {/* Description */}
+                  <div className={`w-full md:w-1/2 text-left bg-primary rounded-3xl text-lg font-medium ${index % 2 === 0 ? '' : 'text-left'}`}>
+                    <p className="text-lightgray bg-gradient rounded-3xl p-4 text-lg font-medium mb-[5px]">{step.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
 
         </div>
       </section>
