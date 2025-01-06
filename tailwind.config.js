@@ -33,6 +33,7 @@ module.exports = {
         homeboxhover: "var(--box-hover-home)",
         boxafterhero: "var(--box-home-after-hero)",
         tourcardhover: "var(--tour-card)",
+        hoverbluegradient: "var(--hover-bluegradient)",
       },
       fontWeight: {
         light: 100,
