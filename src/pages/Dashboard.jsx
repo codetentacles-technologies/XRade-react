@@ -13,20 +13,63 @@ import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useAccount, useReadContract } from "wagmi";
-import {blockConfig} from "../config/BlockChainConfig.jsx"
+import { blockConfig } from "../config/BlockChainConfig.jsx";
+import { readContract } from "@wagmi/core";
 import { parseUnits } from "viem";
+import { configRead } from "../utils/RainbowKitConfig.jsx";
+
+const { chainId } = useAccount();
+
+const checkTotalUsers = async () => {
+  try {
+    const totalUsers = await readContract(configRead, {
+      abi: blockConfig[chainId].XRADE_ABI,
+      address: blockConfig[chainId].XRADE_ADDRESS,
+      functionName: "totalUsers"
+    });
+    return totalUsers;
+  } catch (error) {
+    return false;
+  }
+};
+
+const checkTotalInvest = async () => {
+  try {
+    const totalInvest = await readContract(configRead, {
+      abi: blockConfig[chainId].XRADE_ABI,
+      address: blockConfig[chainId].XRADE_ADDRESS,
+      functionName: "totalInvest"
+    });
+    return totalInvest;
+  } catch (error) {
+    return false;
+  }
+};
+
+const checktotalWithdrawal = async () => {
+  try {
+    const totalWithdrawals = await readContract(configRead, {
+      abi: blockConfig[chainId].XRADE_ABI,
+      address: blockConfig[chainId].XRADE_ADDRESS,
+      functionName: "totalWithdrawal"
+    });
+  } catch (error) {
+    return false;
+  }
+};
+
 
 const Dashboard = () => {
   const { isConnected, chainId } = useAccount()
   const {
-    data : plans, isLoading, error
+    data: plans, isLoading, error
   } = useReadContract({
     abi: blockConfig[chainId].XRADE_ABI,
     address: blockConfig[chainId].XRADE_ADDRESS,
     functionName: "plans",
     args: [1],
   });
-  
+
   // Breadcrumbs
   const breadcrumbs = [
     { name: "Home", link: "/" },
