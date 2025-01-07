@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract } from "wagmi";
+import { Bell } from "lucide-react";
 
 const Header = () => {
     const { chainId, isConnected } = useAccount();
+    const [isBoxVisible, setIsBoxVisible] = useState(false);
+    const boxRef = useRef(null); // Ref for the box
+    const bellRef = useRef(null); // Ref for the Bell icon
+
+    const toggleBox = () => {
+        setIsBoxVisible(!isBoxVisible);
+    };
+
+    // Close the box when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                boxRef.current &&
+                !boxRef.current.contains(event.target) &&
+                bellRef.current &&
+                !bellRef.current.contains(event.target)
+            ) {
+                setIsBoxVisible(false);
+            }
+        };
+
+        // Attach the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+
+        // Cleanup the event listener
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     return (
         <div className="bg-header mx-auto fixed top-0 left-0 w-full z-10">
@@ -31,10 +61,39 @@ const Header = () => {
           />
           Connect Wallet
         </button> */}
-                <Link to="/Dashboard" className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient">
-                  Launch
-                </Link>
-                {/* {<ConnectButton accountStatus={"address"} showBalance={false} />} */}
+                <div className="flex items-center gap-6">
+                <div className="relative cursor-pointer" onClick={toggleBox} ref={bellRef}>
+                        <p><Bell /></p>
+                        <span className="absolute top-0 right-0 bg-primary text-white text-[11px] rounded-full px-1.5 h-[18px] transform translate-x-1/2 -translate-y-1/2">
+                            2 {/* Replace 2 with the actual number you want to display */}
+                        </span>
+                    </div>
+
+                    {/* Conditionally render the box */}
+                    {isBoxVisible && (
+                        <div
+                            className="absolute top-16 right-28 xl:right-40 2xl:right-[500px] bg-bluegradient shadow-lg rounded-2xl text-white"
+                            ref={boxRef}
+                        >
+                            <div className="py-4 px-6 border-b border-[#394B74]">
+                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-sm font-medium">2 hours ago.</p>
+                            </div>
+                            <div className="py-4 px-6 border-b border-[#394B74]">
+                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-sm font-medium">2 hours ago.</p>
+                            </div>
+                            <div className="py-4 px-6">
+                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-sm font-medium">2 hours ago.</p>
+                            </div>
+                        </div>
+                    )}
+                    <Link to="/Dashboard" className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient">
+                        Launch
+                    </Link>
+                    {/* {<ConnectButton accountStatus={"address"} showBalance={false} />} */}
+                </div>
             </header>
         </div>
     );
