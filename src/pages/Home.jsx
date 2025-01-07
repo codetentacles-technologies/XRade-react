@@ -156,7 +156,7 @@ try {
       <section className="p-0">
         <div className=" m-auto flex flex-col items-center justify-center text-center gap-6 xl:gap-9 w-full hero-bg py-32">
           <div className="flex flex-col gap-4 xl:gap-6">
-            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+            <BoxReveal boxColor={"#2850cc"} duration={0.5}>
               <h1 className="text-white text-3xl lg:text-4xl xl:text-[54px] font-black leading-tight">
                 <span className="text-white text-2xl lg:text-3xl xl:text-[40px] font-normal">
                   Unlock Consistent Passive Income with <br />
@@ -165,28 +165,28 @@ try {
               </h1>
             </BoxReveal>
 
-            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+            <BoxReveal boxColor={"#2850cc"} duration={0.5}>
               <p className="text-white text-base xl:text-lg font-medium">
                 Join a platform that merges innovative crypto mechanisms with
                 rewarding opportunities.
               </p>
             </BoxReveal>
           </div>
-          <div className="flex flex-col xl:flex-row items-center gap-6">
-            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+          <div className="flex flex-col xl:flex-row items-center gap-6" data-aos="fade-up">
+            {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
               <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
                 Get Started Now{" "}
                 <ArrowRight className="arrow-icon" size={24} />
               </button>
-            </BoxReveal>
+            {/* </BoxReveal> */}
 
-            <BoxReveal boxColor={"#070E2D66"} duration={0.5}>
+            {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
               <Link to="/PageNotFound" className="no-underline">
                 <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
                   Learn More About Our Features
                 </button>
               </Link>
-            </BoxReveal>
+            {/* </BoxReveal> */}
           </div>
         </div>
       </section>
@@ -194,10 +194,12 @@ try {
       {/* Graph Section */}
       <section data-aos="fade-up" className="container">
         <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          <div className="xl:col-span-1 flex flex-col gap-5">
+          <div className="xl:col-span-1 flex flex-col gap-5" >
             <h6 className="text-primary text-4xl font-bold">AI Trading</h6>
+            <div className="flex flex-col gap-5"  data-aos="fade-up">
             <p className="text-sm font-normal text-lightblue">Welcome to the Real-Time Website Activity section, where you can stay updated with live insights into the platform's performance and engagement. This dynamic chart provides a comprehensive overview of user activity, including the number of visitors currently exploring the website, recent transactions, and real-time engagement metrics such as clicks, likes, and interactions. You can also see which pages are performing the best, offering a snapshot of the most visited sections of the site.</p>
-            <p className="text-sm font-normal text-lightblue">Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
+            <p className="text-sm font-normal text-lightblue" >Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
+            </div>
           </div>
           <div className="xl:col-span-2 w-full m-auto hover:rounded-3xl  hover:shadow-xl transition-all duration-300 ease-in-out">
             <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" />
@@ -208,10 +210,10 @@ try {
       {/* Card Section */}
       <section className="container" data-aos="fade-up">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
-                <img src="/images/network-growth-img.webp" alt="" />
+                <img src="/images/network-growth-img.webp" alt="" className="hover:scale-105 transition duration-300 ease-in-out" />
               </div>
               <h5 className="text-primary text-2xl font-bold">
                 Network Growth
@@ -225,13 +227,13 @@ try {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img
                   src="/images/tiered-reward-img.webp"
                   alt=""
-                  className="w-[55px] h-[70px]"
+                  className="w-[55px] h-[70px] hover:scale-105 transition duration-300 ease-in-out"
                 />
               </div>
               <h5 className="text-primary text-2xl font-bold">
@@ -246,13 +248,13 @@ try {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
             <div className="flex flex-col justify-center items-center gap-4">
               <div className="w-[70px] h-[70px]">
                 <img
                   src="/images/Passive-income-img.webp"
                   alt=""
-                  className=""
+                  className="hover:scale-105 transition duration-300 ease-in-out"
                 />
               </div>
               <h5 className="text-primary text-2xl font-bold">

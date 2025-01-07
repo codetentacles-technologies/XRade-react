@@ -13,7 +13,7 @@ const Header = () => {
                     {" "}
                     <img src="/images/AITrade-logo.png" alt="" className="w-[150px]" />
                 </Link>
-                <nav className="nav hidden md:flex">
+                {/* <nav className="nav hidden md:flex">
                     <ul className="flex space-x-8">
                         <li>
                             <Link to="/Dashboard" className="no-underline text-subtext">
@@ -21,7 +21,7 @@ const Header = () => {
                             </Link>
                         </li>
                     </ul>
-                </nav>
+                </nav> */}
                 {/* <button className="bg-blue text-white text-sm lg:text-lg font-bold py-3 px-8 rounded-full flex items-center gap-2 hover:bg-bluegradient">
           {" "}
           <img
@@ -31,7 +31,10 @@ const Header = () => {
           />
           Connect Wallet
         </button> */}
-                {<ConnectButton accountStatus={"address"} showBalance={false} />}
+                <Link to="/Dashboard" className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient">
+                  Launch
+                </Link>
+                {/* {<ConnectButton accountStatus={"address"} showBalance={false} />} */}
             </header>
         </div>
     );
