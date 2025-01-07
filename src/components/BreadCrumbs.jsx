@@ -14,7 +14,7 @@ const BreadCrumbs = ({ title, breadcrumbs }) => {
             {breadcrumbs.map((breadcrumb, index) => (
               <li
                 key={index}
-                className={`flex items-center ${breadcrumb.isCurrent ? "font-bold text-subtext" : ""}`}
+                className={`flex items-center ${breadcrumb.isCurrent ? "font-bold text-primary" : ""}`}
               >
                 {breadcrumb.isCurrent ? (
                   <span>{breadcrumb.name}</span>
