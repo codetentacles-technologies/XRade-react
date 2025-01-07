@@ -261,3 +261,6 @@ margin: auto !important;
   background-size: cover;
   background-position: center;
 }
+.h-page{
+  min-height: calc(100vh - 471px);
+}

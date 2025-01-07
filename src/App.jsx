@@ -12,6 +12,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { configRead, queryClient } from "./utils/RainbowKitConfig";
 import { Toaster } from "react-hot-toast";
 import About from "./pages/About";
+import Voucher from "./pages/Voucher";
 
 function App() {
     return (
@@ -52,8 +53,8 @@ function App() {
                                         element={
                                             <>
                                                 <Header />
-                                                <div className="py-[4rem]">
-                                                    <About />
+                                                <div className="py-[7rem]">
+                                                    <Voucher />
                                                 </div>
                                                 <Footer />
                                             </>
