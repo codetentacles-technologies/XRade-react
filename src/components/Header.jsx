@@ -41,7 +41,7 @@ const Header = () => {
             <header className="flex items-center justify-between py-4 container">
                 <Link to="/">
                     {" "}
-                    <img src="/images/AITrade-logo.png" alt="" className="w-[150px]" />
+                    <img src="/images/AITrade-logo.png" alt="" className="w-[150px] cursor-pointer" />
                 </Link>
                 {/* <nav className="nav hidden md:flex">
                     <ul className="flex space-x-8">

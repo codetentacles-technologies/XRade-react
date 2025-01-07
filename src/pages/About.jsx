@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BreadCrumbs from '../components/BreadCrumbs'
 import BoxReveal from '../components/ui/box-reveal';
 import AOS from "aos";
@@ -42,6 +42,35 @@ const About = () => {
                 "Expands earning potential with 10 levels of commissions, rewarding users as their network grows.",
         },
     ];
+
+     const [openIndex, setOpenIndex] = useState(null);
+    
+      const handleToggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+      };
+    
+  const questions = [
+    {
+      question: "What is the minimum investment amount?",
+      answer: "The minimum investment amount is $100.",
+    },
+    {
+      question: "How does the referral income work?",
+      answer: "You earn a 10% commission for each referral.",
+    },
+    {
+      question: "What are the withdrawal policies?",
+      answer: "Withdrawals can be made at any time with a minimum fee.",
+    },
+    {
+      question: "What are the withdrawal policies?",
+      answer: "Withdrawals can be made at any time with a minimum fee.",
+    },
+    {
+      question: "What are the withdrawal policies?",
+      answer: "Withdrawals can be made at any time with a minimum fee.",
+    },
+  ];
 
     return (
         <div>
@@ -88,8 +117,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className='text-white advantage-bg py-9 2xl:py-20 xl:px-[100px] px-4 flex flex-col gap-8 items-center justify-center'>
-                    <h4 className='text-2xl font-bold'>Advantages of AI Trade</h4>
+                <div className='text-white advantage-bg py-9 2xl:py-20 xl:px-[100px] px-4 flex flex-col gap-8 items-center justify-center' data-aos="fade-up">
+                    <h4 className='text-2xl font-bold'  >Advantages of AI Trade</h4>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 '>
                         <div className='flex flex-col gap-3'>
                             <h6 className='text-lg font-bold flex items-center gap-3'><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,6 +150,87 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                <div className='container grid grid-cols-1 lg:grid-cols-2 gap-8'  data-aos="fade-up">
+                    <div className='flex flex-col gap-[18px] border border-[#D6D8DE] p-4 rounded-2xl hover:bg-boxafterhero hover:shadow-md hover:border-none'>
+                        <img src="/images/card1-img.webp" alt="card" className='w-[48px] h-[48px]' />
+                        <div className='flex flex-col gap-2'>
+                        <h6 className='text-lg font-bold text-primary'>Multi-Tiered Ecosystem</h6>
+                        <p className='text-base font-normal text-lightblue'>A robust platform offering a combination of daily earnings, bonus structures, and community incentives.</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-[18px] border border-[#D6D8DE] p-4 rounded-2xl  hover:bg-boxafterhero hover:shadow-md hover:border-none'>
+                        <img src="/images/card2-img.webp" alt="card" className='w-[71px] h-[48px]' />
+                        <div className='flex flex-col gap-2'>
+                        <h6 className='text-lg font-bold text-primary'>Luxury and Travel Rewards</h6>
+                        <p className='text-base font-normal text-lightblue'>Unique opportunities for high-performing investors to earn exclusive rewards, including international tours, luxury vehicles, and house funds.</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-[18px] border border-[#D6D8DE] p-4 rounded-2xl  hover:bg-boxafterhero hover:shadow-md hover:border-none'>
+                        <img src="/images/card3-img.webp" alt="card" className='w-[50px] h-[54px]' />
+                        <div className='flex flex-col gap-2'>
+                        <h6 className='text-lg font-bold text-primary'>Innovative Bonus Programs</h6>
+                        <p className='text-base font-normal text-lightblue'>Per-hour mining bonuses and referral-based rewards incentivize platform engagement and network growth.</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-[18px] border border-[#D6D8DE] p-4 rounded-2xl  hover:bg-boxafterhero hover:shadow-md hover:border-none'>
+                        <img src="/images/card4-img.webp" alt="card" className='w-[52px] h-[48px]' />
+                        <div className='flex flex-col gap-2'>
+                        <h6 className='text-lg font-bold text-primary'>CTO Fund</h6>
+                        <p className='text-base font-normal text-lightblue'>A high-value investment option offering up to 20% bonuses, designed to unlock exponential growth for users.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className=" container flex flex-col gap-8 px-4 lg:px-0 py-8"  data-aos="fade-up">
+            <div className=''>
+              <h2 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
+                Frequently Asked Questions{" "}
+                <img
+                  src="/images/questionmark-img.webp"
+                  alt="questionmark"
+                  className="w-[43px] h-[36px]"
+                />
+              </h2>
+              <p className="text-lightblue text-base font-medium">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
+                nulla eu stetur eget.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              {questions.map((item, index) => (
+                <div key={index} className="">
+                  <div className="bg-hovergradient hover:bg-[#EAEFFC] p-4 rounded-2xl cursor-pointer">
+                    <div
+                      className="flex justify-between items-center"
+                      onClick={() => handleToggle(index)}
+                    >
+                      <p className="flex items-center gap-6">
+                        <span className="text-white text-lg font-bold bg-bluegradient rounded-full w-[31px] h-[31px] leading-7 text-center">
+                          {index + 1}
+                        </span>
+                        <span className="text-lg font-medium text-primary">
+                          {item.question}
+                        </span>
+                      </p>
+                      <span
+                        className={`text-lg font-bold text-primary bg-[#CCD5F1] rounded-[8px] ${openIndex === index ? "px-2.5" : "px-2 "
+                          }`}
+                      >
+                        {openIndex === index ? "-" : "+"}
+                      </span>
+                    </div>
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${openIndex === index ? "max-h-[200px]" : "max-h-0"
+                        }`}
+                    >
+                      <div className="text-lg font-medium text-primary p-2 ps-14">
+                        {item.answer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
             </div>
         </div>
     )
