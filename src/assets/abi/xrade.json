@@ -40,7 +40,7 @@
         "inputs": [
             { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
             { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" },
-            { "indexed": false, "internalType": "uint256", "name": "multiplier", "type": "uint256" }
+            { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
         ],
         "name": "HourlyBonus",
         "type": "event"
@@ -185,6 +185,32 @@
         "type": "function"
     },
     {
+        "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }],
+        "name": "getCurrentDeposit",
+        "outputs": [
+            {
+                "components": [
+                    { "internalType": "uint8", "name": "planId", "type": "uint8" },
+                    { "internalType": "uint256", "name": "amount", "type": "uint256" },
+                    { "internalType": "uint256", "name": "start", "type": "uint256" },
+                    { "internalType": "uint256", "name": "end", "type": "uint256" }
+                ],
+                "internalType": "struct Xtrade.Deposit",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }],
+        "name": "getHourlyBonus",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [{ "internalType": "uint8", "name": "jackpot", "type": "uint8" }],
         "name": "getJackpotClaimers",
         "outputs": [{ "internalType": "address[]", "name": "", "type": "address[]" }],
@@ -234,6 +260,13 @@
                 "type": "tuple[]"
             }
         ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }],
+        "name": "getUsersEarning",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
         "type": "function"
     },
@@ -363,7 +396,7 @@
             { "internalType": "uint256", "name": "joinTime", "type": "uint256" },
             { "internalType": "uint256", "name": "totalReferrals", "type": "uint256" },
             { "internalType": "uint256", "name": "startHourlyBonus", "type": "uint256" },
-            { "internalType": "uint256", "name": "lastHourlyBonus", "type": "uint256" },
+            { "internalType": "uint256", "name": "lastBonusClaim", "type": "uint256" },
             { "internalType": "uint256", "name": "lastPayout", "type": "uint256" },
             { "internalType": "uint256", "name": "earnings", "type": "uint256" },
             { "internalType": "bool", "name": "isEligibleFunds", "type": "bool" }
