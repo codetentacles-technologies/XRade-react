@@ -72,6 +72,7 @@ const Dashboard = () => {
   const [totalReferrals, setTotalReferrals] = useState(0);
   const [totalUserInvestedAmount, setTotalUserInvestedAmount] = useState(0);
   const [setTotalUserWithdrawlAmount, setSetTotalUserWithdrawlAmount] = useState(0);
+  const [ROIamount, setROIamount] = useState(0);
 
   const checkTotalUsers = async () => {
     try {
@@ -181,6 +182,21 @@ const Dashboard = () => {
       return false;
     }
   };
+  const getROIamount = async () => {
+    try {
+      debugger
+      const roi = await readContract(configRead, {
+        abi: blockConfig[chainId].XRADE_ABI,
+        address: blockConfig[chainId].XRADE_ADDRESS,
+        functionName: "getROI",
+        args: [address],
+      });
+      setROIamount(formatUnits(roi, 18));
+      return roi;
+    } catch (error) {
+      return false;
+    }
+  };
 
   // Breadcrumbs
   const breadcrumbs = [
@@ -206,6 +222,7 @@ const Dashboard = () => {
     getTotalReferrals();
     getTotalInvestedAmount();
     getTotalWithdrawlAmount()
+    getROIamount()
   }, []);
 
   return (
@@ -258,6 +275,14 @@ const Dashboard = () => {
               <span className="text-4xl transform transition-transform duration-300 group-hover:scale-90">
                 <img src={TotalWithdrawals} alt="Total Withdrawals" />
               </span>
+            </div>
+
+            <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+              <div>
+                <h3 className="text-secondary font-bold text-md">ROI Amount</h3>
+                <p className="text-3xl font-bold text-primary">{ROIamount || 0}</p>
+              </div>
+           
             </div>
           </div>
 

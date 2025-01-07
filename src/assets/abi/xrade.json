@@ -1,8 +1,21 @@
 [
     {
-        "inputs": [{ "internalType": "address", "name": "_usdt", "type": "address" }],
+        "inputs": [
+            { "internalType": "address", "name": "_usdt", "type": "address" },
+            { "internalType": "address", "name": "_owner", "type": "address" }
+        ],
         "stateMutability": "nonpayable",
         "type": "constructor"
+    },
+    {
+        "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }],
+        "name": "OwnableInvalidOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
+        "name": "OwnableUnauthorizedAccount",
+        "type": "error"
     },
     {
         "anonymous": false,
@@ -36,8 +49,7 @@
         "anonymous": false,
         "inputs": [
             { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
-            { "indexed": false, "internalType": "uint8", "name": "jackpot", "type": "uint8" },
-            { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
+            { "indexed": false, "internalType": "uint8", "name": "jackpot", "type": "uint8" }
         ],
         "name": "JackpotClaimed",
         "type": "event"
@@ -59,6 +71,20 @@
             { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }
         ],
         "name": "NewDeposit",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+            },
+            { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }
+        ],
+        "name": "OwnershipTransferred",
         "type": "event"
     },
     {
@@ -114,6 +140,16 @@
         "type": "function"
     },
     {
+        "inputs": [
+            { "internalType": "address", "name": "_to", "type": "address" },
+            { "internalType": "uint256", "name": "_amount", "type": "uint256" }
+        ],
+        "name": "WithdrawFunds",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "name": "baseJackpotRequirements",
         "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
@@ -142,16 +178,23 @@
         "type": "function"
     },
     {
-        "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-        "name": "fundsPercentages",
-        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+        "inputs": [{ "internalType": "address", "name": "user", "type": "address" }],
+        "name": "getClaimedJackpots",
+        "outputs": [{ "internalType": "uint256[]", "name": "", "type": "uint256[]" }],
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "inputs": [{ "internalType": "address", "name": "user", "type": "address" }],
-        "name": "getClaimedJackpots",
-        "outputs": [{ "internalType": "uint256[]", "name": "", "type": "uint256[]" }],
+        "inputs": [{ "internalType": "uint8", "name": "jackpot", "type": "uint8" }],
+        "name": "getJackpotClaimers",
+        "outputs": [{ "internalType": "address[]", "name": "", "type": "address[]" }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }],
+        "name": "getROI",
+        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
         "type": "function"
     },
@@ -184,22 +227,13 @@
                     { "internalType": "uint8", "name": "planId", "type": "uint8" },
                     { "internalType": "uint256", "name": "amount", "type": "uint256" },
                     { "internalType": "uint256", "name": "start", "type": "uint256" },
-                    { "internalType": "uint256", "name": "end", "type": "uint256" },
-                    { "internalType": "uint256", "name": "lastPayout", "type": "uint256" },
-                    { "internalType": "uint256", "name": "totalPayout", "type": "uint256" }
+                    { "internalType": "uint256", "name": "end", "type": "uint256" }
                 ],
                 "internalType": "struct Xtrade.Deposit[]",
                 "name": "",
                 "type": "tuple[]"
             }
         ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [{ "internalType": "address", "name": "_user", "type": "address" }],
-        "name": "getUsersEarning",
-        "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
         "type": "function"
     },
@@ -252,6 +286,16 @@
         "type": "function"
     },
     {
+        "inputs": [
+            { "internalType": "uint8", "name": "", "type": "uint8" },
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "jackpotClaimers",
+        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "name": "lastEarningPayout",
         "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
@@ -278,6 +322,13 @@
     },
     {
         "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
         "name": "totalInvest",
         "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
         "stateMutability": "view",
@@ -298,6 +349,13 @@
         "type": "function"
     },
     {
+        "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
         "name": "users",
         "outputs": [
@@ -306,6 +364,7 @@
             { "internalType": "uint256", "name": "totalReferrals", "type": "uint256" },
             { "internalType": "uint256", "name": "startHourlyBonus", "type": "uint256" },
             { "internalType": "uint256", "name": "lastHourlyBonus", "type": "uint256" },
+            { "internalType": "uint256", "name": "lastPayout", "type": "uint256" },
             { "internalType": "uint256", "name": "earnings", "type": "uint256" },
             { "internalType": "bool", "name": "isEligibleFunds", "type": "bool" }
         ],

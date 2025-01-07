@@ -34,7 +34,7 @@ const Header = () => {
                 <Link to="/Dashboard" className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient">
                   Launch
                 </Link>
-                {/* {<ConnectButton accountStatus={"address"} showBalance={false} />} */}
+                {<ConnectButton accountStatus={"address"} showBalance={false} />}
             </header>
         </div>
     );
