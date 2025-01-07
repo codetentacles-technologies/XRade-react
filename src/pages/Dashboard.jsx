@@ -6,7 +6,7 @@ import TotalWithdrawals from "../../public/images/dashboard/TotalWithdrawals.svg
 import ChallengingIncome from "../../public/images/dashboard/ChallengingIncome.svg";
 // component===============
 import Cardpackage from "../components/Cards";
-import { Search } from "lucide-react";
+import { Check, Search } from "lucide-react";
 import BreadCrumbs from "../components/BreadCrumbs.jsx";
 // icons======
 import { ArrowRight } from "lucide-react";
@@ -19,6 +19,8 @@ import { formatUnits, parseUnits } from "viem";
 import { configRead } from "../utils/RainbowKitConfig.jsx";
 import packagetitle from "../../public/images/dashboard/packagetitle.svg";
 import ChartComponent from "../components/ChartComponent.jsx";
+import { Ellipsis, ChevronRight } from "lucide-react";
+
 
 const packages = [
   {
@@ -226,7 +228,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard">
+    <div className="dashboard text-primary">
       <BreadCrumbs title="Dashboard" breadcrumbs={breadcrumbs} />
       <div className="flex flex-col gap-[94px]">
         <div className="flex flex-col gap-[36px]">
@@ -308,6 +310,186 @@ const Dashboard = () => {
           <Cardpackage packages={packages} />
         </div>
 
+        {/* Activity Overview */}
+        <section data-aos="fade-up">
+          <div className="flex flex-col gap-8">
+            <div>
+              <h5 className="text-2xl font-bold text-primary">Your Activity Overview</h5>
+              <p className="text-normal text-lightblue text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className=" px-6 p-4 border rounded-[24px] flex justify-between items-center hover:shadow-md" >
+                <div className="flex flex-col gap-2">
+                  <p className="text-xl font-semibold text-primary">$50/ 300 Days</p>
+                  <p className="text-xl font-semibold text-primary">(1%)</p>
+                </div>
+                <img src="/images/gift-box.webp" alt="gift-box" className="w-[50px] h-[53px] " />
+              </div>
+              <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md">
+                <p className="text-lg font-medium text-secondary">Your Personal Invitation Link</p>
+                <p className="text-lg font-bold text-primary flex items-center gap-3 break-all">https://howard.codetentaclestechnologies.tech/register?ref=1 <span className="bg-homeabout rounded-[4px] p-1.5"><svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.4 10.3C1.63 10.3 1 9.67 1 8.9V1.9C1 1.13 1.63 0.5 2.4 0.5H9.4C10.17 0.5 10.8 1.13 10.8 1.9M6.6 4.7H13.6C14.3732 4.7 15 5.3268 15 6.1V13.1C15 13.8732 14.3732 14.5 13.6 14.5H6.6C5.8268 14.5 5.2 13.8732 5.2 13.1V6.1C5.2 5.3268 5.8268 4.7 6.6 4.7Z" stroke="#28418D" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                </span></p>
+              </div>
+              <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md" >
+                <p className="text-xl font-semibold text-primary">Withdraw your Income</p>
+                <button className="bg-primary text-white py-2 px-6 rounded-full w-max">Withdraw</button>
+              </div>
+            </div>
+            {/* Header Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 " >
+              <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                <div className="flex flex-col gap-3 w-full">
+                  <h3 className="text-secondary font-bold text-md">Total Income</h3>
+                  <p className="text-3xl font-bold text-primary flex justify-between w-full ">$200 <span className='text-base flex flex-col justify-end font-medium text-lightblue'>In 30 Days</span></p>
+                </div>
+              </div>
+
+              <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-secondary font-bold text-md">Total Referrals</h3>
+                  <p className="text-3xl font-bold text-primary ">50</p>
+                </div>
+              </div>
+
+              <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-secondary font-bold text-md">Income This Month</h3>
+                  <p className="text-3xl font-bold text-primary ">100</p>
+                </div>
+              </div>
+              <div className="group bg-boxgradient shadow-dashboard p-4 my-auto rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-secondary font-bold text-md">My Package</h3>
+                  <p className="text-3xl font-bold text-primary ">$100</p>
+                </div>
+              </div>
+            </div>
+            {/* Challenging Income */}
+            <section className="" data-aos="fade-up">
+              <div className="bg-white rounded-3xl shadow-xl p-6 flex flex-col gap-6">
+                {/* Header */}
+                <div className="flex justify-between items-center ">
+                  <div>
+                    <h2 className="text-2xl font-bold text-primary">Transactions</h2>
+                    <p className="text-sm font-medium text-[#71717A]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                  <a href="#" className="text-secondary text-sm font-semibold flex items-center gap-1 ">
+                    See All Transactions <ChevronRight size={16} />
+                  </a>
+                </div>
+
+                {/* Transactions Table */}
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {[
+                        {
+                          card: "Mastercard **** 6442",
+                          paymentMethod: "Card payment",
+                          amount: "$99.00",
+                          date: "Jan 17, 2022",
+                          status: "Completed",
+                          statusColor: "bg-[#DCFCE7] text-[#14532D",
+                          category: "Dividend",
+                          dotColor: "bg-[#22C55E]",
+                        },
+                        {
+                          card: "Account ****882",
+                          paymentMethod: "Bank payment",
+                          amount: "$249.94",
+                          date: "Jan 17, 2022",
+                          status: "Pending",
+                          statusColor: "bg-[#FEF9C3] text-[#713F12]",
+                          category: "Challenging",
+                          dotColor: "bg-[#FACC15]",
+                        },
+                        {
+                          card: "Account ****882",
+                          paymentMethod: "Bank payment",
+                          amount: "$249.94",
+                          date: "Jan 17, 2022",
+                          status: "Canceled",
+                          statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
+                          category: "Challenging",
+                          dotColor: "bg-[#EF4444] ",
+                        },
+                        {
+                          card: "Account ****882",
+                          paymentMethod: "Bank payment",
+                          amount: "$249.94",
+                          date: "Jan 17, 2022",
+                          status: "Completed",
+                          statusColor: "bg-[#DCFCE7] text-[#14532D",
+                          category: "Challenging",
+                          dotColor: "bg-[#22C55E]",
+                        },
+                        {
+                          card: "Account ****882",
+                          paymentMethod: "Card payment",
+                          amount: "$249.94",
+                          date: "Jan 17, 2022",
+                          status: "Pending",
+                          statusColor: "bg-[#FEF9C3] text-[#713F12]",
+                          category: "Challenging",
+                          dotColor: "bg-[#FACC15]",
+                        },
+                        {
+                          card: "Amex card **** 5666",
+                          paymentMethod: "Card payment",
+                          amount: "$199.24",
+                          date: "Jan 17, 2022",
+                          status: "Canceled",
+                          statusColor: "bg-[#FEE2E2] text-[#7F1D1D]",
+                          category: "CTO Fund",
+                          dotColor: "bg-[#EF4444] ",
+                        },
+                      ].map((transaction, index) => (
+                        <tr key={index}>
+                          <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
+                            {transaction.card} <span className="text-secondary text-xs font-medium"> {transaction.paymentMethod}</span>
+                          </td>
+                          <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
+                            {transaction.amount} <span className="text-secondary text-xs font-medium "> <br /> {transaction.date}</span>
+                          </td>
+                          <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
+                            <span className="flex flex-col items-center">
+                              {/* Dot */}
+
+                              {/* Status */}
+                              <span
+                                className={`px-3 py-1 rounded-full text-xs font-medium ${transaction.statusColor}`}
+                              >
+                                <span className={`w-2 h-2 rounded-full inline-block mr-1 ${transaction.dotColor}`}></span>
+                                {transaction.status}
+                              </span>
+                            </span>
+                          </td>
+
+                          <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
+                            {transaction.category}
+                          </td>
+                          <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
+                            <button className="text-secondary hover:text-gray-600">
+                              <Ellipsis size={32} />
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+
+
         {/* Recent Investment */}
         {/* <div className="mb-10" data-aos="fade-up">
         <div className=" flex items-center justify-between mb-5 flex-col lg:flex-row">
@@ -369,9 +551,15 @@ const Dashboard = () => {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-3">
               <div className="flex justify-between">
-                <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
-                  Dividend Income
-                </h4>
+                <div className="flex items-center justify-between flex-col xl:flex-row gap-4 w-full">
+                  <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
+                    Dividend Income
+                  </h4>
+                  <div className="flex flex-col md:flex-row items-center gap-6">
+                    <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>14hr : 30m : 26 s time left</p>
+                    <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>1 Referral Left</p>
+                  </div>
+                </div>
               </div>
               <p className="text-secondary text-base font-normal">
                 Choose from a range of investment packages that offer attractive
@@ -407,69 +595,20 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* Level Income */}
-        <section data-aos="fade-up" className="container">
-          <div className="flex flex-col gap-8">
-            <h4 className="text-primary text-4xl font-bold flex items-center justify-center gap-3 w-full">
-              Level Income{" "}
-              <img
-                src="/images/level-income-img.png"
-                alt="setting"
-                className="w-[37px] h-[36px]"
-              />
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 justify-center gap-6">
-              <div className="p-3 bg-white rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 1</h5>
-                <p className="font-bold text-md text-[#031641]">0.25%</p>
-              </div>
-              <div className="p-3 bg-[#F4F7FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 2</h5>
-                <p className="font-bold text-md text-[#031641]">0.25%</p>
-              </div>
-              <div className="p-3 bg-[#EDF1FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 3</h5>
-                <p className="font-bold text-md text-[#031641]">0.25%</p>
-              </div>
-              <div className="p-3 bg-[#E7EBFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 4</h5>
-                <p className="font-bold text-md text-[#031641]">4%</p>
-              </div>
-              <div className="p-3 bg-[#DEE5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 5</h5>
-                <p className="font-bold text-md text-[#031641]">4%</p>
-              </div>
-              <div className="p-3 bg-[#D9E1FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 6</h5>
-                <p className="font-bold text-md text-[#031641]">3%</p>
-              </div>
-              <div className="p-3 bg-[#D3DDFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 7</h5>
-                <p className="font-bold text-md text-[#031641]">2%</p>
-              </div>
-              <div className="p-3 bg-[#CAD5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 8</h5>
-                <p className="font-bold text-md text-[#031641]">1%</p>
-              </div>
-              <div className="p-3 bg-[#B8C7FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 9</h5>
-                <p className="font-bold text-md text-[#031641]">6%</p>
-              </div>
-              <div className="p-3 bg-[#B1C2FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
-                <h5 className="font-bold text-lg text-secondary">LEVEL 10</h5>
-                <p className="font-bold text-md text-[#031641]">5%</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
 
         {/* Network section */}
         <section data-aos="fade-up" className="container">
           <div className="flex flex-col gap-8">
-            <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold">
-              Per-Hour Mining Bonus: Engaging  Your Network
-            </h4>
+            <div className="flex items-center justify-between flex-col xl:flex-row gap-4">
+              <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold">
+                Per-Hour Mining Bonus: Engaging  Your Network
+              </h4>
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>20 Days Left to Achieve</p>
+                <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>6 Referral Left</p>
+              </div>
+            </div>
+
             <div className="flex flex-col md:flex-row  gap-6">
               {/* Card 1 */}
               <div className="text-center w-full lg:w-[25%] flex flex-col items-center justify-center gap-8">
@@ -521,9 +660,71 @@ const Dashboard = () => {
           </div>
         </section>
 
+        {/* Level Income */}
+        <section data-aos="fade-up" className="container">
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
+              <h4 className="text-primary text-4xl font-bold flex items-center  gap-3 w-full">
+                Level Income{" "}
+                <img
+                  src="/images/level-income-img.png"
+                  alt="setting"
+                  className="w-[37px] h-[36px]"
+                />
+              </h4>
+              <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4 w-max text-nowrap"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>20 Days Left to Achieve</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 justify-center gap-6">
+              <div className=" bg-[#EFFFEF] rounded-2xl text-grey-darker border-2 border-[#D0F9D0] w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-2">
+                <h5 className="font-semibold text-base text-[#149514] flex items-center "><Check size={20} /> LEVEL 1</h5>
+                <p className="font-bold text-md text-[#031641]">0.25%</p>
+              </div>
+              <div className="p-3 bg-[#F4F7FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 2</h5>
+                <p className="font-bold text-md text-[#031641]">0.25%</p>
+              </div>
+              <div className="p-3 bg-[#EDF1FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 3</h5>
+                <p className="font-bold text-md text-[#031641]">0.25%</p>
+              </div>
+              <div className="p-3 bg-[#E7EBFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 4</h5>
+                <p className="font-bold text-md text-[#031641]">4%</p>
+              </div>
+              <div className="p-3 bg-[#DEE5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 5</h5>
+                <p className="font-bold text-md text-[#031641]">4%</p>
+              </div>
+              <div className="p-3 bg-[#D9E1FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 6</h5>
+                <p className="font-bold text-md text-[#031641]">3%</p>
+              </div>
+              <div className="p-3 bg-[#D3DDFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 7</h5>
+                <p className="font-bold text-md text-[#031641]">2%</p>
+              </div>
+              <div className="p-3 bg-[#CAD5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 8</h5>
+                <p className="font-bold text-md text-[#031641]">1%</p>
+              </div>
+              <div className="p-3 bg-[#B8C7FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 9</h5>
+                <p className="font-bold text-md text-[#031641]">6%</p>
+              </div>
+              <div className="p-3 bg-[#B1C2FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
+                <h5 className="font-bold text-lg text-secondary">LEVEL 10</h5>
+                <p className="font-bold text-md text-[#031641]">5%</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* win trips */}
         <div className="" data-aos="fade-up">
+          <div className="flex flex-col gap-4 md:flex-row items-center justify-between w-full mb-6">
           <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
+          <button className="bg-primary text-white text-base font-semibold rounded-full py-2 px-8">View Details</button>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
               <div className="relative overflow-hidden">
@@ -538,12 +739,9 @@ const Dashboard = () => {
                 <p className="text-lightblue text-base font-medium">
                   $10,000 Direct Business within 45 days
                 </p>
-                {/* <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
-                Complete the Task{" "}
-                <span>
-                  <ArrowRight className="arrow-icon" size={24} />
-                </span>
-              </button> */}
+                <button className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full ">
+                Completed
+              </button>
               </div>
             </div>
 
@@ -560,6 +758,7 @@ const Dashboard = () => {
                 <p className="text-lightblue text-base font-medium">
                   $10,000 Direct Business within 45 days
                 </p>
+                <p className="bg-homeabout  mt-3  text-sm font-bold text-primary rounded-full py-2 px-4 w-max text-nowrap"><span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>20 Days Left to Achieve</p>
                 {/* <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
                 Complete the Task{" "}
                 <span>

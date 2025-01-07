@@ -11,6 +11,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { configRead, queryClient } from "./utils/RainbowKitConfig";
 import { Toaster } from "react-hot-toast";
+import About from "./pages/About";
 
 function App() {
     return (
@@ -41,6 +42,18 @@ function App() {
                                                 <Header />
                                                 <div className="container py-[7rem]">
                                                     <Dashboard />
+                                                </div>
+                                                <Footer />
+                                            </>
+                                        }
+                                    />
+                                     <Route
+                                        path="/about"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="py-[4rem]">
+                                                    <About />
                                                 </div>
                                                 <Footer />
                                             </>

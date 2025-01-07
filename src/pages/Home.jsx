@@ -826,9 +826,9 @@ try {
               Pioneering AI in AI Trading
             </p>
           </div>
-          <button className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
+          <Link to="/about" className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
             View All <ArrowRight className="arrow-icon" size={24} />
-          </button>
+          </Link>
         </div>
         <p className="text-lightblue font-normal my-4">
           Binance Trading is a trailblazer in the world of arbitrage trading,

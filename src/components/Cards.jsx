@@ -122,7 +122,7 @@ const PackageCards = ({ packages }) => {
     };
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {packages.map((pkg, index) => (
                 <div
                     key={index}

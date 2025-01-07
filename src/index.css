@@ -247,3 +247,17 @@ margin: auto !important;
   background-size: contain;
   background-position: center;
 }
+.go2072408551{
+  background-color: #28418D !important;
+  border: 1px solid #28418D !important;
+}
+.about-bg {
+  background: linear-gradient(92.78deg, rgba(55, 62, 84, 0.5) 1.14%, rgba(18, 33, 78, 0.78) 25.13%, rgba(17, 31, 75, 0.79) 60.13%, rgba(55, 62, 84, 0.5) 99.09%), url(../public/images/about-bg.webp);
+  background-size: cover;
+  background-position: center;
+}
+.advantage-bg {
+  background: url(../public/images/advantage-bg.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
