@@ -75,7 +75,7 @@ const About = () => {
 
   return (
     <div>
-      <div className='about-bg text-white py-6 xl:px-[70px] 2xl:px-[400px] px-4 '>
+      <div className='about-bg text-white py-6 xl:px-[70px] 2xl:px-[300px] px-4 '>
         <BreadCrumbs title="About Us" breadcrumbs={breadcrumbs} />
         <div className='flex flex-col items-center justify-center gap-8 pb-[134px]' data-aos="fade-up">
           <div className='flex flex-col items-center justify-center gap-3'>
@@ -181,7 +181,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className=" container flex flex-col gap-8 px-4 lg:px-0 py-8" data-aos="fade-up">
+        <div className=" container flex flex-col gap-8 px-4  py-8" data-aos="fade-up">
           <div className=''>
             <h2 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3">
               Frequently Asked Questions{" "}
@@ -205,7 +205,7 @@ const About = () => {
                     onClick={() => handleToggle(index)}
                   >
                     <p className="flex items-center gap-6">
-                      <span className="text-white text-lg font-bold bg-bluegradient rounded-full w-[31px] h-[31px] leading-7 text-center">
+                      <span className="text-white  font-bold bg-bluegradient rounded-full w-[31px] h-[31px] leading-7 text-center">
                         {index + 1}
                       </span>
                       <span className="text-lg font-medium text-primary">

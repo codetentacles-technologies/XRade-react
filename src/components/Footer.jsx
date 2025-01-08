@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-sm text-primary font-normal">
-            @XTrade 2024. All right reserved
+            @AITrade 2024. All right reserved
           </p>
         </div>
       </div>

@@ -406,7 +406,7 @@ const Dashboard = () => {
                             </div>
                         )}
                         {/* Header Section */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 " data-aos="fade-up">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 " data-aos="fade-up">
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
                                 <div>
                                     <h3 className="text-secondary font-bold text-md">
@@ -954,9 +954,9 @@ const Dashboard = () => {
 
                     {/* win trips */}
                     <div className="" data-aos="fade-up">
-                        <div className="flex flex-col gap-4 md:flex-row items-center justify-between w-full mb-6">
+                        <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full mb-6">
                             <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
-                            <button className="bg-primary text-white text-base font-semibold rounded-full py-2 px-8">
+                            <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
                                 View Details
                             </button>
                         </div>
