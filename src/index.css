@@ -264,3 +264,6 @@ margin: auto !important;
 .h-page{
   min-height: calc(100vh - 471px);
 }
+.h-scroll{
+  min-height: calc(100vh - 410px);
+}
