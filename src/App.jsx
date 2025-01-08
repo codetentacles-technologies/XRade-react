@@ -39,7 +39,19 @@ function App() {
                                         }
                                     />
                                     <Route
-                                        path="/Dashboard"
+                                        path="/dashboard"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="container py-[7rem]">
+                                                    <Dashboard />
+                                                </div>
+                                                <Footer />
+                                            </>
+                                        }
+                                    />{" "}
+                                    <Route
+                                        path="/register/:referral"
                                         element={
                                             <>
                                                 <Header />
@@ -71,12 +83,12 @@ function App() {
                                                     <EditPassportDetails />
                                                 </div>
                                                 <div className="xl:fixed bottom-0 w-full">
-                                                <Footer />
+                                                    <Footer />
                                                 </div>
                                             </>
                                         }
                                     />
-                                     <Route
+                                    <Route
                                         path="/PassportDetails"
                                         element={
                                             <>
@@ -85,12 +97,12 @@ function App() {
                                                     <PassportDetails />
                                                 </div>
                                                 <div className="lg:fixed bottom-0 w-full">
-                                                <Footer />
+                                                    <Footer />
                                                 </div>
                                             </>
                                         }
                                     />
-                                     <Route
+                                    <Route
                                         path="/Voucher"
                                         element={
                                             <>
@@ -99,12 +111,11 @@ function App() {
                                                     <Voucher />
                                                 </div>
                                                 <div className=" w-full">
-                                                <Footer />
+                                                    <Footer />
                                                 </div>
                                             </>
                                         }
                                     />
-                                 
                                     <Route path="*" element={<PageNotFound />} />
                                 </Routes>
                             </RainbowKitProvider>
