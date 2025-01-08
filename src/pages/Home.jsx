@@ -172,9 +172,9 @@ try {
               </p>
             </BoxReveal>
           </div>
-          <div className="flex flex-col xl:flex-row items-center gap-6" data-aos="fade-up">
+          <div className="flex flex-col lg:flex-row items-center gap-6" data-aos="fade-up">
             {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
-              <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full xl:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
+              <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full lg:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
                 Get Started Now{" "}
                 <ArrowRight className="arrow-icon" size={24} />
               </button>
@@ -182,7 +182,7 @@ try {
 
             {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
               <Link to="/PageNotFound" className="no-underline">
-                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full xl:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
+                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full lg:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
                   Learn More About Our Features
                 </button>
               </Link>
@@ -840,7 +840,7 @@ try {
         <h4 className="text-primary text-2xl font-bold my-5">
           Key Features
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {aboutus.map((item, index) => (
             <div key={index} className="flex flex-col h-full">
               <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-600 ease-in-out group hover:translate-y-[-1px] hover:bg-hoverbluegradient  ">

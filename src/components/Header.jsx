@@ -81,7 +81,7 @@ const Header = () => {
                     {/* Conditionally render the box */}
                     {isBoxVisible && (
                         <div
-                            className="absolute top-16 right-28 xl:right-40 2xl:right-[500px] bg-bluegradient shadow-lg rounded-2xl text-white"
+                            className="absolute top-16 right-10 md:right-28 lg:right-24 xl:right-40 2xl:right-[400px] bg-bluegradient shadow-lg rounded-2xl text-white"
                             ref={boxRef}
                         >
                             <div className="py-4 px-6 border-b border-[#394B74]">
