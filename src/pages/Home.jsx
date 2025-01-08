@@ -210,7 +210,7 @@ try {
       {/* Card Section */}
       <section className="container" data-aos="fade-up">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img src="/images/network-growth-img.webp" alt="" className="hover:scale-105 transition duration-300 ease-in-out" />
@@ -227,7 +227,7 @@ try {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -248,7 +248,7 @@ try {
               your own financial ecosystem!
             </p>
           </div>
-          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero hover:shadow">
+          <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
             <div className="flex flex-col justify-center items-center gap-4">
               <div className="w-[70px] h-[70px]">
                 <img
@@ -437,7 +437,7 @@ try {
                 reach and community
               </p>
             </div>
-            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-subtext text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-primary hover:text-white transition duration-300 ease-in-out">
+            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-subtext text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-white hover:text-subtext transition duration-300 ease-in-out">
               Explore All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
@@ -1290,12 +1290,7 @@ try {
                   </div>
                 </div>
               </div>
-              <div>
-                <label className="flex items-center gap-2 text-base font-medium text-secondary">
-                  <input type="checkbox" className="w-[18px] h-[18px] " />I
-                  agree to all the above terms and conditions
-                </label>
-              </div>
+              
             </div>
           </div>
         </section>
