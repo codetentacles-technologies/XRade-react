@@ -1,7 +1,17 @@
 import { X } from 'lucide-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const WithdrawPopup = ({ handleClose }) => {
+    useEffect(() => {
+        // Disable scrolling when the modal is open
+        document.body.style.overflow = 'hidden';
+
+        // Cleanup function to restore scrolling
+        return () => {
+            document.body.style.overflow = 'unset'; 
+        };
+    }, []);
+    
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
     <div className="bg-white rounded-3xl shadow-lg  w-full md:w-[80%] lg:w-2/3 2xl:w-1/2 p-8 relative flex flex-col gap-4">
