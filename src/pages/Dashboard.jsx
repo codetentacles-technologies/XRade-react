@@ -28,6 +28,7 @@ import toast from "react-hot-toast";
 import AddPassportDetails from "./AddPassportDetails.jsx";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useParams } from "react-router-dom";
+import TradingViewWidget from "../components/TradingViewWidget.jsx";
 
 const packages = [
     {
@@ -406,7 +407,10 @@ const Dashboard = () => {
                             </div>
                         )}
                         {/* Header Section */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 " data-aos="fade-up">
+                        <div
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 "
+                            data-aos="fade-up"
+                        >
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
                                 <div>
                                     <h3 className="text-secondary font-bold text-md">
@@ -448,25 +452,12 @@ const Dashboard = () => {
                                     <img src={TotalWithdrawals} alt="Total Withdrawals" />
                                 </span>
                             </div>
-
-                            <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
-                                <div>
-                                    <h3 className="text-secondary font-bold text-md">ROI Amount</h3>
-                                    <p className="text-3xl font-bold text-primary">
-                                        {Number(ROIamount).toFixed(2) || 0}
-                                    </p>
-                                </div>
-                            </div>
                         </div>
 
                         {/* graph section */}
                         <div className="grid grid-cols-1 lg:grid-cols-3  gap-8" data-aos="fade-up">
                             <div className="xl:col-span-2">
-                                <img
-                                    src="/images/graph-img.webp"
-                                    alt="graph"
-                                    className="rounded-3xl shadow-md hover:shadow-2xl"
-                                />
+                                <TradingViewWidget />
                             </div>
                             <div className="flex flex-col gap-8 lg:flex-row xl:flex-col">
                                 <img
@@ -620,6 +611,16 @@ const Dashboard = () => {
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
                                             ${Number(claimAmount).toFixed(2) || 0}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
+                                    <div>
+                                        <h3 className="text-secondary font-bold text-md">
+                                            ROI Amount
+                                        </h3>
+                                        <p className="text-3xl font-bold text-primary">
+                                            {Number(ROIamount).toFixed(2) || 0}
                                         </p>
                                     </div>
                                 </div>

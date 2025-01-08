@@ -68,7 +68,7 @@ const PackageCards = ({ packages, getROIamount, referral }) => {
                 toast.error("Please connect your wallet");
                 return;
             }
-
+debugger
             if (!isAddress(referrerAddress)) {
                 referrerAddress = blockConfig[chainId].ADMIN_ADDRESS;
             }
