@@ -1076,13 +1076,14 @@ try {
           <div className="flex flex-col items-center justify-center gap-[40px] md:gap-[93px]">
             <div className="relative w-full max-w-4xl">
               {/* Timeline Line */}
-              <div className="absolute md:left-1/2 transform md:-translate-x-1/2 w-[2px]  bg-[#D0D8EF] h-full"></div>
+              <div className="absolute md:left-1/2 transform md:-translate-x-1/2 w-[1px]  bg-[#D0D8EF] h-full"></div>
 
               {steps.map((step, index) => (
                 <div
                   key={index}
                   className={`flex flex-col md:flex-row items-center w-full mb-10 last:mb-0 ps-4 md:ps-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
                 >
+                  
                   {/* Title */}
                   <div className={`w-full md:w-1/2 text-left ps-4 md:ps-8 ${index % 2 === 0 ? '' : 'md:text-right pe-4 md:pe-8'}`}>
                     <h3 className="text-lg md:text-2xl font-bold text-primary">
