@@ -14,7 +14,7 @@ const PassportDetails = () => {
       {/* Breadcrumb and Title */}
 
       <BreadCrumbs title="Passport Details" breadcrumbs={breadcrumbs} />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 ">
         {/* Edit Button */}
         <div className="flex justify-end">
           <Link to="/EditPassportDetails" className="flex items-center gap-2 bg-primary text-white font-medium px-8 py-2 rounded-full ">

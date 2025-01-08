@@ -12,13 +12,13 @@ const EditPassportDetails = () => {
 ];
 
   return (
-    <div className='text-primary'>
+    <div className='text-primary '>
        <BreadCrumbs title="Passport Details" breadcrumbs={breadcrumbs} />
        <div>
       
 
         {/* Form Fields */}
-        <form className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4 ">
           {/* Name Input */}
           <div className='flex flex-col gap-3'>
             <label htmlFor="name" className="block text-secondary text-base font-semibold ">
@@ -33,49 +33,49 @@ const EditPassportDetails = () => {
           </div>
 
           {/* File Uploads */}
-          <div className="flex gap-4">
-            {/* Scanned Passport Copy */}
-            <div className="w-1/2 flex flex-col gap-3">
-              <label htmlFor="passport" className="block text-secondary text-base font-semibold ">
-                Scanned Passport Copy
-              </label>
-              <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
-                <input
-                  type="file"
-                  id="passport"
-                  className="hidden"
-                />
-                <label
-                  htmlFor="passport"
-                  className="cursor-pointer flex items-center justify-center text-[#989DAB] gap-2.5 h-16"
-                >
-                  <CloudUpload />
-                  Upload file
-                </label>
-              </div>
-            </div>
-
-            {/* Scanned Identity Copy */}
-            <div className="w-1/2 flex flex-col gap-3">
-              <label htmlFor="identity" className="block text-secondary text-base font-semibold ">
-                Scanned Identity Copy (Aadhar or Pan Card)
-              </label>
-              <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
-                <input
-                  type="file"
-                  id="identity"
-                  className="hidden"
-                />
-                <label
-                  htmlFor="passport"
-                  className="cursor-pointer flex items-center justify-center text-[#989DAB] gap-2.5 h-16"
-                >
-                  <CloudUpload />
-                  Upload file
-                </label>
-              </div>
-            </div>
-          </div>
+         <div className="flex flex-col xl:flex-row gap-4">
+                   {/* Scanned Passport Copy */}
+                   <div className="w-full xl:w-1/2 flex flex-col gap-3">
+                     <label htmlFor="passport" className="block text-secondary text-base font-semibold ">
+                       Scanned Passport Copy
+                     </label>
+                     <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
+                       <input
+                         type="file"
+                         id="passport"
+                         className="hidden"
+                       />
+                       <label
+                         htmlFor="passport"
+                         className="cursor-pointer flex items-center justify-center text-[#989DAB] gap-2.5 h-16"
+                       >
+                         <CloudUpload />
+                         Upload file
+                       </label>
+                     </div>
+                   </div>
+       
+                   {/* Scanned Identity Copy */}
+                   <div className="w-full xl:w-1/2 flex flex-col gap-3">
+                     <label htmlFor="identity" className="block text-secondary text-base font-semibold ">
+                       Scanned Identity Copy (Aadhar or Pan Card)
+                     </label>
+                     <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
+                       <input
+                         type="file"
+                         id="identity"
+                         className="hidden"
+                       />
+                       <label
+                         htmlFor="passport"
+                         className="cursor-pointer flex items-center justify-center text-[#989DAB] gap-2.5 h-16"
+                       >
+                         <CloudUpload />
+                         Upload file
+                       </label>
+                     </div>
+                   </div>
+                 </div>
 
           {/* Submit Button */}
           <div className="text-center mt-4">
