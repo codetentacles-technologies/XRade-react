@@ -202,7 +202,7 @@ try {
             <p className="text-sm font-normal text-lightblue" >Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
             </div>
           </div>
-          <div className="xl:col-span-2 w-full m-auto hover:rounded-3xl  hover:shadow-xl transition-all duration-300 ease-in-out">
+          <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
             {/* <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" /> */}
             <TradingViewWidget/>
           </div>
@@ -439,7 +439,7 @@ try {
                 reach and community
               </p>
             </div>
-            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-subtext text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-white hover:text-subtext transition duration-300 ease-in-out">
+            <button className="hover-arrow-btn flex gap-2 items-center justify-start text-center bg-subtext text-white text-lg font-bold rounded-full py-3 px-6 w-max hover:bg-white hover:text-primary transition duration-300 ease-in-out">
               Explore All <ArrowRight className="arrow-icon" size={24} />
             </button>
           </div>
@@ -453,7 +453,7 @@ try {
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-4 border border-[#CFD3E2] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
+              <div className="flex items-center gap-4 border border-[#858C9F] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
                 <div className="w-max">
                   <p className="bg-bluegradient text-white text-lg font-bold w-[31px] h-[31px] rounded-full text-center leading-7">
                     1
@@ -468,7 +468,7 @@ try {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 border border-[#CFD3E2] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
+              <div className="flex items-center gap-4 border border-[#858C9F] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
                 <div className="w-max">
                   <p className="bg-bluegradient text-white text-lg font-bold w-[31px] h-[31px] rounded-full text-center leading-7">
                     2
@@ -483,7 +483,7 @@ try {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 border border-[#CFD3E2] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
+              <div className="flex items-center gap-4 border border-[#858C9F] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
                 <div className="w-max">
                   <p className="bg-bluegradient text-white text-lg font-bold w-[31px] h-[31px] rounded-full text-center leading-7">
                     3
@@ -845,7 +845,7 @@ try {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {aboutus.map((item, index) => (
             <div key={index} className="flex flex-col h-full">
-              <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-600 ease-in-out group hover:translate-y-[-1px] hover:bg-hoverbluegradient  ">
+              <div className="bg-bluegradient p-[24px] rounded-[16px] flex flex-col h-full transform transition-all group duration-600 ease-in-out group hover:bg-hoverbluegradient  ">
                 <h1 className="text-white font-bold text-lg pb-1 ">
                   {item.title}
                 </h1>

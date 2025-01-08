@@ -408,7 +408,7 @@ const Dashboard = () => {
                         )}
                         {/* Header Section */}
                         <div
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 "
+                            className="grid grid-cols-1 md:grid-cols-3 gap-6 "
                             data-aos="fade-up"
                         >
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
@@ -455,11 +455,11 @@ const Dashboard = () => {
                         </div>
 
                         {/* graph section */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3  gap-8" data-aos="fade-up">
-                            <div className="xl:col-span-2">
+                        <div className="grid grid-cols-1 xl:grid-cols-3  gap-8" data-aos="fade-up">
+                        <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
                                 <TradingViewWidget />
                             </div>
-                            <div className="flex flex-col gap-8 lg:flex-row xl:flex-col">
+                            <div className="flex flex-col gap-8">
                                 <img
                                     src="/images/active-graph.webp"
                                     alt="active-graph"
@@ -521,7 +521,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 {isConnected && (
-                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md">
+                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md hover:border-white">
                                         <p className="text-lg font-medium text-secondary">
                                             Your Personal Invitation Link
                                         </p>
@@ -557,7 +557,7 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                 )}
-                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md">
+                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
                                     <p className="text-xl font-semibold text-primary">
                                         Withdraw your Income
                                     </p>
@@ -571,7 +571,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Header Section */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 ">
                                 <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3 w-full">
                                         <h3 className="text-secondary font-bold text-md">
