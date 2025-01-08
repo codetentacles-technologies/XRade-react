@@ -369,7 +369,7 @@ const Dashboard = () => {
                                 and rewards.
                             </p>
                         </div>
-                        {isConnected && (
+                        {/* {isConnected && (
                             <div
                                 className="p-4 px-6 border rounded-[24px] lg:w-1/2"
                                 data-aos="fade-up"
@@ -405,7 +405,7 @@ const Dashboard = () => {
                                     </span>
                                 </p>
                             </div>
-                        )}
+                        )} */}
                         {/* Header Section */}
                         <div
                             className="grid grid-cols-1 md:grid-cols-3 gap-6 "
@@ -501,7 +501,7 @@ const Dashboard = () => {
                                     egestas duis
                                 </p>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                                 {isAnyActivePlan && (
                                     <div className=" px-6 p-4 border rounded-[24px] flex justify-between items-center hover:shadow-md">
                                         <div className="flex flex-col gap-2">
@@ -557,7 +557,7 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                 )}
-                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
+                                <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
                                     <p className="text-xl font-semibold text-primary">
                                         Withdraw your Income
                                     </p>

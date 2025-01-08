@@ -381,3 +381,26 @@ background: #2850CC !important;
   100% { transform: rotate(360deg); }
 }
 
+/* For Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  width: 2px !important; /* Change width to your preference */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Round the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
+}
