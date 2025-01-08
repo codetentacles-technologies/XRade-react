@@ -2,11 +2,20 @@ import { ArrowLeft, ChevronRight } from "lucide-react";
 import React from "react";
 
 const BreadCrumbs = ({ title, breadcrumbs }) => {
+  const handleBackClick = () => {
+    window.history.back(); // Use the native method to go back
+  };
+
   return (
     <div className="relative mb-[2%]">
       <div className="lg:flex justify-between items-center">
         <h1 className="text-2xl font-bold mb-2 lg:mb-0 transition-all flex items-center gap-3">
-          <ArrowLeft className="left-arrow-icon font-bold" size={28} /> {title}
+          <ArrowLeft
+            className="left-arrow-icon font-bold cursor-pointer"
+            size={28}
+            onClick={handleBackClick}
+          />
+          {title}
         </h1>
 
         <nav className="breadcrumbs">
