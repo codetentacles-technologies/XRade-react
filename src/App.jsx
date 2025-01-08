@@ -12,6 +12,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { configRead, queryClient } from "./utils/RainbowKitConfig";
 import { Toaster } from "react-hot-toast";
 import About from "./pages/About";
+import EditPassportDetails from "./pages/EditPassportDetails";
+import PassportDetails from "./pages/PassportDetails";
 import Voucher from "./pages/Voucher";
 
 function App() {
@@ -48,19 +50,61 @@ function App() {
                                             </>
                                         }
                                     />
-                                     <Route
+                                    <Route
                                         path="/about"
                                         element={
                                             <>
                                                 <Header />
-                                                <div className="py-[7rem]">
-                                                    <Voucher />
+                                                <div className="py-[4rem]">
+                                                    <About />
                                                 </div>
                                                 <Footer />
                                             </>
                                         }
                                     />
-
+                                    <Route
+                                        path="/EditPassportDetails"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="container py-[7rem]">
+                                                    <EditPassportDetails />
+                                                </div>
+                                                <div className="fixed bottom-0 w-full">
+                                                <Footer />
+                                                </div>
+                                            </>
+                                        }
+                                    />
+                                     <Route
+                                        path="/PassportDetails"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="container py-[7rem]">
+                                                    <PassportDetails />
+                                                </div>
+                                                <div className="fixed bottom-0 w-full">
+                                                <Footer />
+                                                </div>
+                                            </>
+                                        }
+                                    />
+                                     <Route
+                                        path="/Voucher"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="container py-[7rem]">
+                                                    <Voucher />
+                                                </div>
+                                                <div className=" w-full">
+                                                <Footer />
+                                                </div>
+                                            </>
+                                        }
+                                    />
+                                 
                                     <Route path="*" element={<PageNotFound />} />
                                 </Routes>
                             </RainbowKitProvider>
