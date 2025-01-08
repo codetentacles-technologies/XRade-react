@@ -70,7 +70,7 @@ function App() {
                                                 <div className="container py-[7rem]">
                                                     <EditPassportDetails />
                                                 </div>
-                                                <div className="fixed bottom-0 w-full">
+                                                <div className="xl:fixed bottom-0 w-full">
                                                 <Footer />
                                                 </div>
                                             </>
@@ -84,7 +84,7 @@ function App() {
                                                 <div className="container py-[7rem]">
                                                     <PassportDetails />
                                                 </div>
-                                                <div className="fixed bottom-0 w-full">
+                                                <div className="lg:fixed bottom-0 w-full">
                                                 <Footer />
                                                 </div>
                                             </>

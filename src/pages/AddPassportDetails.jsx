@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const AddPassportDetails = ({ handleClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-3xl shadow-lg  w-full md:w-[80%] lg:w-2/3  p-8 relative flex flex-col gap-4">
+      <div className="bg-white rounded-3xl shadow-lg  w-full md:w-[80%] lg:w-2/3 2xl:w-1/2 p-8 relative flex flex-col gap-4">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -39,9 +39,9 @@ const AddPassportDetails = ({ handleClose }) => {
           </div>
 
           {/* File Uploads */}
-          <div className="flex gap-4">
+          <div className="flex flex-col xl:flex-row gap-4">
             {/* Scanned Passport Copy */}
-            <div className="w-1/2 flex flex-col gap-3">
+            <div className="w-full xl:w-1/2 flex flex-col gap-3">
               <label htmlFor="passport" className="block text-secondary text-base font-semibold ">
                 Scanned Passport Copy
               </label>
@@ -62,7 +62,7 @@ const AddPassportDetails = ({ handleClose }) => {
             </div>
 
             {/* Scanned Identity Copy */}
-            <div className="w-1/2 flex flex-col gap-3">
+            <div className="w-full xl:w-1/2 flex flex-col gap-3">
               <label htmlFor="identity" className="block text-secondary text-base font-semibold ">
                 Scanned Identity Copy (Aadhar or Pan Card)
               </label>
