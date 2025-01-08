@@ -12,7 +12,8 @@ import BreadCrumbs from "../components/BreadCrumbs.jsx";
 import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useAccount, useReadContract, useWriteContract } from "wagmi";
+import { useAccount, useConnect, useReadContract, useWriteContract } from "wagmi";
+
 import { blockConfig } from "../config/BlockChainConfig.jsx";
 import { readContract } from "@wagmi/core";
 import { formatUnits, parseUnits } from "viem";
@@ -25,6 +26,7 @@ import useWaitForTransaction from "../hooks/useWaitForTransaction.jsx";
 import XRADE_ABI from "../assets/abi/xrade.json";
 import toast from "react-hot-toast";
 import AddPassportDetails from "./AddPassportDetails.jsx";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 const packages = [
     {
@@ -90,6 +92,7 @@ const Dashboard = () => {
 
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
+    const { openConnectModal } = useConnectModal();
 
     const checkTotalUsers = async () => {
         try {
@@ -315,7 +318,7 @@ const Dashboard = () => {
         getTotalWithdrawlAmount();
         getClaimAmount();
         getCurrentDeposits();
-    }, []);
+    }, [isConnected]);
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -326,6 +329,10 @@ const Dashboard = () => {
     const handleClosePopup = () => {
         setIsPopupOpen(false);
     };
+
+    useEffect(() => {
+        if (!isConnected) openConnectModal();
+    }, [isConnected]);
 
     return (
         <>
