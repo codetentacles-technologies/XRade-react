@@ -308,7 +308,6 @@ const Dashboard = () => {
         getCurrentDeposits();
     }, []);
 
-
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleButtonClick = () => {
@@ -331,10 +330,10 @@ const Dashboard = () => {
                                 Welcome to the heart of your crypto investment journey!
                             </h3>
                             <p className="text-lightblue pt-2 pb-1">
-                                This dashboard is your gateway to real-time insights, empowering you to
-                                track and maximize your earnings effortlessly. Here, you'll find
-                                up-to-the-minute updates on your investments, referral performance, and
-                                rewards.
+                                This dashboard is your gateway to real-time insights, empowering you
+                                to track and maximize your earnings effortlessly. Here, you'll find
+                                up-to-the-minute updates on your investments, referral performance,
+                                and rewards.
                             </p>
                         </div>
                         <div className="p-4 px-6 border rounded-[24px] lg:w-1/2" data-aos="fade-up">
@@ -365,8 +364,12 @@ const Dashboard = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 " data-aos="fade-up">
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
                                 <div>
-                                    <h3 className="text-secondary font-bold text-md">Total Users</h3>
-                                    <p className="text-3xl font-bold text-primary">{totalUsers || 0}</p>
+                                    <h3 className="text-secondary font-bold text-md">
+                                        Total Users
+                                    </h3>
+                                    <p className="text-3xl font-bold text-primary">
+                                        {totalUsers || 0}
+                                    </p>
                                 </div>
                                 <span className="text-4xl transform transition-transform duration-300 group-hover:scale-90">
                                     <img src={TotalUsers} alt="Total Users" />
@@ -375,9 +378,11 @@ const Dashboard = () => {
 
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
                                 <div>
-                                    <h3 className="text-secondary font-bold text-md">Total Raised</h3>
+                                    <h3 className="text-secondary font-bold text-md">
+                                        Total Raised
+                                    </h3>
                                     <p className="text-3xl font-bold text-primary">
-                                        {totalInvest || 0}
+                                        {Number(totalInvest).toFixed(2) || 0}
                                     </p>
                                 </div>
                                 <span className="text-4xl transform transition-transform duration-300 group-hover:scale-90">
@@ -391,7 +396,7 @@ const Dashboard = () => {
                                         Total Withdrawals
                                     </h3>
                                     <p className="text-3xl font-bold text-primary">
-                                        {totalWithdrawals || 0}
+                                        {Number(totalWithdrawals).toFixed(2) || 0}
                                     </p>
                                 </div>
                                 <span className="text-4xl transform transition-transform duration-300 group-hover:scale-90">
@@ -402,7 +407,9 @@ const Dashboard = () => {
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
                                 <div>
                                     <h3 className="text-secondary font-bold text-md">ROI Amount</h3>
-                                    <p className="text-3xl font-bold text-primary">{ROIamount || 0}</p>
+                                    <p className="text-3xl font-bold text-primary">
+                                        {Number(ROIamount).toFixed(2) || 0}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -435,8 +442,8 @@ const Dashboard = () => {
                     <div className="" data-aos="fade-up">
                         <h2 className="text-2xl font-bold text-primary">Buy Packages</h2>
                         <p className="text-lightblue mb-8">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu
-                            stetur eget.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla
+                            eu stetur eget.
                         </p>
                         <Cardpackage packages={packages} />
                     </div>
@@ -449,8 +456,9 @@ const Dashboard = () => {
                                     Your Activity Overview
                                 </h5>
                                 <p className="text-normal text-lightblue text-base">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
-                                    nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit
+                                    ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut
+                                    egestas duis
                                 </p>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -517,7 +525,7 @@ const Dashboard = () => {
                                             Total Invested
                                         </h3>
                                         <p className="text-3xl font-bold text-primary flex justify-between w-full ">
-                                            ${totalUserInvestedAmount}
+                                            ${Number(totalUserInvestedAmount).toFixed(2) || 0}
                                         </p>
                                     </div>
                                 </div>
@@ -528,7 +536,7 @@ const Dashboard = () => {
                                             Total Referrals
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            {totalReferrals}
+                                            {totalReferrals || 0}
                                         </p>
                                     </div>
                                 </div>
@@ -539,7 +547,7 @@ const Dashboard = () => {
                                             Total Withdrawals
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            {totalUserWithdrawlAmount}
+                                            {Number(totalUserWithdrawlAmount).toFixed(2) || 0}
                                         </p>
                                     </div>
                                 </div>
@@ -549,7 +557,7 @@ const Dashboard = () => {
                                             Claim Amount
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            ${claimAmount}
+                                            ${Number(claimAmount).toFixed(2) || 0}
                                         </p>
                                     </div>
                                 </div>
@@ -564,7 +572,8 @@ const Dashboard = () => {
                                                 Recent Investments
                                             </h2>
                                             <p className="text-sm font-medium text-[#71717A]">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit.
                                             </p>
                                         </div>
                                         {/* <a
@@ -581,33 +590,33 @@ const Dashboard = () => {
                                             <tbody className="bg-white divide-y divide-gray-200">
                                                 {userDeposits.length > 0
                                                     ? userDeposits.map((deposit, index) => (
-                                                        <tr key={index}>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
-                                                                ${deposit.planAmount}
-                                                            </td>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
-                                                                {deposit.planDuration}{" "}
-                                                                <span className="text-secondary text-xs font-medium pl-1">
-                                                                    {" "}
-                                                                    Days
-                                                                </span>
-                                                            </td>
-                                                            <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
-                                                                <span className="flex flex-col items-center">
-                                                                    {/* Status could be added here if necessary */}
-                                                                </span>
-                                                            </td>
+                                                          <tr key={index}>
+                                                              <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
+                                                                  ${deposit.planAmount}
+                                                              </td>
+                                                              <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
+                                                                  {deposit.planDuration}{" "}
+                                                                  <span className="text-secondary text-xs font-medium pl-1">
+                                                                      {" "}
+                                                                      Days
+                                                                  </span>
+                                                              </td>
+                                                              <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
+                                                                  <span className="flex flex-col items-center">
+                                                                      {/* Status could be added here if necessary */}
+                                                                  </span>
+                                                              </td>
 
-                                                            <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
-                                                                {deposit.dailyIncome} %
-                                                            </td>
-                                                            {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
+                                                              <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
+                                                                  {deposit.dailyIncome} %
+                                                              </td>
+                                                              {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
                                                         <button className="text-secondary hover:text-gray-600">
                                                             <Ellipsis size={32} />
                                                         </button>
                                                     </td> */}
-                                                        </tr>
-                                                    ))
+                                                          </tr>
+                                                      ))
                                                     : "No Investment Found"}
                                             </tbody>
                                         </table>
@@ -696,9 +705,9 @@ const Dashboard = () => {
                                 </div>
                                 <p className="text-secondary text-base font-normal">
                                     Choose from a range of investment packages that offer attractive
-                                    daily returns for a specified duration. This stable Dividend income
-                                    structure provides consistent income, allowing you to grow your
-                                    portfolio with confidence.
+                                    daily returns for a specified duration. This stable Dividend
+                                    income structure provides consistent income, allowing you to
+                                    grow your portfolio with confidence.
                                 </p>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -781,7 +790,9 @@ const Dashboard = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-4">
-                                        <h3 className="font-semibold text-2xl text-primary">Reward</h3>
+                                        <h3 className="font-semibold text-2xl text-primary">
+                                            Reward
+                                        </h3>
                                         <p className="text-base font-medium text-secondary">
                                             Receive a continuous reward of $0.25 per hour.
                                         </p>
@@ -911,7 +922,6 @@ const Dashboard = () => {
                                         </button>
 
                                         {/* Render the popup conditionally */}
-
                                     </div>
                                 </div>
                             </div>
@@ -1001,7 +1011,9 @@ const Dashboard = () => {
                                         />
                                     </div>
                                     <div className="p-6 gap-2">
-                                        <h3 className="text-2xl font-bold text-primary">Superbike</h3>
+                                        <h3 className="text-2xl font-bold text-primary">
+                                            Superbike
+                                        </h3>
                                         <p className="text-lightblue text-base font-medium">
                                             $50,000 Direct Business within 100 days
                                         </p>
@@ -1033,7 +1045,9 @@ const Dashboard = () => {
                                         />
                                     </div>
                                     <div className="p-6 gap-2">
-                                        <h3 className="text-2xl font-bold text-primary">House Fund</h3>
+                                        <h3 className="text-2xl font-bold text-primary">
+                                            House Fund
+                                        </h3>
                                         <p className="text-lightblue text-base font-medium">
                                             $500,000 Direct Business within 100 days
                                         </p>
@@ -1074,8 +1088,8 @@ const Dashboard = () => {
                             </div>
                             {/* <HalfDoughnutChart/> */}
                             <p className="text-lg text-secondary font-medium mt-2">
-                                Invest in the CTO Fund and receive a bonus based on your business level.
-                                Within 200 days
+                                Invest in the CTO Fund and receive a bonus based on your business
+                                level. Within 200 days
                             </p>
                         </div>
                     </section>

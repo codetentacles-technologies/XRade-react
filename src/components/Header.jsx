@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract } from "wagmi";
 import { Bell } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
     const { chainId, isConnected } = useAccount();
     const [isBoxVisible, setIsBoxVisible] = useState(false);
     const boxRef = useRef(null); // Ref for the box
     const bellRef = useRef(null); // Ref for the Bell icon
+    const location = useLocation();
+    const isLaunchVisible = ["/", "/about"].includes(location.pathname);
 
     const toggleBox = () => {
         setIsBoxVisible(!isBoxVisible);
@@ -41,7 +43,11 @@ const Header = () => {
             <header className="flex items-center justify-between py-4 container">
                 <Link to="/">
                     {" "}
-                    <img src="/images/AITrade-logo.png" alt="" className="w-[150px] cursor-pointer" />
+                    <img
+                        src="/images/AITrade-logo.png"
+                        alt=""
+                        className="w-[150px] cursor-pointer"
+                    />
                 </Link>
                 {/* <nav className="nav hidden md:flex">
                     <ul className="flex space-x-8">
@@ -61,10 +67,12 @@ const Header = () => {
           />
           Connect Wallet
         </button> */}
-              
+
                 <div className="flex items-center gap-6">
-                <div className="relative cursor-pointer" onClick={toggleBox} ref={bellRef}>
-                        <p><Bell /></p>
+                    <div className="relative cursor-pointer" onClick={toggleBox} ref={bellRef}>
+                        <p>
+                            <Bell />
+                        </p>
                         <span className="absolute top-0 right-0 bg-primary text-white text-[11px] rounded-full px-1.5 h-[18px] transform translate-x-1/2 -translate-y-1/2">
                             2 {/* Replace 2 with the actual number you want to display */}
                         </span>
@@ -77,23 +85,35 @@ const Header = () => {
                             ref={boxRef}
                         >
                             <div className="py-4 px-6 border-b border-[#394B74]">
-                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-base font-semibold">
+                                    You are eligible to Claim Dividend Income
+                                </p>
                                 <p className="text-sm font-medium">2 hours ago.</p>
                             </div>
                             <div className="py-4 px-6 border-b border-[#394B74]">
-                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-base font-semibold">
+                                    You are eligible to Claim Dividend Income
+                                </p>
                                 <p className="text-sm font-medium">2 hours ago.</p>
                             </div>
                             <div className="py-4 px-6">
-                                <p className="text-base font-semibold">You are eligible to Claim Dividend Income</p>
+                                <p className="text-base font-semibold">
+                                    You are eligible to Claim Dividend Income
+                                </p>
                                 <p className="text-sm font-medium">2 hours ago.</p>
                             </div>
                         </div>
                     )}
-                    <Link to="/Dashboard" className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient">
-                        Launch
-                    </Link>
-                    {<ConnectButton accountStatus={"address"} showBalance={false} />}
+                    {isLaunchVisible ? (
+                        <Link
+                            to="/Dashboard"
+                            className="bg-blue text-white text-lg font-semibold py-2 px-6 rounded-full flex items-center gap-2 hover:bg-primarygradient"
+                        >
+                            Launch
+                        </Link>
+                    ) : (
+                        <ConnectButton accountStatus={"address"} showBalance={false} />
+                    )}
                 </div>
             </header>
         </div>
