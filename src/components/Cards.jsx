@@ -9,7 +9,7 @@ import { erc20Abi } from "viem";
 import toast from "react-hot-toast";
 import { configRead } from "../utils/RainbowKitConfig";
 
-const PackageCards = ({ packages }) => {
+const PackageCards = ({ packages, getROIamount }) => {
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
     const { chainId, isConnected, address } = useAccount();
@@ -110,7 +110,7 @@ const PackageCards = ({ packages }) => {
 
             setTransactionMessage("Confirming transaction...");
             await waitForTransaction(investTx, 100);
-
+            getROIamount()
             toast.success("Successfully invested in plan!");
         } catch (error) {
             console.error("Investment error:", error);

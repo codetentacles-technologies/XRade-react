@@ -249,7 +249,7 @@ const Dashboard = () => {
 
             setTransactionMessage("Confirming transaction...");
             await waitForTransaction(investTx, 100);
-
+            getROIamount();
             toast.success("Successfully Claimed!");
         } catch (error) {
             console.error("Claim error:", error);
@@ -296,6 +296,16 @@ const Dashboard = () => {
     }, []);
 
     useEffect(() => {
+        // Set an interval to call getROIamount every 5 seconds
+        const intervalId = setInterval(() => {
+            getROIamount();
+        }, 5000);
+
+        // Cleanup the interval on component unmount
+        return () => clearInterval(intervalId);
+    }, []); // Empty dependency array ensures this effect runs only once on component mount
+
+    useEffect(() => {
         checkTotalUsers();
         checkTotalInvest();
         checktotalWithdrawal();
@@ -303,7 +313,6 @@ const Dashboard = () => {
         getTotalReferrals();
         getTotalInvestedAmount();
         getTotalWithdrawlAmount();
-        getROIamount();
         getClaimAmount();
         getCurrentDeposits();
     }, []);
@@ -445,7 +454,7 @@ const Dashboard = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla
                             eu stetur eget.
                         </p>
-                        <Cardpackage packages={packages} />
+                        <Cardpackage packages={packages} getROIamount={getROIamount} />
                     </div>
 
                     {/* Activity Overview */}
