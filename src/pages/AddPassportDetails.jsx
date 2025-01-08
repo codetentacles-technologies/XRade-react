@@ -1,11 +1,21 @@
 import { CloudUpload, X } from 'lucide-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const AddPassportDetails = ({ handleClose }) => {
+  useEffect(() => {
+    // Disable scrolling when the modal is open
+    document.body.style.overflow = 'hidden';
+
+    // Cleanup function to restore scrolling
+    return () => {
+      document.body.style.overflow = 'unset'; // Restore overflow
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-3xl shadow-lg  w-full md:w-[80%] lg:w-2/3 2xl:w-1/2 p-8 relative flex flex-col gap-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={handleClose}>
+      <div className="bg-white rounded-3xl shadow-lg w-full md:w-[80%] lg:w-2/3 2xl:w-1/2 p-8 relative flex flex-col gap-4" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -27,7 +37,7 @@ const AddPassportDetails = ({ handleClose }) => {
         <form className="flex flex-col gap-4">
           {/* Name Input */}
           <div className='flex flex-col gap-3'>
-            <label htmlFor="name" className="block text-secondary text-base font-semibold ">
+            <label htmlFor="name" className="block text-secondary text-base font-semibold">
               Name
             </label>
             <input
@@ -42,7 +52,7 @@ const AddPassportDetails = ({ handleClose }) => {
           <div className="flex flex-col xl:flex-row gap-4">
             {/* Scanned Passport Copy */}
             <div className="w-full xl:w-1/2 flex flex-col gap-3">
-              <label htmlFor="passport" className="block text-secondary text-base font-semibold ">
+              <label htmlFor="passport" className="block text-secondary text-base font-semibold">
                 Scanned Passport Copy
               </label>
               <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
@@ -63,7 +73,7 @@ const AddPassportDetails = ({ handleClose }) => {
 
             {/* Scanned Identity Copy */}
             <div className="w-full xl:w-1/2 flex flex-col gap-3">
-              <label htmlFor="identity" className="block text-secondary text-base font-semibold ">
+              <label htmlFor="identity" className="block text-secondary text-base font-semibold">
                 Scanned Identity Copy (Aadhar or Pan Card)
               </label>
               <div className="border border-[#D6D8DE] rounded-[8px] p-3 text-center">
@@ -73,7 +83,7 @@ const AddPassportDetails = ({ handleClose }) => {
                   className="hidden"
                 />
                 <label
-                  htmlFor="passport"
+                  htmlFor="identity"
                   className="cursor-pointer flex items-center justify-center text-[#989DAB] gap-2.5 h-16"
                 >
                   <CloudUpload />
