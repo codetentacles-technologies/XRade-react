@@ -27,6 +27,7 @@ import XRADE_ABI from "../assets/abi/xrade.json";
 import toast from "react-hot-toast";
 import AddPassportDetails from "./AddPassportDetails.jsx";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { useParams } from "react-router-dom";
 
 const packages = [
     {
@@ -84,15 +85,30 @@ const Dashboard = () => {
     const [ROIamount, setROIamount] = useState(0);
     const [claiming, setClaiming] = useState(false);
 
+    const { writeContractAsync } = useWriteContract();
+    const { waitForTransaction } = useWaitForTransaction();
+    const { openConnectModal } = useConnectModal();
     const [transactionMessage, setTransactionMessage] = useState("Please wait...");
     const [isTransaction, setIsTransaction] = useState(false);
 
     const [isAnyActivePlan, setIsAnyActivePlan] = useState(false);
     const [currentPlanIndex, setCurrentPlanIndex] = useState(0);
 
-    const { writeContractAsync } = useWriteContract();
-    const { waitForTransaction } = useWaitForTransaction();
-    const { openConnectModal } = useConnectModal();
+    const [copied, setCopied] = useState(false);
+    let { referral } = useParams();
+    const currentUrl = window.location.origin + "/register/" + address;
+
+    const copyToClipboard = () => {
+        toast.success("Link copied to clipboard");
+        const url = currentUrl;
+        navigator.clipboard.writeText(url);
+        setCopied(true);
+
+        // Reset copied state after 2 seconds
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    };
 
     const checkTotalUsers = async () => {
         try {
@@ -352,30 +368,43 @@ const Dashboard = () => {
                                 and rewards.
                             </p>
                         </div>
-                        <div className="p-4 px-6 border rounded-[24px] lg:w-1/2" data-aos="fade-up">
-                            <p className="text-lg font-medium text-secondary">
-                                Your Personal Invitation Link
-                            </p>
-                            <p className="text-lg font-bold text-primary flex items-center gap-3 break-all">
-                                https://howard.codetentaclestechnologies.tech/register?ref=1{" "}
-                                <span className="bg-homeabout rounded-[4px] p-1.5">
-                                    <svg
-                                        width="16"
-                                        height="15"
-                                        viewBox="0 0 16 15"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M2.4 10.3C1.63 10.3 1 9.67 1 8.9V1.9C1 1.13 1.63 0.5 2.4 0.5H9.4C10.17 0.5 10.8 1.13 10.8 1.9M6.6 4.7H13.6C14.3732 4.7 15 5.3268 15 6.1V13.1C15 13.8732 14.3732 14.5 13.6 14.5H6.6C5.8268 14.5 5.2 13.8732 5.2 13.1V6.1C5.2 5.3268 5.8268 4.7 6.6 4.7Z"
-                                            stroke="#28418D"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </span>
-                            </p>
-                        </div>
+                        {isConnected && (
+                            <div
+                                className="p-4 px-6 border rounded-[24px] lg:w-1/2"
+                                data-aos="fade-up"
+                            >
+                                <p className="text-lg font-medium text-secondary">
+                                    Your Personal Invitation Link
+                                </p>
+                                <p className="text-lg font-bold text-primary flex items-center gap-3 break-all">
+                                    <span onClick={copyToClipboard} className="cursor-pointer">
+                                        {currentUrl.substring(0, 9)}...
+                                        {currentUrl.substring(currentUrl.length - 7)}
+                                    </span>
+                                    <span className="bg-homeabout rounded-[4px] p-1.5">
+                                        {copied ? (
+                                            <Check />
+                                        ) : (
+                                            <svg
+                                                width="16"
+                                                height="15"
+                                                viewBox="0 0 16 15"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                onClick={copyToClipboard}
+                                            >
+                                                <path
+                                                    d="M2.4 10.3C1.63 10.3 1 9.67 1 8.9V1.9C1 1.13 1.63 0.5 2.4 0.5H9.4C10.17 0.5 10.8 1.13 10.8 1.9M6.6 4.7H13.6C14.3732 4.7 15 5.3268 15 6.1V13.1C15 13.8732 14.3732 14.5 13.6 14.5H6.6C5.8268 14.5 5.2 13.8732 5.2 13.1V6.1C5.2 5.3268 5.8268 4.7 6.6 4.7Z"
+                                                    stroke="#28418D"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        )}
+                                    </span>
+                                </p>
+                            </div>
+                        )}
                         {/* Header Section */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 " data-aos="fade-up">
                             <div className="group bg-boxgradient shadow-dashboard p-6 flex items-center justify-between rounded-[24px] transition-transform duration-300">
@@ -461,7 +490,11 @@ const Dashboard = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla
                             eu stetur eget.
                         </p>
-                        <Cardpackage packages={packages} getROIamount={getROIamount} />
+                        <Cardpackage
+                            packages={packages}
+                            getROIamount={getROIamount}
+                            referral={referral}
+                        />
                     </div>
 
                     {/* Activity Overview */}
@@ -496,30 +529,43 @@ const Dashboard = () => {
                                         />
                                     </div>
                                 )}
-                                <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md">
-                                    <p className="text-lg font-medium text-secondary">
-                                        Your Personal Invitation Link
-                                    </p>
-                                    <p className="text-lg font-bold text-primary flex items-center gap-3 break-all">
-                                        https://howard.codetentaclestechnologies.tech/register?ref=1{" "}
-                                        <span className="bg-homeabout rounded-[4px] p-1.5">
-                                            <svg
-                                                width="16"
-                                                height="15"
-                                                viewBox="0 0 16 15"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
+                                {isConnected && (
+                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md">
+                                        <p className="text-lg font-medium text-secondary">
+                                            Your Personal Invitation Link
+                                        </p>
+                                        <p className="text-lg font-bold text-primary flex items-center gap-3 break-all">
+                                            <span
+                                                onClick={copyToClipboard}
+                                                className="cursor-pointer"
                                             >
-                                                <path
-                                                    d="M2.4 10.3C1.63 10.3 1 9.67 1 8.9V1.9C1 1.13 1.63 0.5 2.4 0.5H9.4C10.17 0.5 10.8 1.13 10.8 1.9M6.6 4.7H13.6C14.3732 4.7 15 5.3268 15 6.1V13.1C15 13.8732 14.3732 14.5 13.6 14.5H6.6C5.8268 14.5 5.2 13.8732 5.2 13.1V6.1C5.2 5.3268 5.8268 4.7 6.6 4.7Z"
-                                                    stroke="#28418D"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </p>
-                                </div>
+                                                {currentUrl.substring(0, 9)}...
+                                                {currentUrl.substring(currentUrl.length - 7)}
+                                            </span>
+                                            <span className="bg-homeabout rounded-[4px] p-1.5">
+                                                {copied ? (
+                                                    <Check />
+                                                ) : (
+                                                    <svg
+                                                        width="16"
+                                                        height="15"
+                                                        viewBox="0 0 16 15"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        onClick={copyToClipboard}
+                                                    >
+                                                        <path
+                                                            d="M2.4 10.3C1.63 10.3 1 9.67 1 8.9V1.9C1 1.13 1.63 0.5 2.4 0.5H9.4C10.17 0.5 10.8 1.13 10.8 1.9M6.6 4.7H13.6C14.3732 4.7 15 5.3268 15 6.1V13.1C15 13.8732 14.3732 14.5 13.6 14.5H6.6C5.8268 14.5 5.2 13.8732 5.2 13.1V6.1C5.2 5.3268 5.8268 4.7 6.6 4.7Z"
+                                                            stroke="#28418D"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        />
+                                                    </svg>
+                                                )}
+                                            </span>
+                                        </p>
+                                    </div>
+                                )}
                                 <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md">
                                     <p className="text-xl font-semibold text-primary">
                                         Withdraw your Income

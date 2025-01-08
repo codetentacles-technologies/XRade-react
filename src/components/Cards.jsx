@@ -5,11 +5,11 @@ import { blockConfig } from "../config/BlockChainConfig";
 import { readContract } from "@wagmi/core";
 import useWaitForTransaction from "../hooks/useWaitForTransaction";
 import CardParticleBg from "../../public/images/dashboard/CardParticleBg.svg";
-import { erc20Abi } from "viem";
+import { erc20Abi, isAddress } from "viem";
 import toast from "react-hot-toast";
 import { configRead } from "../utils/RainbowKitConfig";
 
-const PackageCards = ({ packages, getROIamount }) => {
+const PackageCards = ({ packages, getROIamount, referral }) => {
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
     const { chainId, isConnected, address } = useAccount();
@@ -17,6 +17,7 @@ const PackageCards = ({ packages, getROIamount }) => {
     const [isTransaction, setIsTransaction] = useState(false);
     const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
     const BASE_FEE = 1e18;
+    let referrerAddress = referral;
 
     const setApproval = async (amount) => {
         try {
@@ -61,16 +62,16 @@ const PackageCards = ({ packages, getROIamount }) => {
         }
     };
 
-    const handleBuyPackage = async (planId, referrer) => {
+    const handleBuyPackage = async (planId) => {
         try {
             if (!isConnected) {
                 toast.error("Please connect your wallet");
                 return;
             }
-            // const walletAddress = checkWalletAddress();
-            // if (walletAddress) {
-            //   return;
-            // }
+
+            if (!isAddress(referrerAddress)) {
+                referrerAddress = blockConfig[chainId].ADMIN_ADDRESS;
+            }
 
             setIsTransaction(true);
             setTransactionMessage("Checking balance...");
@@ -105,12 +106,12 @@ const PackageCards = ({ packages, getROIamount }) => {
                 address: blockConfig[chainId].XRADE_ADDRESS,
                 abi: XRADE_ABI,
                 functionName: "invest",
-                args: [planId, referrer],
+                args: [planId, referrerAddress],
             });
 
             setTransactionMessage("Confirming transaction...");
             await waitForTransaction(investTx, 100);
-            getROIamount()
+            getROIamount();
             toast.success("Successfully invested in plan!");
         } catch (error) {
             console.error("Investment error:", error);
@@ -144,7 +145,7 @@ const PackageCards = ({ packages, getROIamount }) => {
                         className="bg-blue text-white py-2 px-4 rounded-full hover:bg-[#192265] hover:shadow-buypackage"
                         onClick={() => {
                             setSelectedPackageIndex(index);
-                            handleBuyPackage(index, "0xA8655F82b083407D1567dc848D6f28C48E3D77FB");
+                            handleBuyPackage(index);
                         }} // Pass null for referrer if not available
                         disabled={isTransaction}
                     >

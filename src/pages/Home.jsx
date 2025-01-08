@@ -13,6 +13,7 @@ import { useAccount } from "wagmi";
 import { readContract } from "wagmi/actions";
 import { blockConfig } from "../config/BlockChainConfig.jsx";
 import { configRead } from "../utils/RainbowKitConfig.jsx";
+import TradingViewWidget from "../components/TradingViewWidget.jsx"
 
 const Home = () => {
   const { chainId } = useAccount();
@@ -202,7 +203,8 @@ try {
             </div>
           </div>
           <div className="xl:col-span-2 w-full m-auto hover:rounded-3xl  hover:shadow-xl transition-all duration-300 ease-in-out">
-            <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" />
+            {/* <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" /> */}
+            <TradingViewWidget/>
           </div>
         </div>
       </section>
