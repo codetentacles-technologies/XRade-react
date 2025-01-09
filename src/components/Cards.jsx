@@ -9,7 +9,7 @@ import { erc20Abi, isAddress } from "viem";
 import toast from "react-hot-toast";
 import { configRead } from "../utils/RainbowKitConfig";
 
-const PackageCards = ({ packages, getROIamount, referral }) => {
+const PackageCards = ({ packages, referral }) => {
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
     const { chainId, isConnected, address } = useAccount();
@@ -111,7 +111,7 @@ debugger
 
             setTransactionMessage("Confirming transaction...");
             await waitForTransaction(investTx, 100);
-            getROIamount();
+            
             toast.success("Successfully invested in plan!");
         } catch (error) {
             console.error("Investment error:", error);
@@ -140,7 +140,7 @@ debugger
 
                     <p className="text-lg font-bold text-primary mb-2">{pkg.price}</p>
                     <p className="text-lg font-bold text-primary mb-2">{pkg.percentage}</p>
-                    <p className="text-[#989DAB] mb-4">{pkg.description}</p>
+                    {/* <p className="text-[#989DAB] mb-4">{pkg.description}</p> */}
                     <button
                         className="bg-blue text-white py-2 px-4 rounded-full hover:bg-[#192265] hover:shadow-buypackage"
                         onClick={() => {
