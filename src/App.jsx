@@ -15,8 +15,26 @@ import About from "./pages/About";
 import EditPassportDetails from "./pages/EditPassportDetails";
 import PassportDetails from "./pages/PassportDetails";
 import Voucher from "./pages/Voucher";
+import Preloader from "./components/Preloder";
+import { useEffect, useState } from "react";
 
 function App() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate a loading process
+        const loadData = async () => {
+            // Simulate a delay (e.g., fetching data)
+            await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds delay
+            setLoading(false);
+        };
+
+        loadData();
+    }, []);
+
+    if (loading) {
+        return <Preloader />;
+    }
     return (
         <>
             <Router>
@@ -110,7 +128,7 @@ function App() {
                                                 <div className="container py-[7rem]">
                                                     <Voucher />
                                                 </div>
-                                                <div className=" w-full">
+                                                <div className="lg:fixed bottom-0 w-full ">
                                                     <Footer />
                                                 </div>
                                             </>

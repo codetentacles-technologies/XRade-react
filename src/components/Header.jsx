@@ -38,8 +38,10 @@ const Header = () => {
         };
     }, []);
 
+    const isHomePage = location.pathname === '/';
+
     return (
-        <div className="bg-header mx-auto fixed top-0 left-0 w-full z-10">
+        <div className={`bg-header mx-auto fixed top-0 left-0 w-full z-10 ${!isHomePage ? 'shadow-md' : ''}`}>
             <header className="flex items-center justify-between py-4 container">
                 <Link to="/">
                     {" "}

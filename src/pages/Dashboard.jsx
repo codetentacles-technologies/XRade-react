@@ -379,11 +379,11 @@ const Dashboard = () => {
                         </div>
 
                         {/* graph section */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3  gap-8" data-aos="fade-up">
-                            <div className="xl:col-span-2">
+                        <div className="grid grid-cols-1 xl:grid-cols-3  gap-8" data-aos="fade-up">
+                        <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
                                 <TradingViewWidget />
                             </div>
-                            <div className="flex flex-col gap-8 lg:flex-row xl:flex-col">
+                            <div className="flex flex-col gap-8">
                                 <img
                                     src="/images/active-graph.webp"
                                     alt="active-graph"
@@ -422,7 +422,7 @@ const Dashboard = () => {
                                     All stats are realtime and showing all your current activity in AITrade
                                 </p>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                                 {isAnyActivePlan && (
                                     <div className=" px-6 p-4 border rounded-[24px] flex justify-between items-center hover:shadow-md">
                                         <div className="flex flex-col gap-2">
@@ -442,7 +442,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 {isConnected && (
-                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md">
+                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md hover:border-white">
                                         <p className="text-lg font-medium text-secondary">
                                             Your Personal Invitation Link
                                         </p>
