@@ -29,7 +29,7 @@ import AddPassportDetails from "./AddPassportDetails.jsx";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useParams } from "react-router-dom";
 import TradingViewWidget from "../components/TradingViewWidget.jsx";
-import CountdownTimer from "../components/CountDownTimer.jsx";
+import CountDownTimer from "../components/CountDownTimer.jsx";
 
 const packages = [
     {
@@ -640,7 +640,7 @@ const Dashboard = () => {
                                         <div className="flex flex-col md:flex-row items-center gap-6">
                                             {Number(totalUserInvestedAmount?.joinTime) > 0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                                 <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                                <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + 86400000} /> left
+                                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + 86400000} /> left
                                             </p> : <></>}
                                             {userStatus?._hasRecievedCashback ?
                                                 <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
@@ -845,7 +845,7 @@ const Dashboard = () => {
                         <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full mb-6">
                             <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
                             <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} /> left
+                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} /> left
                             </button>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -959,7 +959,7 @@ const Dashboard = () => {
                                         />
                                     </h4>
                                     <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                        <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
+                                        <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
                                     </button>
                                     <p className="text-secondary text-base font-normal">
                                         Beyond travel, we offer luxurious rewards for high-achieving
