@@ -495,11 +495,11 @@ const Dashboard = () => {
                                         </button>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             {/* Header Section */}
                             <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-6 ">
-                            <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                                <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3">
                                         <h3 className="text-secondary font-bold text-md">
                                             Total Referrals
@@ -948,19 +948,21 @@ const Dashboard = () => {
                     {/* Jackpot Rewards */}
                     <section data-aos="fade-up" className="container">
                         <div className="flex flex-col gap-8">
-                            <div className="flex flex-col lg:flex-row gap-3 justify-between">
-                                <div className="flex flex-col ">
-                                    <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3 ">
-                                        Jackpot Rewards: Luxurious Recognition
-                                        <img
-                                            src="/images/jackpot-rewards.png"
-                                            alt="setting"
-                                            className=" h-[36px]"
-                                        />
-                                    </h4>
-                                    <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                        <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
-                                    </button>
+                            <div className="flex flex-col ">
+                                <div className="flex flex-col  gap-4">
+                                    <div className="flex flex-col xl:flex-row items-center justify-between gap-4">
+                                        <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold flex items-center gap-3 ">
+                                            Jackpot Rewards: Luxurious Recognition
+                                            <img
+                                                src="/images/jackpot-rewards.png"
+                                                alt="setting"
+                                                className=" h-[36px]"
+                                            />
+                                        </h4>
+                                        <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
+                                            <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
+                                        </button>
+                                    </div>
                                     <p className="text-secondary text-base font-normal">
                                         Beyond travel, we offer luxurious rewards for high-achieving
                                         investors. Our Jackpot Rewards recognize your exceptional
