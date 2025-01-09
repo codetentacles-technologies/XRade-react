@@ -179,7 +179,7 @@ const Dashboard = () => {
                 functionName: "getUsersEarning",
                 args: [address],
             });
-            debugger
+            // debugger
             setTotalUserInvestedAmount(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -196,7 +196,7 @@ const Dashboard = () => {
                 functionName: "getUsersStatus",
                 args: [address],
             });
-            
+
             setUserStatus(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -204,9 +204,9 @@ const Dashboard = () => {
         }
     };
 
-    
 
-    
+
+
     const handleUserWithdrawl = async () => {
         try {
             if (!isConnected) {
@@ -306,9 +306,9 @@ const Dashboard = () => {
         if (!isConnected) openConnectModal();
     }, [isConnected]);
 
-    const formatNumber = ((value,decimals) => {
-        if(value==undefined) return 0;
-        return formatUnits(value,decimals);
+    const formatNumber = ((value, decimals) => {
+        if (value == undefined) return 0;
+        return formatUnits(value, decimals);
     });
 
     return (
@@ -329,7 +329,7 @@ const Dashboard = () => {
                                 and rewards.
                             </p>
                         </div>
-                       
+
                         {/* Header Section */}
                         <div
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
@@ -380,7 +380,7 @@ const Dashboard = () => {
 
                         {/* graph section */}
                         <div className="grid grid-cols-1 xl:grid-cols-3  gap-8" data-aos="fade-up">
-                        <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
+                            <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
                                 <TradingViewWidget />
                             </div>
                             <div className="flex flex-col gap-8">
@@ -406,7 +406,7 @@ const Dashboard = () => {
                         </p>
                         <Cardpackage
                             packages={packages}
-                            
+
                             referral={referral}
                         />
                     </div>
@@ -424,7 +424,7 @@ const Dashboard = () => {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                                 {isAnyActivePlan && (
-                                    <div className=" px-6 p-4 border rounded-[24px] flex justify-between items-center hover:shadow-md">
+                                    <div className=" px-6 p-4 border rounded-[24px] flex justify-between hover:shadow-md hover:border-white">
                                         <div className="flex flex-col gap-2">
                                             <p className="text-xl font-semibold text-primary">
                                                 {packages[currentPlanIndex].price}
@@ -442,7 +442,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 {isConnected && (
-                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 justify-center hover:shadow-md hover:border-white">
+                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 hover:shadow-md hover:border-white">
                                         <p className="text-lg font-medium text-secondary">
                                             Your Personal Invitation Link
                                         </p>
@@ -478,31 +478,49 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                 )}
-                                <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
+                                    <p className="text-xl font-semibold text-primary">
+                                        Withdraw your Income
+                                    </p>
+                                    <div className="flex items-center gap-4 justify-between">
+                                        <p className="text-3xl font-bold text-primary ">
+                                            ${formatNumber(totalUserInvestedAmount?.totalEarnings, 18)}
+                                        </p>
+                                        <button
+                                            disabled={claiming}
+                                            onClick={handleUserWithdrawl}
+                                            className="bg-primary text-sm text-white py-2 px-6 rounded-full w-max"
+                                        >
+                                            {claiming ? "Claiming..." : "Withdraw"}
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            {/* Header Section */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-6 ">
+                            <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3">
                                         <h3 className="text-secondary font-bold text-md">
                                             Total Referrals
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            {formatNumber(totalUserInvestedAmount?.totalReferrals,0)}
+                                            {formatNumber(totalUserInvestedAmount?.totalReferrals, 0)}
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            {/* Header Section */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
                                 <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3 w-full">
                                         <h3 className="text-secondary font-bold text-md">
                                             Total Invested
                                         </h3>
                                         <p className="text-3xl font-bold text-primary flex justify-between w-full ">
-                                            ${formatNumber(totalUserInvestedAmount?.totalInvestment,18)}
+                                            ${formatNumber(totalUserInvestedAmount?.totalInvestment, 18)}
                                         </p>
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3">
@@ -510,7 +528,7 @@ const Dashboard = () => {
                                             Total Withdrawals
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(totalUserInvestedAmount?.totalWithdrawal,18)}
+                                            ${formatNumber(totalUserInvestedAmount?.totalWithdrawal, 18)}
                                         </p>
                                     </div>
                                 </div>
@@ -520,7 +538,7 @@ const Dashboard = () => {
                                             Dividend Income
                                         </h3>
                                         <p className="text-3xl font-bold text-primary">
-                                            ${formatNumber(totalUserInvestedAmount?.currentROI,18)}
+                                            ${formatNumber(totalUserInvestedAmount?.currentROI, 18)}
                                         </p>
                                     </div>
                                 </div>
@@ -530,7 +548,7 @@ const Dashboard = () => {
                                             Referral Earning
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(totalUserInvestedAmount?.referralIncome,18)}
+                                            ${formatNumber(totalUserInvestedAmount?.referralIncome, 18)}
                                         </p>
                                     </div>
                                 </div>
@@ -540,26 +558,12 @@ const Dashboard = () => {
                                             Level Income
                                         </h3>
                                         <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(totalUserInvestedAmount?.levelIncome,18)}
+                                            ${formatNumber(totalUserInvestedAmount?.levelIncome, 18)}
                                         </p>
                                     </div>
                                 </div>
-                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md">
-                                    <p className="text-xl font-semibold text-primary">
-                                        Withdraw your Income
-                                    </p>
-                                    <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(totalUserInvestedAmount?.totalEarnings,18)}
-                                        </p>
-                                    <button
-                                        disabled={claiming}
-                                        onClick={handleUserWithdrawl}
-                                        className="bg-primary text-white py-2 px-6 rounded-full w-max"
-                                    >
-                                        {claiming ? "Claiming..." : "Withdraw"}
-                                    </button>
-                                </div>
-                                
+
+
                             </div>
                             {/* Challenging Income */}
                             <section className="" data-aos="fade-up">
@@ -570,7 +574,7 @@ const Dashboard = () => {
                                             <h2 className="text-2xl font-bold text-primary">
                                                 Recent Investments
                                             </h2>
-                                            
+
                                         </div>
                                         {/* <a
                                         href="#"
@@ -586,33 +590,33 @@ const Dashboard = () => {
                                             <tbody className="bg-white divide-y divide-gray-200">
                                                 {userDeposits.length > 0
                                                     ? userDeposits.map((deposit, index) => (
-                                                          <tr key={index}>
-                                                              <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
-                                                                  ${deposit.planAmount}
-                                                              </td>
-                                                              <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
-                                                                  {deposit.planDuration}{" "}
-                                                                  <span className="text-secondary text-xs font-medium pl-1">
-                                                                      {" "}
-                                                                      Days
-                                                                  </span>
-                                                              </td>
-                                                              <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
-                                                                  <span className="flex flex-col items-center">
-                                                                      {/* Status could be added here if necessary */}
-                                                                  </span>
-                                                              </td>
+                                                        <tr key={index}>
+                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
+                                                                ${deposit.planAmount}
+                                                            </td>
+                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
+                                                                {deposit.planDuration}{" "}
+                                                                <span className="text-secondary text-xs font-medium pl-1">
+                                                                    {" "}
+                                                                    Days
+                                                                </span>
+                                                            </td>
+                                                            <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
+                                                                <span className="flex flex-col items-center">
+                                                                    {/* Status could be added here if necessary */}
+                                                                </span>
+                                                            </td>
 
-                                                              <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
-                                                                  {deposit.dailyIncome} %
-                                                              </td>
-                                                              {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
+                                                            <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
+                                                                {deposit.dailyIncome} %
+                                                            </td>
+                                                            {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
                                                         <button className="text-secondary hover:text-gray-600">
                                                             <Ellipsis size={32} />
                                                         </button>
                                                     </td> */}
-                                                          </tr>
-                                                      ))
+                                                        </tr>
+                                                    ))
                                                     : "No Investment Found"}
                                             </tbody>
                                         </table>
@@ -622,7 +626,7 @@ const Dashboard = () => {
                         </div>
                     </section>
 
-                   
+
 
                     {/* Dividend Income */}
                     <section data-aos="fade-up" className="container">
@@ -634,19 +638,19 @@ const Dashboard = () => {
                                             Dividend Income
                                         </h4>
                                         <div className="flex flex-col md:flex-row items-center gap-6">
-                                            {Number(totalUserInvestedAmount?.joinTime)>0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
+                                            {Number(totalUserInvestedAmount?.joinTime) > 0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                                 <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                                <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime)*1000+86400000} /> left
+                                                <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + 86400000} /> left
                                             </p> : <></>}
-                                            {userStatus?._hasRecievedCashback ? 
-                                            <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
-                                            <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                            Activated
-                                        </p> : <></>
-                                        }
+                                            {userStatus?._hasRecievedCashback ?
+                                                <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
+                                                    <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
+                                                    Activated
+                                                </p> : <></>
+                                            }
                                             <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                                 <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                                {totalUserInvestedAmount?.higherPlanRef<2 ? 2 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
+                                                {totalUserInvestedAmount?.higherPlanRef < 2 ? 2 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
                                             </p>
                                         </div>
                                     </div>
@@ -699,8 +703,8 @@ const Dashboard = () => {
                                     </p> */}
                                     <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                         <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                        {userStatus?._hasRecievedCashback ? totalUserInvestedAmount?.higherPlanRef<12 ? 12 - Number(totalUserInvestedAmount?.higherPlanRef) : 0
-                                        : totalUserInvestedAmount?.higherPlanRef<10 ? 10 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
+                                        {userStatus?._hasRecievedCashback ? totalUserInvestedAmount?.higherPlanRef < 12 ? 12 - Number(totalUserInvestedAmount?.higherPlanRef) : 0
+                                            : totalUserInvestedAmount?.higherPlanRef < 10 ? 10 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
                                     </p>
                                 </div>
                             </div>
@@ -787,7 +791,7 @@ const Dashboard = () => {
                                         className="w-[37px] h-[36px]"
                                     />
                                 </h4>
-                                
+
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 justify-center gap-6">
                                 <div className=" bg-[#EFFFEF] rounded-2xl text-grey-darker border-2 border-[#D0F9D0] w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-2">
@@ -841,7 +845,7 @@ const Dashboard = () => {
                         <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full mb-6">
                             <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
                             <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                        <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime)*1000+(86400000*45)} /> left
+                                <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} /> left
                             </button>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -894,19 +898,19 @@ const Dashboard = () => {
                                     <p className="text-lightblue text-base font-medium">
                                         $10,000 Direct Business within 45 days
                                     </p>
-                                   
+
                                     {/* <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
                 Complete the Task{" "}
                 <span>
                   <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button> */}
-              {userStatus?._hasQualified?.[1] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
-                                        >
-                                            Completed
-                                        </button> : <></>}
+                                    {userStatus?._hasQualified?.[1] ? <button
+                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Completed
+                                    </button> : <></>}
 
                                 </div>
                             </div>
@@ -929,12 +933,12 @@ const Dashboard = () => {
                   <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button> */}
-              {userStatus?._hasQualified?.[2] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
-                                        >
-                                            Completed
-                                        </button> : <></>}
+                                    {userStatus?._hasQualified?.[2] ? <button
+                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Completed
+                                    </button> : <></>}
 
                                 </div>
                             </div>
@@ -955,14 +959,14 @@ const Dashboard = () => {
                                         />
                                     </h4>
                                     <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                        <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime)*1000+(86400000*100)} /> left
+                                        <CountdownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
                                     </button>
                                     <p className="text-secondary text-base font-normal">
                                         Beyond travel, we offer luxurious rewards for high-achieving
                                         investors. Our Jackpot Rewards recognize your exceptional
                                         dedication and commitment to the platform.
                                     </p>
-                                    
+
                                 </div>
                                 {/* <button className="flex gap-2 items-center justify-center text-center text-nowrap bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-[186px] hover-arrow-btn">
               Explore All <ArrowRight className="arrow-icon" size={24} />
@@ -987,11 +991,11 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                     {userStatus?._hasQualified?.[3] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
-                                        >
-                                            Completed
-                                        </button> : <></>}
+                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Completed
+                                    </button> : <></>}
                                 </div>
 
                                 <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
@@ -1009,11 +1013,11 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                     {userStatus?._hasQualified?.[4] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
-                                        >
-                                            Completed
-                                        </button> : <></>}
+                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Completed
+                                    </button> : <></>}
                                 </div>
 
                                 <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
@@ -1033,11 +1037,11 @@ const Dashboard = () => {
                                         </p>
                                     </div>
                                     {userStatus?._hasQualified?.[5] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
-                                        >
-                                            Completed
-                                        </button> : <></>}
+                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                        onClick={handleButtonClick}
+                                    >
+                                        Completed
+                                    </button> : <></>}
                                 </div>
                             </div>
                         </div>
