@@ -29,7 +29,7 @@ import AddPassportDetails from "./AddPassportDetails.jsx";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useParams } from "react-router-dom";
 import TradingViewWidget from "../components/TradingViewWidget.jsx";
-import CountDownTimer from "../components/CountDownTimer.jsx";
+import CountDownTimer from "../components/CountdownTimer.jsx";
 
 const packages = [
     {
