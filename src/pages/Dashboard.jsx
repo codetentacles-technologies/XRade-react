@@ -75,7 +75,8 @@ const packages = [
 ];
 
 const Dashboard = () => {
-    const { isConnected, chainId, address } = useAccount();
+    const { isConnected, chainId } = useAccount();
+    const address = "0x32D61AB28b38860a3B8433AE41e0239a45221004";
     const [totalUsers, setTotalUsers] = useState(0);
     const [totalInvest, setTotalInvest] = useState(0);
     const [totalWithdrawals, setTotalWithdrawals] = useState(0);
@@ -165,6 +166,7 @@ const Dashboard = () => {
                     planAmount: formatUnits(pkg.amount, 18),
                     planDuration: packages[pkg.planId].duration,
                     dailyIncome: packages[pkg.planId].dailyIncome,
+                    end : pkg.end
                 }))
             );
             return userDepositsdata;
@@ -198,7 +200,6 @@ const Dashboard = () => {
                 functionName: "getUsersStatus",
                 args: [address],
             });
-
             setUserStatus(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -592,28 +593,34 @@ const Dashboard = () => {
 
                                     {/* Transactions Table */}
                                     <div className="overflow-x-auto">
-                                        <table className="min-w-full divide-y divide-gray-200">
-                                            <tbody className="bg-white divide-y divide-gray-200">
+                                        <table className="min-w-full text-center divide-y divide-gray-200">
+                                            <thead>
+                                                <th>Amount</th>
+                                                <th>Duration</th>
+                                                <th>Remaining days</th>
+                                                <th>ROI</th>
+                                            </thead>
+                                            <tbody className="bg-white text-center divide-y divide-gray-200">
                                                 {userDeposits.length > 0
                                                     ? userDeposits.map((deposit, index) => (
                                                         <tr key={index}>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col w-[20%]">
+                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col">
                                                                 ${deposit.planAmount}
                                                             </td>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold w-[20%]">
+                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold">
                                                                 {deposit.planDuration}{" "}
                                                                 <span className="text-secondary text-xs font-medium pl-1">
                                                                     {" "}
                                                                     Days
                                                                 </span>
                                                             </td>
-                                                            <td className="p-4 whitespace-nowrap mx-auto text-center w-[35%]">
+                                                            <td className="p-4 whitespace-nowrap mx-auto  ">
                                                                 <span className="flex flex-col items-center">
-                                                                    {/* Status could be added here if necessary */}
+                                                                    <CountDownTimer endDate={Number(deposit?.end) * 1000} onlyDays={true}/>
                                                                 </span>
                                                             </td>
 
-                                                            <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium w-[20%]">
+                                                            <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium">
                                                                 {deposit.dailyIncome} %
                                                             </td>
                                                             {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
@@ -644,20 +651,25 @@ const Dashboard = () => {
                                             Dividend Income
                                         </h4>
                                         <div className="flex flex-col md:flex-row items-center gap-6">
-                                            {Number(totalUserInvestedAmount?.joinTime) > 0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
-                                                <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + 86400000} /> left
-                                            </p> : <></>}
-                                            {userStatus?._hasRecievedCashback ?
+                                            
+                                            {userStatus?.[0] ?
                                                 <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                                     <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
                                                     Activated
-                                                </p> : <></>
+                                                </p> : 
+                                                <>
+                                                {Number(totalUserInvestedAmount?.joinTime) > 0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
+                                                <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
+                                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + 86400000} onlyDays={false}/> left
+                                            </p> : <></>
                                             }
-                                            <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
+                                             <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                                 <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
                                                 {totalUserInvestedAmount?.higherPlanRef < 2 ? 2 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
                                             </p>
+                                            </>
+                                            }
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -709,7 +721,7 @@ const Dashboard = () => {
                                     </p> */}
                                     <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                         <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                        {userStatus?._hasRecievedCashback ? totalUserInvestedAmount?.higherPlanRef < 12 ? 12 - Number(totalUserInvestedAmount?.higherPlanRef) : 0
+                                        {userStatus?.[0] ? totalUserInvestedAmount?.higherPlanRef < 12 ? 12 - Number(totalUserInvestedAmount?.higherPlanRef) : 0
                                             : totalUserInvestedAmount?.higherPlanRef < 10 ? 10 - Number(totalUserInvestedAmount?.higherPlanRef) : 0} Referral Left
                                     </p>
                                 </div>
@@ -851,7 +863,7 @@ const Dashboard = () => {
                         <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full mb-6">
                             <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
                             <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} /> left
+                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} onlyDays={false}/> left
                             </button>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

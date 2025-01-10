@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const CountdownTimer = ({ endDate }) => {
+const CountdownTimer = ({ endDate,onlyDays }) => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
   // Calculate remaining time
@@ -37,9 +37,16 @@ const CountdownTimer = ({ endDate }) => {
   }, [endDate]);
 
   return (
+    <>
+    {onlyDays ? 
+      <span>
+      {timeRemaining.days}d {timeRemaining.hours}h left
+    </span> :
       <span>
         {timeRemaining.days}d {timeRemaining.hours}h {timeRemaining.minutes}m {timeRemaining.seconds}s
       </span>
+}
+      </>
   );
 };
 
