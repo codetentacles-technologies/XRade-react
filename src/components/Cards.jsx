@@ -9,6 +9,7 @@ import { erc20Abi, isAddress } from "viem";
 import toast from "react-hot-toast";
 import { configRead } from "../utils/RainbowKitConfig";
 
+
 const PackageCards = ({ packages, referral }) => {
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
@@ -16,6 +17,7 @@ const PackageCards = ({ packages, referral }) => {
     const [transactionMessage, setTransactionMessage] = useState("Please wait...");
     const [isTransaction, setIsTransaction] = useState(false);
     const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
+    
     const BASE_FEE = 1e18;
     let referrerAddress = referral;
 
@@ -108,11 +110,18 @@ debugger
                 functionName: "invest",
                 args: [planId, referrerAddress],
             });
-
-            setTransactionMessage("Confirming transaction...");
-            await waitForTransaction(investTx, 100);
             
-            toast.success("Successfully invested in plan!");
+            
+            
+            setTransactionMessage("Confirming transaction...");
+            
+            const response = await waitForTransaction(investTx, 100);
+            if(response.status=="reverted"){
+                toast.error("Transaction failed");
+            }else{
+toast.success("Successfully invested in plan!");
+            }
+            
         } catch (error) {
             console.error("Investment error:", error);
             toast.error(error.shortMessage || "Failed to invest in plan");

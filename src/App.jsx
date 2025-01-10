@@ -69,7 +69,7 @@ function App() {
                                         }
                                     />{" "}
                                     <Route
-                                        path="/register/:referral"
+                                        path="/dashboard/:referral"
                                         element={
                                             <>
                                                 <Header />

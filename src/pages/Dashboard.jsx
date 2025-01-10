@@ -96,7 +96,7 @@ const Dashboard = () => {
 
     const [copied, setCopied] = useState(false);
     let { referral } = useParams();
-    const currentUrl = window.location.origin + "/register/" + address;
+    const currentUrl = window.location.origin + "/dashboard/" + address;
 
     const copyToClipboard = () => {
         toast.success("Link copied to clipboard");
@@ -183,7 +183,7 @@ const Dashboard = () => {
                 functionName: "getUsersEarning",
                 args: [address],
             });
-            // debugger
+            console.log(address,"address")
             setTotalUserInvestedAmount(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -218,7 +218,8 @@ const Dashboard = () => {
             }
             
             if(formatNumber(totalUserInvestedAmount?.totalEarnings, 18)<=10){
-                toast.error("Min 10$ needed to withdraw")
+                toast.error("Min 10$ needed to withdraw");
+                return;
             }
 
             setIsTransaction(true);
@@ -233,8 +234,13 @@ const Dashboard = () => {
             });
 
             setTransactionMessage("Confirming transaction...");
-            await waitForTransaction(investTx, 100);
+            const response = await waitForTransaction(investTx, 100);
+            if(response.status=="reverted"){
+                toast.error("Transaction failed");
+            }
+            else{
             toast.success("Successfully Claimed!");
+            }
         } catch (error) {
             console.error("Claim error:", error);
             toast.error(error.shortMessage || "Failed to claim");
@@ -282,14 +288,17 @@ const Dashboard = () => {
     useEffect(() => {
         // Set an interval to call getROIamount every 5 seconds
         const intervalId = setInterval(() => {
-            getUsersEarning();
+          console.log("Current Address:", address);
+          getUsersEarning();
         }, 5000);
-
+    
         // Cleanup the interval on component unmount
         return () => clearInterval(intervalId);
-    }, []); // Empty dependency array ensures this effect runs only once on component mount
+      }, [address]); // Re-run effect whenever `address` changes
+
 
     useEffect(() => {
+        
         checkTotalUsers();
         checkTotalInvest();
         checktotalWithdrawal();
@@ -297,7 +306,7 @@ const Dashboard = () => {
         getCurrentDeposits();
         getUsersEarning();
         getUsersStatus();
-    }, [isConnected]);
+    }, [isConnected,address]);
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -315,7 +324,7 @@ const Dashboard = () => {
 
     const formatNumber = ((value, decimals) => {
         if (value == undefined) return 0;
-        return formatUnits(value, decimals);
+        return Number(formatUnits(value, decimals)).toFixed(2);
     });
 
     return (
@@ -630,7 +639,11 @@ const Dashboard = () => {
                                                     </td> */}
                                                         </tr>
                                                     ))
-                                                    : "No Investment Found"}
+                                                    : <tr>
+                                                        <td colSpan={4}>
+                                                        No Investment Found
+                                                        </td>
+                                                        </tr>}
                                             </tbody>
                                         </table>
                                     </div>
@@ -889,7 +902,7 @@ const Dashboard = () => {
                                             Completed
                                         </button> */}
 
-                                        {userStatus?._hasQualified?.[0] ? <button
+                                        {userStatus?.[1]?.[0] ? <button
                                             className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                             onClick={handleButtonClick}
                                         >
@@ -923,7 +936,7 @@ const Dashboard = () => {
                   <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button> */}
-                                    {userStatus?._hasQualified?.[1] ? <button
+                                    {userStatus?.[1]?.[1] ? <button
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
@@ -951,7 +964,7 @@ const Dashboard = () => {
                   <ArrowRight className="arrow-icon" size={24} />
                 </span>
               </button> */}
-                                    {userStatus?._hasQualified?.[2] ? <button
+                                    {userStatus?.[1]?.[2] ? <button
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
@@ -1010,7 +1023,7 @@ const Dashboard = () => {
                                             $50,000 Direct Business within 100 days
                                         </p>
                                     </div>
-                                    {userStatus?._hasQualified?.[3] ? <button
+                                    {userStatus?.[1]?.[3] ? <button
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
@@ -1032,7 +1045,7 @@ const Dashboard = () => {
                                             $100,000 Direct Business within 100 days
                                         </p>
                                     </div>
-                                    {userStatus?._hasQualified?.[4] ? <button
+                                    {userStatus?.[1]?.[4] ? <button
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
@@ -1056,7 +1069,7 @@ const Dashboard = () => {
                                             $500,000 Direct Business within 100 days
                                         </p>
                                     </div>
-                                    {userStatus?._hasQualified?.[5] ? <button
+                                    {userStatus?.[1]?.[5] ? <button
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
