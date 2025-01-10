@@ -90,6 +90,8 @@ const Dashboard = () => {
 
     const [isAnyActivePlan, setIsAnyActivePlan] = useState(false);
     const [currentPlanIndex, setCurrentPlanIndex] = useState(0);
+    const [transactionMessage, setTransactionMessage] = useState("Please wait...");
+    const [isTransaction, setIsTransaction] = useState(false);
 
     const [copied, setCopied] = useState(false);
     let { referral } = useParams();
@@ -212,6 +214,10 @@ const Dashboard = () => {
             if (!isConnected) {
                 toast.error("Please connect your wallet");
                 return;
+            }
+            
+            if(formatNumber(totalUserInvestedAmount?.totalEarnings, 18)<=10){
+                toast.error("Min 10$ needed to withdraw")
             }
 
             setIsTransaction(true);
