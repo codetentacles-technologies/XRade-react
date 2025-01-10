@@ -75,8 +75,8 @@ const packages = [
 ];
 
 const Dashboard = () => {
-    const { isConnected, chainId } = useAccount();
-    const address = "0x32D61AB28b38860a3B8433AE41e0239a45221004";
+    const { isConnected, chainId,address } = useAccount();
+    // const address = "0x32D61AB28b38860a3B8433AE41e0239a45221004";
     const [totalUsers, setTotalUsers] = useState(0);
     const [totalInvest, setTotalInvest] = useState(0);
     const [totalWithdrawals, setTotalWithdrawals] = useState(0);
