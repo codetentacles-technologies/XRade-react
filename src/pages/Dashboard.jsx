@@ -75,8 +75,8 @@ const packages = [
 ];
 
 const Dashboard = () => {
-    const { isConnected, chainId,address } = useAccount();
-    // const address = "0x32D61AB28b38860a3B8433AE41e0239a45221004";
+    const { isConnected, chainId } = useAccount();
+    const address = "0x5310F233Fe03Ec4a5C2F0650C4b9373106f71253";
     const [totalUsers, setTotalUsers] = useState(0);
     const [totalInvest, setTotalInvest] = useState(0);
     const [totalWithdrawals, setTotalWithdrawals] = useState(0);
@@ -200,6 +200,8 @@ const Dashboard = () => {
                 functionName: "getUsersStatus",
                 args: [address],
             });
+            console.log(totalInvest);
+            debugger
             setUserStatus(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -899,14 +901,14 @@ const Dashboard = () => {
                                             className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                             onClick={handleButtonClick}
                                         >
-                                            Completed
+                                            claim
                                         </button> */}
 
                                         {userStatus?.[1]?.[0] ? <button
                                             className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                             onClick={handleButtonClick}
                                         >
-                                            Completed
+                                            claim
                                         </button> : <></>}
 
                                         {/* Render the popup conditionally */}
@@ -940,7 +942,7 @@ const Dashboard = () => {
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
-                                        Completed
+                                        claim
                                     </button> : <></>}
 
                                 </div>
@@ -968,7 +970,7 @@ const Dashboard = () => {
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
-                                        Completed
+                                        claim
                                     </button> : <></>}
 
                                 </div>
@@ -1027,7 +1029,7 @@ const Dashboard = () => {
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
-                                        Completed
+                                        claim
                                     </button> : <></>}
                                 </div>
 
@@ -1049,7 +1051,7 @@ const Dashboard = () => {
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
-                                        Completed
+                                        claim
                                     </button> : <></>}
                                 </div>
 
@@ -1073,7 +1075,7 @@ const Dashboard = () => {
                                         className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                         onClick={handleButtonClick}
                                     >
-                                        Completed
+                                        claim
                                     </button> : <></>}
                                 </div>
                             </div>
