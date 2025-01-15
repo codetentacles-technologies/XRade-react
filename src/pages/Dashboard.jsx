@@ -535,7 +535,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 {isConnected && (
-                                    <div className="p-4  px-6 border rounded-[24px] flex flex-col gap-2 hover:shadow-md hover:border-white">
+                                    <div className="xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 hover:shadow-md hover:border-white">
                                         <p className="text-lg font-medium text-secondary">
                                             Your Personal Invitation Link
                                         </p>
@@ -590,27 +590,11 @@ const Dashboard = () => {
                                 </div>
 
 
-                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
-                                    <p className="text-xl font-semibold text-primary">
-                                        Withdraw your CTO Funds
-                                    </p>
-                                    <div className="flex items-center gap-4 justify-between">
-                                        <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(userStatus?.[5], 18)}
-                                        </p>
-                                        <button
-                                            disabled={claiming}
-                                            onClick={handleClaimCTO}
-                                            className="bg-primary text-sm text-white py-2 px-6 rounded-full w-max"
-                                        >
-                                            {claiming ? "Claiming..." : "Withdraw"}
-                                        </button>
-                                    </div>
-                                </div>
+                                
 
                             </div>
                             {/* Header Section */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-6 ">
+                            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6 ">
                                 <div className="group bg-boxgradient shadow-dashboard p-4 flex items-center justify-between rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
                                     <div className="flex flex-col gap-3">
                                         <h3 className="text-secondary font-bold text-md">
@@ -672,6 +656,35 @@ const Dashboard = () => {
                                         <p className="text-3xl font-bold text-primary ">
                                             ${formatNumber(totalUserInvestedAmount?.levelIncome, 18)}
                                         </p>
+                                    </div>
+                                </div>
+
+                                <div className="group bg-boxgradient shadow-dashboard p-4 my-auto rounded-[24px] transition-transform duration-300 hover:translate-y-[-4px]">
+                                    <div className="flex flex-col gap-3">
+                                        <h3 className="text-secondary font-bold text-md">
+                                            Direct Business
+                                        </h3>
+                                        <p className="text-3xl font-bold text-primary ">
+                                            ${formatNumber(totalUserInvestedAmount?.directBusiness, 18)}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className=" p-4 px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
+                                    <p className="text-xl font-semibold text-primary">
+                                        Withdraw your CTO Funds
+                                    </p>
+                                    <div className="flex items-center gap-4 justify-between">
+                                        <p className="text-3xl font-bold text-primary ">
+                                            ${formatNumber(userStatus?.[5], 18)}
+                                        </p>
+                                        <button
+                                            disabled={claiming}
+                                            onClick={handleClaimCTO}
+                                            className="bg-primary text-sm text-white py-2 px-6 rounded-full w-max"
+                                        >
+                                            {claiming ? "Claiming..." : "Withdraw"}
+                                        </button>
                                     </div>
                                 </div>
 
