@@ -75,8 +75,8 @@ const packages = [
 ];
 
 const Dashboard = () => {
-    const { isConnected, chainId } = useAccount();
-    const address = "0x5310F233Fe03Ec4a5C2F0650C4b9373106f71253";
+    const { isConnected, chainId,address } = useAccount();
+    // const address = "0x5310F233Fe03Ec4a5C2F0650C4b9373106f71253";
     const [totalUsers, setTotalUsers] = useState(0);
     const [totalInvest, setTotalInvest] = useState(0);
     const [totalWithdrawals, setTotalWithdrawals] = useState(0);
@@ -363,7 +363,10 @@ const Dashboard = () => {
         // Set an interval to call getROIamount every 5 seconds
         const intervalId = setInterval(() => {
           console.log("Current Address:", address);
-          getUsersEarning();
+           getUserDeposits();
+        getCurrentDeposits();
+        getUsersEarning();
+        getUsersStatus();
         }, 5000);
     
         // Cleanup the interval on component unmount
