@@ -83,6 +83,7 @@ const Dashboard = () => {
     const [userDeposits, setUserDeposits] = useState(0);
     const [totalUserInvestedAmount, setTotalUserInvestedAmount] = useState(0);
     const [claiming, setClaiming] = useState(false);
+    const [claimingCTO, setClaimingCTO] = useState(false);
     const [userStatus, setUserStatus] = useState();
 
     const { writeContractAsync } = useWriteContract();
@@ -93,6 +94,8 @@ const Dashboard = () => {
     const [currentPlanIndex, setCurrentPlanIndex] = useState(0);
     const [transactionMessage, setTransactionMessage] = useState("Please wait...");
     const [isTransaction, setIsTransaction] = useState(false);
+
+    const [isTransactionClaim, setIsTransactionClaim] = useState(false);
 
     const [copied, setCopied] = useState(false);
     let { referral } = useParams();
@@ -250,6 +253,75 @@ const Dashboard = () => {
             setIsTransaction(false);
             setTransactionMessage("Please wait...");
             setClaiming(false);
+        }
+    };
+
+    const handleClaimCTO = async () => {
+        try {
+            if (!isConnected) {
+                toast.error("Please connect your wallet");
+                return;
+            }
+            
+            if(formatNumber(userStatus?.[5], 18)<=0){
+                toast.error("Amount not available");
+                return;
+            }
+
+            setClaimingCTO(true);
+            const investTx = await writeContractAsync({
+                address: blockConfig[chainId].XRADE_ADDRESS,
+                abi: XRADE_ABI,
+                functionName: "claimDirectEarnings",
+            });
+
+            setTransactionMessage("Confirming transaction...");
+            const response = await waitForTransaction(investTx, 100);
+            if(response.status=="reverted"){
+                toast.error("Transaction failed");
+            }
+            else{
+            toast.success("Successfully Claimed!");
+            }
+        } catch (error) {
+            console.error("Claim error:", error);
+            toast.error(error.shortMessage || "Failed to claim");
+        } finally {
+            setClaimingCTO(false);
+        }
+    };
+
+
+    const handleClaimJackpot = async (id) => {
+        try {
+            if (!isConnected) {
+                toast.error("Please connect your wallet");
+                return;
+            }
+            
+            
+            setIsTransactionClaim(true);
+
+            const investTx = await writeContractAsync({
+                address: blockConfig[chainId].XRADE_ADDRESS,
+                abi: XRADE_ABI,
+                functionName: "claimJackpot",
+                args : [id]
+            });
+
+            const response = await waitForTransaction(investTx, 100);
+            if(response.status=="reverted"){
+                toast.error("Transaction failed");
+            }
+            else{
+            toast.success("Successfully Claimed!");
+            }
+        } catch (error) {
+            console.error("Claim error:", error);
+            toast.error(error.shortMessage || "Failed to claim");
+        } finally {
+            setIsTransactionClaim(false);
+           
         }
     };
 
@@ -460,7 +532,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                                 {isConnected && (
-                                    <div className=" xl:col-span-2 p-4  px-6 border rounded-[24px] flex flex-col gap-2 hover:shadow-md hover:border-white">
+                                    <div className="p-4  px-6 border rounded-[24px] flex flex-col gap-2 hover:shadow-md hover:border-white">
                                         <p className="text-lg font-medium text-secondary">
                                             Your Personal Invitation Link
                                         </p>
@@ -507,6 +579,25 @@ const Dashboard = () => {
                                         <button
                                             disabled={claiming}
                                             onClick={handleUserWithdrawl}
+                                            className="bg-primary text-sm text-white py-2 px-6 rounded-full w-max"
+                                        >
+                                            {claiming ? "Claiming..." : "Withdraw"}
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div className=" p-4  px-6 border rounded-[24px] flex flex-col gap-4 justify-center hover:shadow-md hover:border-white">
+                                    <p className="text-xl font-semibold text-primary">
+                                        Withdraw your CTO Funds
+                                    </p>
+                                    <div className="flex items-center gap-4 justify-between">
+                                        <p className="text-3xl font-bold text-primary ">
+                                            ${formatNumber(userStatus?.[5], 18)}
+                                        </p>
+                                        <button
+                                            disabled={claiming}
+                                            onClick={handleClaimCTO}
                                             className="bg-primary text-sm text-white py-2 px-6 rounded-full w-max"
                                         >
                                             {claiming ? "Claiming..." : "Withdraw"}
@@ -897,16 +988,17 @@ const Dashboard = () => {
                                     </p>
                                     <div>
                                         {/* Your existing content */}
-                                        {/* <button
+                                        {userStatus?.[2]?.includes(0) ? <button
                                             className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
                                             onClick={handleButtonClick}
                                         >
-                                            claim
-                                        </button> */}
+                                            Submit Details
+                                        </button> : <></>}
 
                                         {userStatus?.[1]?.[0] ? <button
-                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                            onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(0)}
+                                            disabled={isTransactionClaim}
                                         >
                                             claim
                                         </button> : <></>}
@@ -932,15 +1024,16 @@ const Dashboard = () => {
                                         $10,000 Direct Business within 45 days
                                     </p>
 
-                                    {/* <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
-                Complete the Task{" "}
-                <span>
-                  <ArrowRight className="arrow-icon" size={24} />
-                </span>
-              </button> */}
+                                    {userStatus?.[2]?.includes(1) ? <button
+                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submit Details
+                                        </button> : <></>}
                                     {userStatus?.[1]?.[1] ? <button
-                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                        onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(1)}
+                                        disabled={isTransactionClaim}
                                     >
                                         claim
                                     </button> : <></>}
@@ -960,15 +1053,16 @@ const Dashboard = () => {
                                     <p className="text-lightblue text-base font-medium">
                                         $10,000 Direct Business within 45 days
                                     </p>
-                                    {/* <button className="bg-blue text-white text-sm gap-2 text-center flex items-center justify-center py-1 px-4 mt-3 rounded-full hover:bg-[#192265] hover-arrow-btn">
-                Complete the Task{" "}
-                <span>
-                  <ArrowRight className="arrow-icon" size={24} />
-                </span>
-              </button> */}
+                                    {userStatus?.[2]?.includes(2) ? <button
+                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submit Details
+                                        </button> : <></>}
                                     {userStatus?.[1]?.[2] ? <button
-                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                        onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(2)}
+                                            disabled={isTransactionClaim}
                                     >
                                         claim
                                     </button> : <></>}
@@ -1025,9 +1119,16 @@ const Dashboard = () => {
                                             $50,000 Direct Business within 100 days
                                         </p>
                                     </div>
+                                    {userStatus?.[2]?.includes(3) ? <button
+                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submit Details
+                                        </button> : <></>}
                                     {userStatus?.[1]?.[3] ? <button
-                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                        onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(3)}
+                                            disabled={isTransactionClaim}
                                     >
                                         claim
                                     </button> : <></>}
@@ -1047,9 +1148,16 @@ const Dashboard = () => {
                                             $100,000 Direct Business within 100 days
                                         </p>
                                     </div>
+                                    {userStatus?.[2]?.includes(4) ? <button
+                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submit Details
+                                        </button> : <></>}
                                     {userStatus?.[1]?.[4] ? <button
-                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                        onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(4)}
+                                            disabled={isTransactionClaim}
                                     >
                                         claim
                                     </button> : <></>}
@@ -1071,9 +1179,16 @@ const Dashboard = () => {
                                             $500,000 Direct Business within 100 days
                                         </p>
                                     </div>
+                                    {userStatus?.[2]?.includes(5) ? <button
+                                            className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submit Details
+                                        </button> : <></>}
                                     {userStatus?.[1]?.[5] ? <button
-                                        className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
-                                        onClick={handleButtonClick}
+                                            className={isTransactionClaim ? "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed" : "bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"} 
+                                            onClick={()=>handleClaimJackpot(5)}
+                                            disabled={isTransactionClaim}
                                     >
                                         claim
                                     </button> : <></>}
