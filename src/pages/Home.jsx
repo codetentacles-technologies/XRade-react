@@ -697,7 +697,7 @@ const Home = () => {
           <div className="flex flex-col gap-3">
             <div className="flex justify-between">
               <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
-                Revolutionizing Crypto Investment Opportunities with AI Trade
+                Challenging Income: Maximizing  Your Investment Returns
                 <img
                   src="/images/divident-img.png"
                   alt="setting"
@@ -706,7 +706,7 @@ const Home = () => {
               </h4>
             </div>
             <p className="text-secondary text-base font-normal">
-              AI Trade is an innovative crypto investment platform designed to unlock the potential of cryptocurrency investments. It offers diverse income streams, such as referral income, mining bonuses, and tiered rewards, catering to both experienced investors and newcomers. With its robust ecosystem, AI Trade empowers users to achieve financial growth and long-term security.
+              Unlock the power of your investments with AI Trade's daily returns, designed to help you grow your wealth effortlessly while enjoying a secure and reliable platform tailored for your financial success!
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -825,7 +825,7 @@ const Home = () => {
               />
             </h4>
             <p className="text-lightblue font-normal">
-              Pioneering AI in AI Trading
+              Revolutionizing Crypto Investment Opportunities with AI Trade
             </p>
           </div>
           <Link to="/about" className="flex gap-2 items-center justify-center text-center bg-blue text-white text-lg font-bold rounded-full py-3 px-6 h-[54px] w-max text-nowrap hover-arrow-btn">
@@ -833,11 +833,7 @@ const Home = () => {
           </Link>
         </div>
         <p className="text-lightblue font-normal my-4">
-          Binance Trading is a trailblazer in the world of arbitrage trading,
-          fusing artificial intelligence with financial expertise to redefine
-          how you engage with global markets. Our mission is to empower traders
-          of all levels with advanced tools and insights, ensuring they navigate
-          the complexities of financial markets with confidence and success.
+          AI Trade is an innovative crypto investment platform designed to unlock the potential of cryptocurrency investments. It offers diverse income streams, such as referral income, mining bonuses, and tiered rewards, catering to both experienced investors and newcomers. With its robust ecosystem, AI Trade empowers users to achieve financial growth and long-term security.
         </p>
         <h4 className="text-primary text-2xl font-bold my-5">
           Key Features
