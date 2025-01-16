@@ -9,7 +9,7 @@ const config = {
     },
     dev: {
         97: {
-            XRADE_ADDRESS: "0x6C58c2b82A76Ed50312E52C36d588D9FD8aF086b",
+            XRADE_ADDRESS: "0x7110EFf0dc4Bdc42898a8130fAc640aE5f1E5eE6",
             XRADE_ABI: XRADE_ABI,
             USDT_TOKEN_ADDRESS: "0x821FfF7ea6Aa91A4303BaaFBBA205E37a072CF4D",
             USDT_TOKEN_ABI: USDT_TOKEN_ABI,

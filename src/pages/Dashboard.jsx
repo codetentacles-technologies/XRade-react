@@ -204,7 +204,6 @@ const Dashboard = () => {
                 args: [address],
             });
             console.log(totalInvest);
-            debugger
             setUserStatus(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -257,6 +256,7 @@ const Dashboard = () => {
     };
 
     const handleClaimCTO = async () => {
+        debugger
         try {
             if (!isConnected) {
                 toast.error("Please connect your wallet");
