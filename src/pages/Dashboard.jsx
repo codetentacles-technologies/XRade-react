@@ -263,7 +263,7 @@ const Dashboard = () => {
                 return;
             }
             
-            if(formatNumber(userStatus?.[5], 18)<=0){
+            if(formatNumber(userStatus?.[4], 18)<=0){
                 toast.error("Amount not available");
                 return;
             }
@@ -676,7 +676,7 @@ const Dashboard = () => {
                                     </p>
                                     <div className="flex items-center gap-4 justify-between">
                                         <p className="text-3xl font-bold text-primary ">
-                                            ${formatNumber(userStatus?.[5], 18)}
+                                            ${formatNumber(userStatus?.[4], 18)}
                                         </p>
                                         <button
                                             disabled={claiming}
