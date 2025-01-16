@@ -761,7 +761,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/superbike.png" // Replace with your image URL
@@ -777,7 +777,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/suv-car.png" // Replace with your image URL
@@ -793,7 +793,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
               <div className="relative overflow-hidden">
                 <img
                   src="/images/house-fund.png" // Replace with your image URL
