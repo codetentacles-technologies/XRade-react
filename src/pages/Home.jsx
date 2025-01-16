@@ -18,47 +18,47 @@ import TradingViewWidget from "../components/TradingViewWidget.jsx"
 const Home = () => {
   const { chainId } = useAccount();
 
-const checkUsersInvestment = async (user) => {
-  try {
-    const investment = await readContract(configRead, {
-      abi: blockConfig[chainId].XRADE_ABI,
-      address: blockConfig[chainId].XRADE_ADDRESS,
-      functionName: "usersTotalInvested",
-      arg: [user]
-    });
-    return investment;
-  } catch (error) {
-    return false;
-  }
-};
+  const checkUsersInvestment = async (user) => {
+    try {
+      const investment = await readContract(configRead, {
+        abi: blockConfig[chainId].XRADE_ABI,
+        address: blockConfig[chainId].XRADE_ADDRESS,
+        functionName: "usersTotalInvested",
+        arg: [user]
+      });
+      return investment;
+    } catch (error) {
+      return false;
+    }
+  };
 
-const checkUsersWithdrawal = async (user) => {
-  try {
-    const usersWithdrawal = await readContract(configRead,{
-      abi: blockConfig[chainId].XRADE_ABI,
-      address: blockConfig[chainId].XRADE_ADDRESS,
-      functionName: "usersTotalWithdrawal",
-      arg: [user]
-    });
-    return usersWithdrawal;
-  }catch(error){
-    return false;
-  }
-};
+  const checkUsersWithdrawal = async (user) => {
+    try {
+      const usersWithdrawal = await readContract(configRead, {
+        abi: blockConfig[chainId].XRADE_ABI,
+        address: blockConfig[chainId].XRADE_ADDRESS,
+        functionName: "usersTotalWithdrawal",
+        arg: [user]
+      });
+      return usersWithdrawal;
+    } catch (error) {
+      return false;
+    }
+  };
 
-const checkUserEarning = async (user) => {
-try {
-  const userEarning = await readContract(configRead, {
-    abi: blockConfig[chainId].XRADE_ABI,
-    address: blockConfig[chainId].XRADE_ADDRESS,
-    functionName: "getUsersEarning",
-    arg: [user]
-  });
-  return userEarning;
-} catch (error) {
-  return false;
-}
-};
+  const checkUserEarning = async (user) => {
+    try {
+      const userEarning = await readContract(configRead, {
+        abi: blockConfig[chainId].XRADE_ABI,
+        address: blockConfig[chainId].XRADE_ADDRESS,
+        functionName: "getUsersEarning",
+        arg: [user]
+      });
+      return userEarning;
+    } catch (error) {
+      return false;
+    }
+  };
 
   const data = Array(8).fill({
     packageAmount: "$50",
@@ -108,46 +108,51 @@ try {
   const questions = [
     {
       question: "What is the minimum investment amount?",
-      answer: "The minimum investment amount is $100.",
+      answer: "The minimum investment amount is $50, offering a 1% daily return for 300 days. You can choose from various packages to grow your portfolio confidently.",
     },
     {
       question: "How does the referral income work?",
-      answer: "You earn a 10% commission for each referral.",
+      answer: "Level income is earned as your referral network grows, with tiered rewards across 10 levels. The percentage increases with each level, starting at 0.25% and going up to 6%.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "What are the withdrawal charges?",
+      answer: "Withdrawal charges vary based on the amount: 8% for $10-$500, 5% for $501-$2000, 2% for $2001-$6000, and no charges above $6001, with a fixed $1 maintenance fee.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "How does the per-hour mining bonus work?",
+      answer: "By bringing 10 referrals within 48 hours, you earn a continuous $0.25 per hour for 30 days, credited directly to your account.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "What are the jackpot rewards?",
+      answer: "High achievers can unlock luxurious rewards like superbikes, SUVs, and house funds by achieving direct business targets ranging from $50,000 to $500,000 within 100 days.",
     },
   ];
 
   const steps = [
     {
-      title: "Login Or Create our account",
+      title: "Short-Term Goals (3-6 Months)",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendisse consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        "Launch new investment packages and bonus features.Enhance platform usability and introduce multilingual support.Expand marketing campaigns to attract global users.",
     },
     {
-      title: "Research",
+      title: "Mid-Term Goals (6-12 Months)",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor",
+        "Develop a mobile app for seamless access. Integrate additional cryptocurrencies and wallets. Launch advanced analytical tools for user investment insights.",
     },
     {
-      title: "Choose your crypto",
+      title: "Long-Term Goals (1-3 Years)",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. r adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        "Introduce AI-driven investment advisory services. Expand referral network features with community-driven rewards. Collaborate with global financial institutions for mainstream adoption.",
     },
     {
-      title: "Pre-Sale and Buy",
+      title: "Sustainability & Innovation",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. r adipiscing elit. At sit ut nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas duis dolor. Congue suspendisse  aliquam ut egestas duis dolor. Congue suspendiss consectetur adipiscing elit. ",
+        "Commit to green blockchain technology. Continuously improve security measures and compliance.",
+    },
+    {
+      title: "Global Community Building",
+      description:
+        "Host investor meetups, training, and webinars to strengthen engagement. Expand the user base across multiple continents.",
     },
   ];
 
@@ -175,18 +180,18 @@ try {
           </div>
           <div className="flex flex-col lg:flex-row items-center gap-6" data-aos="fade-up">
             {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
-              <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full lg:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
-                Get Started Now{" "}
-                <ArrowRight className="arrow-icon" size={24} />
-              </button>
+            <button className="text-white border border-white rounded-full text-sm md:text-lg font-semibold py-3.5 px-14 w-full lg:w-max text-center flex items-center justify-center gap-3 hover:bg-primary hover:text-white hover:border-primary transition duration-300 ease-in-out hover-arrow-btn">
+              Get Started Now{" "}
+              <ArrowRight className="arrow-icon" size={24} />
+            </button>
             {/* </BoxReveal> */}
 
             {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
-              <Link to="/PageNotFound" className="no-underline">
-                <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full lg:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
-                  Learn More About Our Features
-                </button>
-              </Link>
+            <Link to="/PageNotFound" className="no-underline">
+              <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full lg:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out">
+                Learn More About Our Features
+              </button>
+            </Link>
             {/* </BoxReveal> */}
           </div>
         </div>
@@ -197,14 +202,14 @@ try {
         <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-8">
           <div className="xl:col-span-1 flex flex-col gap-5" >
             <h6 className="text-primary text-4xl font-bold">AI Trading</h6>
-            <div className="flex flex-col gap-5"  data-aos="fade-up">
-            <p className="text-sm font-normal text-lightblue">Welcome to the Real-Time Website Activity section, where you can stay updated with live insights into the platform's performance and engagement. This dynamic chart provides a comprehensive overview of user activity, including the number of visitors currently exploring the website, recent transactions, and real-time engagement metrics such as clicks, likes, and interactions. You can also see which pages are performing the best, offering a snapshot of the most visited sections of the site.</p>
-            <p className="text-sm font-normal text-lightblue" >Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
+            <div className="flex flex-col gap-5" data-aos="fade-up">
+              <p className="text-sm font-normal text-lightblue">Welcome to the Real-Time Website Activity section, where you can stay updated with live insights into the platform's performance and engagement. This dynamic chart provides a comprehensive overview of user activity, including the number of visitors currently exploring the website, recent transactions, and real-time engagement metrics such as clicks, likes, and interactions. You can also see which pages are performing the best, offering a snapshot of the most visited sections of the site.</p>
+              <p className="text-sm font-normal text-lightblue" >Additionally, the chart highlights geographic data, showcasing where our users are connecting from, and provides trends like bounce rates, session durations, and conversion rates. Whether you're curious about peak activity times or recent spikes in user engagement, this tool keeps you informed with live updates. Dive deeper into the data and optimize your experience with these actionable insights.</p>
             </div>
           </div>
           <div className="xl:col-span-2 w-full m-auto rounded-3xl shadow-xl transition-all duration-300 ease-in-out p-4">
             {/* <img src="/images/graph-img.webp" alt="graph" className="rounded-3xl shadow-lg" /> */}
-            <TradingViewWidget/>
+            <TradingViewWidget />
           </div>
         </div>
       </section>
@@ -283,13 +288,11 @@ try {
                 Referral Income
               </h4>
               <p className="text-white font-normal text-base">
-                Earn referral income from 10 levels of your network's daily ROI.
+                Earn referral income across 10 levels of your network's daily ROI.
               </p>
             </div>
             <p className="text-white font-normal text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
-              nulla eu stetur eget. Nec, ac, sollicitudin aliquam ut egestas
-              duis dolor. Congue suspendisse aliquam ut egestas duis dolor
+              With a direct commission of 15%, build your network and maximize your earnings effortlessly. Explore tiered rewards as your network grows, ensuring long-term financial success.
             </p>
           </div>
           <div className="m-auto flex flex-col justify-center items-center relative mb-5 lg:mb-auto">
@@ -314,7 +317,7 @@ try {
               />
             </h2>
             <p className="text-lightblue text-base font-normal">
-              Earn referral income from 10 levels of your network's daily ROI.
+              Explore multiple income streams, including referral income across 10 levels of your network's daily ROI. Build your network, earn rewards, and maximize your financial growth.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 items-center justify-center gap-5 xl:h-[244px] w-full">
@@ -694,7 +697,7 @@ try {
           <div className="flex flex-col gap-3">
             <div className="flex justify-between">
               <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
-                Challenging Income: Maximizing  Your Investment Returns
+                Revolutionizing Crypto Investment Opportunities with AI Trade
                 <img
                   src="/images/divident-img.png"
                   alt="setting"
@@ -703,10 +706,7 @@ try {
               </h4>
             </div>
             <p className="text-secondary text-base font-normal">
-              Choose from a range of investment packages that offer attractive
-              daily returns for a specified duration. This stable Dividend
-              income structure provides consistent income, allowing you to grow
-              your portfolio with confidence.
+              AI Trade is an innovative crypto investment platform designed to unlock the potential of cryptocurrency investments. It offers diverse income streams, such as referral income, mining bonuses, and tiered rewards, catering to both experienced investors and newcomers. With its robust ecosystem, AI Trade empowers users to achieve financial growth and long-term security.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1083,7 +1083,7 @@ try {
                   key={index}
                   className={`flex flex-col md:flex-row items-center w-full mb-10 last:mb-0 ps-4 md:ps-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
                 >
-                  
+
                   {/* Title */}
                   <div className={`w-full md:w-1/2 text-left ps-4 md:ps-8 ${index % 2 === 0 ? '' : 'md:text-right pe-4 md:pe-8'}`}>
                     <h3 className="text-lg md:text-2xl font-bold text-primary">
@@ -1205,8 +1205,7 @@ try {
                 />
               </h2>
               <p className="text-lightblue text-base font-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
-                nulla eu stetur eget.
+                Referral income works by inviting others to join the platform, where you earn a 15% direct commission on their investments. Additionally, as your network expands, you unlock tiered rewards ranging from 0.25% to 6% across 10 levels, providing consistent passive income.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -1293,7 +1292,7 @@ try {
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </section>

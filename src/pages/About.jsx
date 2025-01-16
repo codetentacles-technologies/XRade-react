@@ -53,23 +53,23 @@ const About = () => {
   const questions = [
     {
       question: "What is the minimum investment amount?",
-      answer: "The minimum investment amount is $100.",
+      answer: "The minimum investment amount is $50, offering a 1% daily return for 300 days. You can choose from various packages to grow your portfolio confidently.",
     },
     {
       question: "How does the referral income work?",
-      answer: "You earn a 10% commission for each referral.",
+      answer: "Level income is earned as your referral network grows, with tiered rewards across 10 levels. The percentage increases with each level, starting at 0.25% and going up to 6%.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "What are the withdrawal charges?",
+      answer: "Withdrawal charges vary based on the amount: 8% for $10-$500, 5% for $501-$2000, 2% for $2001-$6000, and no charges above $6001, with a fixed $1 maintenance fee.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "How does the per-hour mining bonus work?",
+      answer: "By bringing 10 referrals within 48 hours, you earn a continuous $0.25 per hour for 30 days, credited directly to your account.",
     },
     {
-      question: "What are the withdrawal policies?",
-      answer: "Withdrawals can be made at any time with a minimum fee.",
+      question: "What are the jackpot rewards?",
+      answer: "High achievers can unlock luxurious rewards like superbikes, SUVs, and house funds by achieving direct business targets ranging from $50,000 to $500,000 within 100 days.",
     },
   ];
 
@@ -192,8 +192,7 @@ const About = () => {
               />
             </h2>
             <p className="text-lightblue text-base font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. At sit ut
-              nulla eu stetur eget.
+              Referral income works by inviting others to join the platform, where you earn a 15% direct commission on their investments. Additionally, as your network expands, you unlock tiered rewards ranging from 0.25% to 6% across 10 levels, providing consistent passive income.
             </p>
           </div>
           <div className="flex flex-col gap-4">

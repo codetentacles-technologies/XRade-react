@@ -764,7 +764,7 @@ const Dashboard = () => {
 
 
                     {/* Dividend Income */}
-                    <section data-aos="fade-up" className="container">
+                    <section data-aos="fade-up" className="container px-0">
                         <div className="flex flex-col gap-8">
                             <div className="flex flex-col gap-3">
                                 <div className="flex justify-between">
@@ -830,7 +830,7 @@ const Dashboard = () => {
                     </section>
 
                     {/* Network section */}
-                    <section data-aos="fade-up" className="container">
+                    <section data-aos="fade-up" className="container px-0">
                         <div className="flex flex-col gap-8">
                             <div className="flex items-center justify-between flex-col xl:flex-row gap-4">
                                 <h4 className="text-primary text-2xl md:text-3xl xl:text-4xl font-bold">
@@ -920,7 +920,7 @@ const Dashboard = () => {
                     </section>
 
                     {/* Level Income */}
-                    <section data-aos="fade-up" className="container">
+                    <section data-aos="fade-up" className="container px-0">
                         <div className="flex flex-col gap-8">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
                                 <h4 className="text-primary text-4xl font-bold flex items-center  gap-3 w-full">
@@ -989,7 +989,7 @@ const Dashboard = () => {
                             </button>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+                            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
                                 <div className="relative overflow-hidden">
                                     <img
                                         src="/images/dubai-img.png"
@@ -1024,7 +1024,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+                            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
                                 <div className="relative overflow-hidden">
                                     <img
                                         src="/images/turkey-img.png"
@@ -1056,7 +1056,7 @@ const Dashboard = () => {
 
                                 </div>
                             </div>
-                            <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
+                            <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0 ">
                                 <div className="relative overflow-hidden">
                                     <img
                                         src="/images/europe-img.png"
@@ -1089,7 +1089,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* Jackpot Rewards */}
-                    <section data-aos="fade-up" className="container">
+                    <section data-aos="fade-up" className="container px-0">
                         <div className="flex flex-col gap-8">
                             <div className="flex flex-col ">
                                 <div className="flex flex-col  gap-4">
@@ -1119,7 +1119,7 @@ const Dashboard = () => {
                             </div>
 
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+                                <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
                                     <div className="relative overflow-hidden">
                                         <img
                                             src="/images/superbike.png" // Replace with your image URL
@@ -1150,7 +1150,7 @@ const Dashboard = () => {
                                     </button> : <></>}
                                 </div>
 
-                                <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+                                <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
                                     <div className="relative overflow-hidden">
                                         <img
                                             src="/images/suv-car.png" // Replace with your image URL
@@ -1179,7 +1179,7 @@ const Dashboard = () => {
                                     </button> : <></>}
                                 </div>
 
-                                <div className="max-w-sm mx-auto rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
+                                <div className="max-w-full rounded-3xl overflow-hidden border border-bodytext bg-white transform transition-all duration-300 ease-in-out group hover:shadow-xl hover:border-0">
                                     <div className="relative overflow-hidden">
                                         <img
                                             src="/images/house-fund.png" // Replace with your image URL
