@@ -7,6 +7,7 @@ import { QueryClient } from "@tanstack/react-query";
 import {
   walletConnectWallet,
   metaMaskWallet,
+  trustWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import {  bsc, bscTestnet } from "viem/chains";
 
@@ -31,7 +32,7 @@ const connectors = connectorsForWallets(
   [
     {
       groupName: "Recommended",
-      wallets: [metaMaskWallet, walletConnectWallet],
+      wallets: [metaMaskWallet, walletConnectWallet, trustWallet],
     },
   ],
   {
