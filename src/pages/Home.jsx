@@ -451,9 +451,6 @@ const Home = () => {
               <h5 className="text-white text-2xl font-bold">
                 Per-Hour Mining Bonus: Engaging Your Network
               </h5>
-              <p className="text-white text-base font-normal">
-                Earn referral income from 10 levels of your network's daily ROI.
-              </p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4 border border-[#858C9F] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
@@ -668,7 +665,7 @@ const Home = () => {
                   Turkey + Dubai Tour
                 </h3>
                 <p className="text-lightblue text-base font-medium">
-                  $10,000 Direct Business within 45 days
+                  $25,000 Direct Business within 45 days
                 </p>
               </div>
             </div>
@@ -683,7 +680,7 @@ const Home = () => {
               <div className="p-6 gap-2">
                 <h3 className="text-2xl font-bold text-primary">Europe Tour</h3>
                 <p className="text-lightblue text-base font-medium">
-                  $10,000 Direct Business within 45 days
+                  $35,000 Direct Business within 45 days
                 </p>
               </div>
             </div>
