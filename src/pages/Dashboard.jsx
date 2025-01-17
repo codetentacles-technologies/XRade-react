@@ -1037,7 +1037,7 @@ const Dashboard = () => {
                                         Turkey + Dubai Tour
                                     </h3>
                                     <p className="text-lightblue text-base font-medium">
-                                        $10,000 Direct Business within 45 days
+                                        $25,000 Direct Business within 45 days
                                     </p>
 
                                     {userStatus?.[2]?.includes(1) ? <button
@@ -1067,7 +1067,7 @@ const Dashboard = () => {
                                 <div className="p-6 gap-2">
                                     <h3 className="text-2xl font-bold text-primary">Europe Tour</h3>
                                     <p className="text-lightblue text-base font-medium">
-                                        $10,000 Direct Business within 45 days
+                                        $35,000 Direct Business within 45 days
                                     </p>
                                     {userStatus?.[2]?.includes(2) ? <button
                                             className="bg-[#149514] text-white text-sm gap-2 text-center flex items-center justify-center py-2 px-4 mt-3 rounded-full"
