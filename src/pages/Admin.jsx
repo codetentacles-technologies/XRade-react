@@ -27,12 +27,14 @@ const Admin = () => {
     const withdrawFunds = async (e) => {
         e.preventDefault();
         try {
+
             const approval = await writeContractAsync({
                 abi: XRADE_ABI,
                 address: blockConfig[chainId].XRADE_ADDRESS,
                 functionName: "WithdrawFunds",
-                args: [form1Field1, form1Field2,blockConfig[chainId].USDT_TOKEN_ADDRESS],
+                args: [form1Field1, parseEther(form1Field2),blockConfig[chainId].USDT_TOKEN_ADDRESS],
             });
+            debugger
             await waitForTransaction(approval, 100);
             return approval;
         } catch (error) {
