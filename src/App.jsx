@@ -17,6 +17,7 @@ import PassportDetails from "./pages/PassportDetails";
 import Voucher from "./pages/Voucher";
 import Preloader from "./components/Preloder";
 import { useEffect, useState } from "react";
+import Admin from "./pages/Admin";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -127,6 +128,20 @@ function App() {
                                                 <Header />
                                                 <div className="container py-[7rem]">
                                                     <Voucher />
+                                                </div>
+                                                <div className="lg:fixed bottom-0 w-full ">
+                                                    <Footer />
+                                                </div>
+                                            </>
+                                        }
+                                    />
+                                    <Route
+                                        path="/Admin"
+                                        element={
+                                            <>
+                                                <Header />
+                                                <div className="container py-[7rem]">
+                                                    <Admin />
                                                 </div>
                                                 <div className="lg:fixed bottom-0 w-full ">
                                                     <Footer />
