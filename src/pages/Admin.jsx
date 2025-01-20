@@ -213,7 +213,7 @@ const Admin = () => {
                     <label className="block text-sm font-medium text-gray-600 mb-2">Amount</label>
                     <input
                         type="text"
-                        value={form1Field1}
+                        value={form1Field2}
                         onChange={(e) => setForm1Field2(e.target.value)}
                         required
                         className="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
