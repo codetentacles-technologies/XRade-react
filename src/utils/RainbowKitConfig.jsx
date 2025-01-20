@@ -8,6 +8,7 @@ import {
   walletConnectWallet,
   metaMaskWallet,
   trustWallet,
+  binanceWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import {  bsc, bscTestnet } from "viem/chains";
 
@@ -32,7 +33,7 @@ const connectors = connectorsForWallets(
   [
     {
       groupName: "Recommended",
-      wallets: [metaMaskWallet, walletConnectWallet, trustWallet],
+      wallets: [metaMaskWallet, walletConnectWallet, trustWallet, binanceWallet],
     },
   ],
   {
