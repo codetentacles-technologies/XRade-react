@@ -143,9 +143,7 @@ function App() {
                                                 <div className="container py-[7rem]">
                                                     <Admin />
                                                 </div>
-                                                <div className="lg:fixed bottom-0 w-full ">
-                                                    <Footer />
-                                                </div>
+                                              
                                             </>
                                         }
                                     />
