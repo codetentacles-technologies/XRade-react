@@ -950,31 +950,31 @@ const Dashboard = () => {
                                 </div>
                                 <div className="p-3 bg-[#E7EBFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 4</h5>
-                                    <p className="font-bold text-md text-[#031641]">4%</p>
+                                    <p className="font-bold text-md text-[#031641]">0.5%</p>
                                 </div>
                                 <div className="p-3 bg-[#DEE5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 5</h5>
-                                    <p className="font-bold text-md text-[#031641]">4%</p>
+                                    <p className="font-bold text-md text-[#031641]">1%</p>
                                 </div>
                                 <div className="p-3 bg-[#D9E1FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 6</h5>
-                                    <p className="font-bold text-md text-[#031641]">3%</p>
+                                    <p className="font-bold text-md text-[#031641]">2%</p>
                                 </div>
                                 <div className="p-3 bg-[#D3DDFF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 7</h5>
-                                    <p className="font-bold text-md text-[#031641]">2%</p>
+                                    <p className="font-bold text-md text-[#031641]">3%</p>
                                 </div>
                                 <div className="p-3 bg-[#CAD5FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 8</h5>
-                                    <p className="font-bold text-md text-[#031641]">1%</p>
+                                    <p className="font-bold text-md text-[#031641]">4%</p>
                                 </div>
                                 <div className="p-3 bg-[#B8C7FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 9</h5>
-                                    <p className="font-bold text-md text-[#031641]">6%</p>
+                                    <p className="font-bold text-md text-[#031641]">5%</p>
                                 </div>
                                 <div className="p-3 bg-[#B1C2FF] rounded-2xl shadow-lg text-grey-darker w-full md:w-max flex flex-col items-center justify-center m-auto py-5 gap-4 px-3.5">
                                     <h5 className="font-bold text-lg text-secondary">LEVEL 10</h5>
-                                    <p className="font-bold text-md text-[#031641]">5%</p>
+                                    <p className="font-bold text-md text-[#031641]">6%</p>
                                 </div>
                             </div>
                         </div>
