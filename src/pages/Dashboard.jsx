@@ -41,6 +41,7 @@ const packages = [
         imageUrl: packagetitle,
         duration: 300,
         dailyIncome: 1, // 1% of 50
+        amount:50
     },
     {
         title: "Package Title",
@@ -51,6 +52,7 @@ const packages = [
         imageUrl: packagetitle,
         duration: 300,
         dailyIncome: 1, // 1% of 100
+        amount:100
     },
     {
         title: "Package Title",
@@ -61,6 +63,7 @@ const packages = [
         imageUrl: packagetitle,
         duration: 200,
         dailyIncome: 1.5,
+        amount:250
     },
     {
         title: "Package Title",
@@ -71,6 +74,7 @@ const packages = [
         imageUrl: packagetitle,
         duration: 200,
         dailyIncome: 1.5,
+        amount:500
     },
 ];
 
@@ -157,21 +161,22 @@ const Dashboard = () => {
 
     const getUserDeposits = async () => {
         try {
+            
             const userDepositsdata = await readContract(configRead, {
                 abi: blockConfig[chainId].XRADE_ABI,
                 address: blockConfig[chainId].XRADE_ADDRESS,
                 functionName: "getUserDeposits",
                 args: [address],
             });
-
-            setUserDeposits(
-                userDepositsdata.map((pkg) => ({
-                    planAmount: formatUnits(pkg.amount, 18),
-                    planDuration: packages[pkg.planId].duration,
-                    dailyIncome: packages[pkg.planId].dailyIncome,
-                    end : pkg.end
-                }))
-            );
+            
+            setUserDeposits({
+                
+                    planAmount: formatUnits(userDepositsdata.amount, 18),
+                    planDuration: userDepositsdata.duration,
+                    dailyIncome: userDepositsdata.dailyROI,
+                    // end : pkg.end
+                })
+                debugger    
             return userDepositsdata;
         } catch (error) {
             return [];
@@ -186,7 +191,6 @@ const Dashboard = () => {
                 functionName: "getUsersEarning",
                 args: [address],
             });
-            console.log(address,"address")
             setTotalUserInvestedAmount(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -203,7 +207,6 @@ const Dashboard = () => {
                 functionName: "getUsersStatus",
                 args: [address],
             });
-            console.log(totalInvest);
             setUserStatus(totalInvest);
             return totalInvest;
         } catch (error) {
@@ -362,7 +365,6 @@ const Dashboard = () => {
     useEffect(() => {
         // Set an interval to call getROIamount every 5 seconds
         const intervalId = setInterval(() => {
-          console.log("Current Address:", address);
            getUserDeposits();
         getCurrentDeposits();
         getUsersEarning();
@@ -499,7 +501,7 @@ const Dashboard = () => {
                         </p>
                         <Cardpackage
                             packages={packages}
-
+                            activePlanId = {Number(totalUserInvestedAmount?.joinTime > 0) ?  userDeposits?.planAmount : 0}
                             referral={referral}
                         />
                     </div>
@@ -690,74 +692,7 @@ const Dashboard = () => {
 
 
                             </div>
-                            {/* Challenging Income */}
-                            <section className="" data-aos="fade-up">
-                                <div className="bg-white rounded-3xl shadow-xl p-6 flex flex-col gap-6">
-                                    {/* Header */}
-                                    <div className="flex justify-between items-center ">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-primary">
-                                                Recent Investments
-                                            </h2>
-
-                                        </div>
-                                        {/* <a
-                                        href="#"
-                                        className="text-secondary text-sm font-semibold flex items-center gap-1 "
-                                    >
-                                        See All Transactions <ChevronRight size={16} />
-                                    </a> */}
-                                    </div>
-
-                                    {/* Transactions Table */}
-                                    <div className="overflow-x-auto">
-                                        <table className="min-w-full text-center divide-y divide-gray-200">
-                                            <thead>
-                                                <th>Amount</th>
-                                                <th>Duration</th>
-                                                <th>Remaining days</th>
-                                                <th>ROI</th>
-                                            </thead>
-                                            <tbody className="bg-white text-center divide-y divide-gray-200">
-                                                {userDeposits.length > 0
-                                                    ? userDeposits.map((deposit, index) => (
-                                                        <tr key={index}>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold flex flex-col">
-                                                                ${deposit.planAmount}
-                                                            </td>
-                                                            <td className="p-4 whitespace-nowrap text-sm text-primary font-semibold">
-                                                                {deposit.planDuration}{" "}
-                                                                <span className="text-secondary text-xs font-medium pl-1">
-                                                                    {" "}
-                                                                    Days
-                                                                </span>
-                                                            </td>
-                                                            <td className="p-4 whitespace-nowrap mx-auto  ">
-                                                                <span className="flex flex-col items-center">
-                                                                    <CountDownTimer endDate={Number(deposit?.end) * 1000} onlyDays={true}/>
-                                                                </span>
-                                                            </td>
-
-                                                            <td className="p-4 whitespace-nowrap text-sm text-secondary text-center font-medium">
-                                                                {deposit.dailyIncome} %
-                                                            </td>
-                                                            {/* <td className="p-4 whitespace-nowrap text-sm text-secondary font-medium w-[5%]">
-                                                        <button className="text-secondary hover:text-gray-600">
-                                                            <Ellipsis size={32} />
-                                                        </button>
-                                                    </td> */}
-                                                        </tr>
-                                                    ))
-                                                    : <tr>
-                                                        <td colSpan={4}>
-                                                        No Investment Found
-                                                        </td>
-                                                        </tr>}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </section>
+                           
                         </div>
                     </section>
 

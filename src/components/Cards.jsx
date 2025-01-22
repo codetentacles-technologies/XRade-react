@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { configRead } from "../utils/RainbowKitConfig";
 
 
-const PackageCards = ({ packages, referral }) => {
+const PackageCards = ({ packages, referral,activePlanId }) => {
     const { writeContractAsync } = useWriteContract();
     const { waitForTransaction } = useWaitForTransaction();
     const { chainId, isConnected, address } = useAccount();
@@ -70,7 +70,7 @@ const PackageCards = ({ packages, referral }) => {
                 toast.error("Please connect your wallet");
                 return;
             }
-debugger
+
             if (!isAddress(referrerAddress)) {
                 referrerAddress = blockConfig[chainId].ADMIN_ADDRESS;
             }
@@ -150,18 +150,26 @@ toast.success("Successfully invested in plan!");
                     <p className="text-lg font-bold text-primary mb-2">{pkg.price}</p>
                     <p className="text-lg font-bold text-primary mb-2">{pkg.percentage}</p>
                     {/* <p className="text-[#989DAB] mb-4">{pkg.description}</p> */}
+                    {activePlanId==pkg.amount ? 
+                    <button
+                    className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full  hover:shadow-buypackage"
+                >
+                      Active
+                </button>
+                 :
                     <button
                         className="bg-blue text-white py-2 px-4 rounded-full hover:bg-[#192265] hover:shadow-buypackage"
                         onClick={() => {
                             setSelectedPackageIndex(index);
                             handleBuyPackage(index);
                         }} // Pass null for referrer if not available
-                        disabled={isTransaction}
+                        disabled={isTransaction || activePlanId>0}
                     >
-                        {index == selectedPackageIndex && isTransaction
+                          {(index == selectedPackageIndex && isTransaction)
                             ? "Processing..."
                             : "Buy Package"}
                     </button>
+}
                 </div>
             ))}
         </div>
