@@ -772,10 +772,11 @@ const Dashboard = () => {
                                     Per-Hour Mining Bonus: Engaging Your Network
                                 </h4>
                                 <div className="flex flex-col md:flex-row items-center gap-6">
-                                    {/* <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
-                                        <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
-                                        20 Days Left to Achieve
-                                    </p> */}
+                                {Number(totalUserInvestedAmount?.joinTime) > 0 ? <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
+                                                <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
+                                                <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000*2)} onlyDays={false}/> left
+                                            </p> : <></>
+                                            }
                                     <p className="bg-homeabout text-sm font-bold text-primary rounded-full py-2 px-4">
                                         <span className="w-2 h-2 rounded-full inline-block mr-1.5 bg-primary"></span>
                                         {userStatus?.[0] ? totalUserInvestedAmount?.higherPlanRef < 12 ? 12 - Number(totalUserInvestedAmount?.higherPlanRef) : 0

@@ -4,7 +4,11 @@ import USDT_TOKEN_ABI from "../assets/abi/usdt-token.json";
 const config = {
     prod: {
         56: {
-            contractAddress: "",
+            XRADE_ADDRESS: "0xDe33610B195A3200143415eddCaf6c6baFD54Ec4",
+            XRADE_ABI: XRADE_ABI,
+            USDT_TOKEN_ADDRESS: "0x55d398326f99059fF775485246999027B3197955",
+            USDT_TOKEN_ABI: USDT_TOKEN_ABI,
+            ADMIN_ADDRESS: "0xd5D5dDc96C7204a589f6C8b59fF2dd4b8eb07061",
         },
     },
     dev: {
