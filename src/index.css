@@ -1,4 +1,5 @@
-@import "./styles/theme.css"; /* Import the theme variables */
+@import "./styles/theme.css";
+/* Import the theme variables */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
@@ -8,10 +9,12 @@ body {
   font-family: "Lato", serif;
   margin: auto;
 }
+
 .reffral-income-bg {
   background: url(../public/images/refferal-income-bg.webp) center no-repeat;
   background-size: cover;
 }
+
 .timeline-shadow {
   box-shadow: 0px 1px 8px 6px #81a1f340;
 }
@@ -35,6 +38,7 @@ body {
 }
 
 @keyframes main {
+
   0%,
   40%,
   100% {
@@ -45,6 +49,7 @@ body {
     transform: translateY(-20px);
   }
 }
+
 /*============= income type============== */
 .contain-income-type {
   perspective: 1000px;
@@ -60,6 +65,7 @@ body {
     transform: rotateY(360deg);
   }
 }
+
 /*============= wallet============== */
 .contain-wallet img {
   animation: flip 3s infinite;
@@ -67,6 +73,7 @@ body {
 }
 
 @keyframes flip {
+
   0%,
   80% {
     transform: rotateY(360deg);
@@ -78,9 +85,11 @@ body {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -89,14 +98,17 @@ body {
 .animate-rotate {
   animation: floatEffect 3s ease-in-out infinite;
 }
+
 /*============= Bouce Effect ============== */
 @keyframes bounceEffect {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-3px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -137,17 +149,20 @@ body {
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
 }
 
 
-.hover-arrow-btn:hover, .left-arrow-button:hover {
-  background-color: #28418D; 
+.hover-arrow-btn:hover,
+.left-arrow-button:hover {
+  background-color: #28418D;
 }
 
-.hover-arrow-btn, .left-arrow-button {
+.hover-arrow-btn,
+.left-arrow-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -157,27 +172,29 @@ body {
 
 .arrow-icon {
   display: inline-block;
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.3s ease-out;
 }
 
 .hover-arrow-btn:hover .arrow-icon {
   transform: translateX(8px);
 }
 
-.left-arrow-icon{
+.left-arrow-icon {
   display: inline-block;
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.3s ease-out;
 }
 
 .left-arrow-button:hover .left-arrow-icon {
   transform: translateX(-8px);
 }
-.ju367v9i{
+
+.ju367v9i {
   background: #2850CC !important;
-border-radius: 25px !important;
-padding: 0px 32px !important;
-margin: auto !important;
+  border-radius: 25px !important;
+  padding: 0px 32px !important;
+  margin: auto !important;
 }
+
 .hero-bg {
   background: linear-gradient(#070E2DD9 85%, #050A20D4 85%, #070D29D9 85%), url(../public/images/hero-bg.webp);
   background-size: cover;
@@ -189,14 +206,18 @@ margin: auto !important;
   background-size: cover;
   background-position: center;
 }
-.investment{
+
+.investment {
   background: url(../public/images/investment-img.webp);
   background-size: cover;
   background-position: center;
 }
+
 .investment {
-  position: relative; /* Required for the pseudo-element */
-  overflow: hidden; /* Hide the overflow from the pseudo-element scaling */
+  position: relative;
+  /* Required for the pseudo-element */
+  overflow: hidden;
+  /* Hide the overflow from the pseudo-element scaling */
 }
 
 .investment::before {
@@ -209,9 +230,12 @@ margin: auto !important;
   left: 0;
   right: 0;
   bottom: 0;
-  transition: transform 0.3s ease; /* Smooth transition */
-  transform: scale(1); /* Initial scale */
-  z-index: 0; /* Place behind other content */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+  transform: scale(1);
+  /* Initial scale */
+  z-index: 0;
+  /* Place behind other content */
 }
 
 .investment:hover::before {
@@ -219,14 +243,17 @@ margin: auto !important;
 
 }
 
-.cashback{
+.cashback {
   background: url(../public/images/cashback-img.webp);
   background-size: cover;
   background-position: center;
 }
+
 .cashback {
-  position: relative; /* Required for the pseudo-element */
-  overflow: hidden; /* Hide the overflow from the pseudo-element scaling */
+  position: relative;
+  /* Required for the pseudo-element */
+  overflow: hidden;
+  /* Hide the overflow from the pseudo-element scaling */
 }
 
 .cashback::before {
@@ -239,9 +266,12 @@ margin: auto !important;
   left: 0;
   right: 0;
   bottom: 0;
-  transition: transform 0.3s ease; /* Smooth transition */
-  transform: scale(1); /* Initial scale */
-  z-index: 0; /* Place behind other content */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+  transform: scale(1);
+  /* Initial scale */
+  z-index: 0;
+  /* Place behind other content */
 }
 
 .cashback:hover::before {
@@ -250,65 +280,81 @@ margin: auto !important;
 
 }
 
-.card{
+.card {
   background: url(../public/images/card-bg.webp) no-repeat;
   background-size: contain;
   background-position: center;
 }
-.go2072408551{
+
+.go2072408551 {
   background-color: #28418D !important;
   border: 1px solid #28418D !important;
 }
+
 .about-bg {
   background: linear-gradient(92.78deg, rgba(55, 62, 84, 0.5) 1.14%, rgba(18, 33, 78, 0.78) 25.13%, rgba(17, 31, 75, 0.79) 60.13%, rgba(55, 62, 84, 0.5) 99.09%), url(../public/images/about-bg.webp);
   background-size: cover;
   background-position: center;
 }
+
 .advantage-bg {
   background: url(../public/images/advantage-bg.webp) no-repeat;
   background-size: cover;
   background-position: center;
 }
-.h-page{
+
+.h-page {
   min-height: calc(100vh - 471px);
 }
-.h-scroll{
+
+.h-scroll {
   min-height: calc(100vh - 410px);
 }
-._9pm4ki3{
+
+._9pm4ki3 {
   top: 0 !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
 }
-.ju367vbr{
+
+.ju367vbr {
   background: white !important;
 }
-.ju367vbl{
+
+.ju367vbl {
   background: #e6e5e3 !important;
 }
-.ju367v8u{
-transition: none !important;
+
+.ju367v8u {
+  transition: none !important;
 }
-.ju367va3{
-background: #2850CC !important;
+
+.ju367va3 {
+  background: #2850CC !important;
 }
-.ju367vfu{
+
+.ju367vfu {
   color: #ffffff !important;
 }
-.ju367v8a{
+
+.ju367v8a {
   padding-top: 12px !important;
 }
-.ju367v6j{
+
+.ju367v6j {
   padding-bottom: 12px !important;
 }
-.ju367v7q{
-  padding-right:  20px !important;
+
+.ju367v7q {
+  padding-right: 20px !important;
 }
-.ju367v75{
+
+.ju367v75 {
   padding-left: 20px !important;
 }
-.ju367vn{
+
+.ju367vn {
   border-radius: 25px !important;
 }
 
@@ -346,6 +392,7 @@ background: #2850CC !important;
 .tradingview-widget-copyright a:visited .blue-text {
   color: #4C5163 !important;
 }
+
 /* src/components/Preloader.css */
 .preloader {
   position: fixed;
@@ -357,50 +404,81 @@ background: #2850CC !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Slightly transparent white */
 }
 
 .loader {
-  border: 5px dashed #f3f3f3; /* Light grey */
-  border-top: 5px dashed #28418D; /* Blue */
+  border: 5px dashed #f3f3f3;
+  /* Light grey */
+  border-top: 5px dashed #28418D;
+  /* Blue */
   border-radius: 50%;
-  width: 40px; /* Size of the loader */
-  height: 40px; /* Size of the loader */
+  width: 40px;
+  /* Size of the loader */
+  height: 40px;
+  /* Size of the loader */
   animation: spin 1s linear infinite;
 }
 
 .loading-text {
   margin-top: 16px;
-  color: #28418D; /* Color of the loading text */
-  font-size: 32px; /* Font size of the loading text */
+  color: #28418D;
+  /* Color of the loading text */
+  font-size: 32px;
+  /* Font size of the loading text */
 }
 
 /* Animation Keyframes */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* For Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
-  width: 2px !important; /* Change width to your preference */
+  width: 2px !important;
+  /* Change width to your preference */
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Background of the scrollbar track */
+  background: #f1f1f1;
+  /* Background of the scrollbar track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Round the scrollbar thumb */
+  background: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Round the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the scrollbar thumb on hover */
+  background: #555;
+  /* Color of the scrollbar thumb on hover */
 }
 
 /* For Firefox */
 html {
-  scrollbar-width: thin; /* Makes the scrollbar thin */
-  scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
+  scrollbar-width: thin;
+  /* Makes the scrollbar thin */
+  scrollbar-color: #888 #f1f1f1;
+  /* thumb color and track color */
+}
+
+[data-rk] ._9pm4ki3 {
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  [data-rk] .ju367v9i {
+    font-size: 12px !important;
+    padding: 8px !important;
+  }
+
 }
