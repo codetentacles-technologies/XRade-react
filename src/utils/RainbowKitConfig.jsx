@@ -14,7 +14,7 @@ import {  bsc, bscTestnet } from "viem/chains";
 
 
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = "86203b1826ce3273c5d9478876b27a53";  
+const projectId = "70f528e021aac6b9598bf72afedd1ddb";  
 
 const testNetworks = [bscTestnet];
 const mainNetworks = [bsc];

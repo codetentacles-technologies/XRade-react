@@ -856,9 +856,9 @@ const Home = () => {
           <div className="flex justify-between items-center ">
             <div>
               <h2 className="text-2xl font-bold text-primary">Transactions</h2>
-              <p className="text-sm font-medium text-[#71717A]">
+              {/* <p className="text-sm font-medium text-[#71717A]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+              </p> */}
             </div>
             <a href="#" className="text-secondary text-sm font-semibold flex items-center gap-1 ">
               See All Transactions <ChevronRight size={16} />
