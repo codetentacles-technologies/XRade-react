@@ -705,7 +705,7 @@ const Dashboard = () => {
                                 <div className="flex justify-between">
                                     <div className="flex items-center justify-between flex-col xl:flex-row gap-4 w-full">
                                         <h4 className="text-primary text-4xl font-bold flex items-center gap-3">
-                                            Dividend Income
+                                        Challenging Income: Maximizing Your Investment Returns
                                         </h4>
                                         <div className="flex flex-col md:flex-row items-center gap-6">
                                             

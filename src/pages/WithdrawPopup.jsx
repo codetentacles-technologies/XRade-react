@@ -28,7 +28,7 @@ const WithdrawPopup = ({ handleClose }) => {
           {/* Header */}
           <div className="flex justify-between items-center ">
             <div>
-              <h2 className="text-2xl font-bold text-primary">Imcome</h2>
+              <h2 className="text-2xl font-bold text-primary">Income</h2>
               <p className="text-sm font-medium text-[#71717A]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
