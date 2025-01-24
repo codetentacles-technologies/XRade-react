@@ -30,7 +30,7 @@ const WithdrawPopup = ({ handleClose }) => {
             <div>
               <h2 className="text-2xl font-bold text-primary">Income</h2>
               <p className="text-sm font-medium text-[#71717A]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Check your income breakdown before you cash out
               </p>
             </div>
            
