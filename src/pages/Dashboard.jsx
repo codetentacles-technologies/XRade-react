@@ -30,6 +30,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useParams } from "react-router-dom";
 import TradingViewWidget from "../components/TradingViewWidget.jsx";
 import CountDownTimer from "../components/CountdownTimer.jsx";
+import CountdownTimer from "../components/CountdownTimer.jsx";
 
 const packages = [
     {
@@ -996,8 +997,9 @@ const Dashboard = () => {
                 <div className="" data-aos="fade-up">
                     <div className="flex flex-col lg:flex-row gap-4 items-center justify-between w-full mb-6">
                         <h2 className="text-2xl font-bold mb-4 text-primary">Win Trips</h2>
-                        <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                            <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 45)} onlyDays={false} /> left
+                        <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8 flex items-center gap-2">
+                        <CountdownTimer endDate={new Date("2025-01-25T00:00:00").getTime()} onlyDays={false} />
+                        left
                         </button>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -1114,8 +1116,9 @@ const Dashboard = () => {
                                             className=" h-[36px]"
                                         />
                                     </h4>
-                                    <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8">
-                                        <CountDownTimer endDate={Number(totalUserInvestedAmount?.joinTime) * 1000 + (86400000 * 100)} /> left
+                                    <button className="bg-primary text-white text-base font-semibold rounded-full w-max py-2 px-8 flex items-center gap-2">
+                                    <CountdownTimer endDate={new Date("2025-01-25T00:00:00").getTime()} onlyDays={false} />
+                                    left
                                     </button>
                                 </div>
                                 <p className="text-secondary text-base font-normal">

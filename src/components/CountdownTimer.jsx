@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 
-const CountdownTimer = ({ endDate,onlyDays }) => {
+const CountdownTimer = ({ endDate, onlyDays }) => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
   // Calculate remaining time
   function calculateTimeRemaining() {
-    const end = endDate;
+    if (!endDate || isNaN(endDate)) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
     const now = new Date().getTime();
-    const difference = end - now;
+    const difference = endDate - now;
 
     if (difference <= 0) {
       return {
@@ -38,15 +46,16 @@ const CountdownTimer = ({ endDate,onlyDays }) => {
 
   return (
     <>
-    {onlyDays ? 
-      <span>
-      {timeRemaining.days}d {timeRemaining.hours}h left
-    </span> :
-      <span>
-        {timeRemaining.days}d {timeRemaining.hours}h {timeRemaining.minutes}m {timeRemaining.seconds}s
-      </span>
-}
-      </>
+      {onlyDays ? (
+        <span>
+          {timeRemaining.days}d {timeRemaining.hours}h left
+        </span>
+      ) : (
+        <span>
+          {timeRemaining.days}d {timeRemaining.hours}h {timeRemaining.minutes}m {timeRemaining.seconds}s
+        </span>
+      )}
+    </>
   );
 };
 
