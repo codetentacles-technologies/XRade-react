@@ -248,7 +248,7 @@ const Home = () => {
               </h5>
             </div>
             <p className="text-lightblue text-base font-medium text-center md:w-[50%] lg:w-[40%] xl:w-full">
-            Earn more as your referral network expands.  Our tiered reward system ensures that your  efforts are handsomely rewarded. As your  network grows, you move up the tiers,  unlocking increasingly higher commission  rates on your referrals' investments and  activities.
+              Earn more as your referral network expands.  Our tiered reward system ensures that your  efforts are handsomely rewarded. As your  network grows, you move up the tiers,  unlocking increasingly higher commission  rates on your referrals' investments and  activities.
             </p>
           </div>
           <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
@@ -265,7 +265,7 @@ const Home = () => {
               </h5>
             </div>
             <p className="text-lightblue text-base font-medium text-center  md:w-[50%] lg:w-[40%] xl:w-full">
-            Consistent returns from your referred users'  investments. Once you've built your network,  your earnings continue even while you're  doing other things. This passive income  stream is a powerful tool for long-term  financial growth and security. Imagine the  freedom of earning while you sleep!
+              Consistent returns from your referred users'  investments. Once you've built your network,  your earnings continue even while you're  doing other things. This passive income  stream is a powerful tool for long-term  financial growth and security. Imagine the  freedom of earning while you sleep!
             </p>
           </div>
         </div>
@@ -423,7 +423,7 @@ const Home = () => {
                   />
                 </h4>
                 <p className="text-white text-base font-normal">
-                Your path to earning starts with easy, rewarding tasks.
+                  Your path to earning starts with easy, rewarding tasks.
                 </p>
               </div>
               <p className="text-white text-base font-normal">
@@ -1127,7 +1127,7 @@ const Home = () => {
                 className="w-[70px] h-[68px]"
               />
               <p className="text-base text-primary font-semibold">
-                Ton Keeper Wallet
+                Trust Wallet
               </p>
             </div>
             <div
@@ -1140,7 +1140,7 @@ const Home = () => {
                 className="w-[72px] h-[68px]"
               />
               <p className="text-base text-primary font-semibold">
-                Ton Keeper Wallet
+                MetaMask Wallet
               </p>
             </div>
             <div
@@ -1153,7 +1153,7 @@ const Home = () => {
                 className="w-[68px] h-[68px]"
               />
               <p className="text-base text-primary font-semibold">
-                Ton Keeper Wallet
+                Binanace Wallet
               </p>
             </div>
             <div
@@ -1166,7 +1166,7 @@ const Home = () => {
                 className="w-[63px] h-[68px]"
               />
               <p className="text-base text-primary font-semibold">
-                Ton Keeper Wallet
+                Bitget Wallet
               </p>
             </div>
           </div>
@@ -1310,10 +1310,10 @@ const Home = () => {
                   className="w-[45px] h-[42px]"
                 />
                 <h6 className="text-primary text-lg font-bold">
-                Join Our Community
+                  Join Our Community
                 </h6>
                 <p className="text-secondary text-sm font-medium">
-                Connect with our vibrant community  of investors and unlock new  opportunities.
+                  Connect with our vibrant community  of investors and unlock new  opportunities.
                 </p>
               </div>
               <div className="flex flex-col gap-2.5 items-center justify-center text-center">
@@ -1323,10 +1323,10 @@ const Home = () => {
                   className="w-[35px] h-[42px]"
                 />
                 <h6 className="text-primary text-lg font-bold">
-                Contact Us
+                  Contact Us
                 </h6>
                 <p className="text-secondary text-sm font-medium">
-                Reach out to our dedicated support  team for any questions or assistance.
+                  Reach out to our dedicated support  team for any questions or assistance.
                 </p>
               </div>
             </div>
