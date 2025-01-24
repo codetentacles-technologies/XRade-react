@@ -423,8 +423,7 @@ const Home = () => {
                   />
                 </h4>
                 <p className="text-white text-base font-normal">
-                  Earn referral income from 10 levels of your network's daily
-                  ROI.
+                Your path to earning starts with easy, rewarding tasks.
                 </p>
               </div>
               <p className="text-white text-base font-normal">
@@ -439,10 +438,11 @@ const Home = () => {
             </button>
           </div>
           <div className="flex flex-col gap-8">
-            <div>
+            <div className="flex flex-col gap-1">
               <h5 className="text-white text-2xl font-bold">
                 Per-Hour Mining Bonus: Engaging Your Network
               </h5>
+              <p className="text-base text-white font-normal">Transform everyday tasks into sustainable income streams.</p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4 border border-[#858C9F] group hover:bg-hovergradient transform transition-all group duration-300 ease-in-out rounded-2xl py-4 px-6">
