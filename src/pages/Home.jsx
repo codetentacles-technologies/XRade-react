@@ -188,7 +188,7 @@ const Home = () => {
 
             {/* <BoxReveal boxColor={"#2850cc"} duration={0.5}> */}
             <Link to="/about" className="no-underline">
-              <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full lg:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out border border-blue">
+              <button className="text-white bg-blue rounded-full text-sm md:text-lg font-semibold py-3.5 px-8 w-full lg:w-max hover:bg-primary transform transition-all group duration-300 ease-in-out border border-blue hover:border-primary">
                 Learn More About Our Features
               </button>
             </Link>
