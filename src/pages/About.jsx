@@ -132,22 +132,24 @@ const About = () => {
               <h6 className='text-lg font-bold flex items-center gap-3'><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.67201L3.71939 8.62281C5.15598 9.45098 6.44169 10.5235 7.54865 11.8797C10.412 7.13211 13.7017 3.24216 17.3178 0H20.1516C15.0957 5.6168 10.9696 11.6305 7.67001 18C5.90543 14.2167 3.43732 11.0319 0 8.67201Z" fill="#01A601" />
               </svg>
-                Flexible Withdrawal Terms</h6>
-              <p className='text-sm font-normal'>Low charges and a seamless process for deposits and withdrawals, including tiered maintenance fees for different transaction volumes.</p>
+              Community-Driven Growth</h6>
+              <p className='text-sm font-normal'>Engage with a vibrant community of investors to enhance learning, networking, and investment opportunities.</p>
             </div>
             <div className='flex flex-col gap-3'>
               <h6 className='text-lg font-bold flex items-center gap-3'><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.67201L3.71939 8.62281C5.15598 9.45098 6.44169 10.5235 7.54865 11.8797C10.412 7.13211 13.7017 3.24216 17.3178 0H20.1516C15.0957 5.6168 10.9696 11.6305 7.67001 18C5.90543 14.2167 3.43732 11.0319 0 8.67201Z" fill="#01A601" />
               </svg>
-                Flexible Withdrawal Terms</h6>
-              <p className='text-sm font-normal'>Low charges and a seamless process for deposits and withdrawals, including tiered maintenance fees for different transaction volumes.</p>
+              Transparency and Security</h6>
+              <p className='text-sm font-normal'>A highly reliable platform backed by experienced blockchain and fintech professionals, ensuring user funds' safety and growth.
+              </p>
             </div>
             <div className='flex flex-col gap-3'>
               <h6 className='text-lg font-bold flex items-center gap-3'><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.67201L3.71939 8.62281C5.15598 9.45098 6.44169 10.5235 7.54865 11.8797C10.412 7.13211 13.7017 3.24216 17.3178 0H20.1516C15.0957 5.6168 10.9696 11.6305 7.67001 18C5.90543 14.2167 3.43732 11.0319 0 8.67201Z" fill="#01A601" />
               </svg>
-                Flexible Withdrawal Terms</h6>
-              <p className='text-sm font-normal'>Low charges and a seamless process for deposits and withdrawals, including tiered maintenance fees for different transaction volumes.</p>
+              Enhanced User Experience</h6>
+              <p className='text-sm font-normal'>Supported by accessible customer support, engaging bonus features, and diversified income options.
+              </p>
             </div>
           </div>
         </div>
