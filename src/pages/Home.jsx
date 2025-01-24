@@ -248,11 +248,7 @@ const Home = () => {
               </h5>
             </div>
             <p className="text-lightblue text-base font-medium text-center md:w-[50%] lg:w-[40%] xl:w-full">
-              Expand your network and watch your passive income grow. Invite
-              friends, family, and colleagues to join our platform. The more
-              people you refer, the larger your network becomes, leading to
-              exponentially higher earning potential. Think of it as building
-              your own financial ecosystem!
+            Earn more as your referral network expands.  Our tiered reward system ensures that your  efforts are handsomely rewarded. As your  network grows, you move up the tiers,  unlocking increasingly higher commission  rates on your referrals' investments and  activities.
             </p>
           </div>
           <div className="card flex flex-col justify-center items-center rounded-2xl group gap-[18px] px-6 py-8 transform  transition-all group duration-300 ease-in-out group hover:rounded-2xl hover:bg-boxafterhero ">
@@ -269,11 +265,7 @@ const Home = () => {
               </h5>
             </div>
             <p className="text-lightblue text-base font-medium text-center  md:w-[50%] lg:w-[40%] xl:w-full">
-              Expand your network and watch your passive income grow. Invite
-              friends, family, and colleagues to join our platform. The more
-              people you refer, the larger your network becomes, leading to
-              exponentially higher earning potential. Think of it as building
-              your own financial ecosystem!
+            Consistent returns from your referred users'  investments. Once you've built your network,  your earnings continue even while you're  doing other things. This passive income  stream is a powerful tool for long-term  financial growth and security. Imagine the  freedom of earning while you sleep!
             </p>
           </div>
         </div>
