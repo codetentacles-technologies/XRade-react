@@ -1310,11 +1310,10 @@ const Home = () => {
                   className="w-[45px] h-[42px]"
                 />
                 <h6 className="text-primary text-lg font-bold">
-                  Explore Our Platform
+                Join Our Community
                 </h6>
                 <p className="text-secondary text-sm font-medium">
-                  Discover the full potential of our innovative investment
-                  platform.
+                Connect with our vibrant community  of investors and unlock new  opportunities.
                 </p>
               </div>
               <div className="flex flex-col gap-2.5 items-center justify-center text-center">
@@ -1324,11 +1323,10 @@ const Home = () => {
                   className="w-[35px] h-[42px]"
                 />
                 <h6 className="text-primary text-lg font-bold">
-                  Explore Our Platform
+                Contact Us
                 </h6>
                 <p className="text-secondary text-sm font-medium">
-                  Discover the full potential of our innovative investment
-                  platform.
+                Reach out to our dedicated support  team for any questions or assistance.
                 </p>
               </div>
             </div>
