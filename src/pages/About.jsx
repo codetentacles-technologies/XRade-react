@@ -118,7 +118,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className='text-white advantage-bg py-9 2xl:py-20 xl:px-[70px] 2xl:px-[400px] px-4 flex flex-col gap-8 items-center justify-center' data-aos="fade-up">
+        <div className='text-white advantage-bg py-9 2xl:py-20 xl:px-[70px] 2xl:px-[300px] px-4 flex flex-col gap-8 items-center justify-center' data-aos="fade-up">
           <h4 className='text-2xl font-bold'  >Advantages of AI Trade</h4>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 '>
             <div className='flex flex-col gap-3'>
