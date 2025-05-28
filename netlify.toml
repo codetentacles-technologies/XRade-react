@@ -1,7 +1,6 @@
 [build]
-  base = "XRade-react"
-  publish = "XRade-react/dist"
+  publish = "dist"
   command = "npm install && npm run build"
 
 [functions]
-  directory = "XRade-react/netlify/functions"
+  directory = "netlify/functions"
